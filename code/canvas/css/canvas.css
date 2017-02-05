@@ -1,0 +1,879 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+}
+p {
+    font-size: 0.95em;
+}
+pre {
+    border: none;
+    background-color: #eceff1;
+    visibility: hidden;
+}
+
+/*-------------------------------
+           LOGO
+ --------------------------------*/
+
+a.logo {
+    display: block;
+}
+a.logo img {
+    display: block;
+    width: 60%;
+    margin: auto;
+}
+
+/* ------------------------------
+        Form header
+ ------------------------------ */
+
+.form-header {
+    width: 100%;
+    margin: 0 auto 2.14em auto;
+    /*background-color:#546e7a;*/
+    background-color: #eceff1;
+    border-radius: 0 0 5px 5px;
+    min-height: 6em;
+}
+.form-header h1 {
+    color: #444;
+    font-size: 1.9em;
+    text-align: left;
+}
+.form-header h2 {
+    font-size: 1.4em;
+    color: #444;
+}
+.form-header p {
+    font-size: 0.9em;
+    margin-top: 1em;
+    color: #444;
+}
+.form-header label {
+    font-size: 1.1em;
+    margin-top: 1.8em;
+    margin-right: 0.3em;
+    color: #444;
+}
+.form-header input {
+    width: 62%;
+    outline: none;
+    border: 1px solid #eceff1;
+    border-radius: 4px;
+    padding: 0.45em;
+}
+
+/*----------------------------------
+   DROPDOWN MENU (User DASHBORD menu)
+ -----------------------------------*/
+
+
+/*User area button and dropdown menu in the header :
+  only shown when logged in*/
+
+.form-header .user-profile {
+    font-size: 1em;
+    margin-top: 1.8em;
+    margin-right: 0.3em;
+    color: #444;
+    min-width: 80%;
+    margin-left: 3.5em;
+}
+.form-header .user-profile img {
+    width: 2.6em;
+    margin-right: 0.5em;
+}
+.form-header .user-profile button {
+    padding: 0.2em 1em;
+    width: 90%;
+    border: none;
+    border-radius: 2px;
+    outline: 0;
+    background-color: transparent;
+    transition: all 0.5s;
+}
+.form-header .user-profile button:hover {
+    padding: 0.2em;
+    background-color: #fff;
+}
+
+/*Boortstrap dropdown classes*/
+
+ul.dropdown-menu {
+    border: none;
+    border-radius: 2px;
+    width: 90%;
+    margin: 0 5%;
+    box-shadow: none;
+    background-color: #48585f;
+}
+ul.dropdown-menu a {
+    color: #fff;
+}
+
+/*The button When the drop down menu is open*/
+
+.dropdown.open button#dropdownMenu1 {
+    background-color: #fff;
+}
+
+/* ------------------------------
+        Masonry Blocks
+ ------------------------------ */
+
+.masonry-layout8-5 {
+    -webkit-column-count: 5;
+    /* Chrome, Safari, Opera */
+    -moz-column-count: 5;
+    /* Firefox */
+    column-count: 5;
+    -webkit-column-gap: 0;
+    /* Chrome, Safari, Opera */
+    -moz-column-gap: 0;
+    /* Firefox */
+    column-gap: 0;
+}
+.masonry-layout4 {
+    -webkit-column-count: 4;
+    /* Chrome, Safari, Opera */
+    -moz-column-count: 4;
+    /* Firefox */
+    column-count: 4;
+    -webkit-column-gap: 0;
+    /* Chrome, Safari, Opera */
+    -moz-column-gap: 0;
+    /* Firefox */
+    column-gap: 0;
+}
+.masonry-layout__panel {
+    break-inside: avoid;
+    padding: 0.36em;
+}
+.masonry-layout__panel-content {
+    padding: 5px 4px;
+    border-radius: 10px;
+}
+
+/* ---------------------------------
+    Field Content & Items
+ ----------------------------------- */
+
+
+/*The field introduction text*/
+
+.intro {
+    padding: 1em 1.3em 0 1.3em;
+    color: rgba(0, 0, 0, 0.6);
+    font-style: italic;
+}
+
+/*The description text toggler btn*/
+
+.intro-toggle {
+    padding: 0.25em 1.2em;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+/*the show/hide text bootstrap glyphicon icon*/
+
+.intro-toggle-icon {
+    padding: 0.4em;
+    font-size: 1em;
+}
+.field-title {
+    font-size: 1.4em;
+    margin-left: 0.8em;
+    line-height: 1.5;
+}
+
+/*Item list in the field*/
+
+ul.item_list {
+    list-style-type: none;
+    padding-left: 0;
+    width: 100%;
+    /*to make a place holder for empty lists.
+   Being able to drop cards in empty fields*/
+    min-height: 4em;
+}
+li.added_item {
+    width: 100%;
+    margin: 0.5em auto;
+    height: auto;
+    overflow: visible;
+    cursor: move;
+}
+ul.item_list textarea {
+    font-size: 0.95em;
+    padding: 0.5em 0.5em 0.5em 1em;
+    border-radius: 0.35em;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 87%;
+    max-width: 87%;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.6);
+    /*for auto expantion jQuery code*/
+    box-sizing: padding-box;
+    overflow: hidden;
+}
+
+/* -----------------------------------------
+   List item handles : bootstrap glyphicon
+  -----------------------------------------*/
+
+span.handle {
+    position: relative;
+    /* Neccessary for handle in sortable to work*/
+    top: -3em;
+    right: -0.18em;
+    color: #fff;
+    font-size: 1.2em;
+    cursor: move;
+}
+
+/* the remove icon for each item*/
+
+span.remove {
+    top: -50px;
+    right: 0px;
+    margin-right: -22px;
+    font-size: 1.2em;
+    font-weight: 400;
+    color: #fff;
+    border-radius: 100%;
+    cursor: auto;
+}
+span.remove:hover {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+/* Placeholder for sorting items*/
+
+.sort-placeholder {
+    border-radius: 0.35em;
+    background-color: rgba(40, 40, 40, 0.35);
+    width: 85%;
+    height: 2.5em;
+    padding: 0.5em 0.5em;
+    margin-left: 1em;
+}
+
+/* -----------------------------------
+    USER INPUT:
+    Add new items in each field
+   ----------------------------------- */
+
+.user-input {
+    width: 100%;
+    margin-left: 1em;
+    margin-top: 2em;
+    padding-bottom: 1.5em;
+    display: none;
+    /* Shown (slide up and down) by jQuery when adding ideas*/
+}
+
+/*The div containing all the user input things*/
+
+.add_box {
+    /*make room for the absolutely positioned div at the buttom each card
+  always keeping a distance from the buttom of the card (as high as the height of the absolutely positined icon div + some distance)*/
+    padding-bottom: 5.3em;
+}
+
+/*Ad an idea link*/
+
+a.add-idea {
+    color: #fff;
+    margin-left: 1em;
+    margin-top: 2em;
+    padding: 1em 1em 1em 2em;
+    background-image: url('../icons/lamp.svg');
+    background-size: 1.4em;
+    background-position: left;
+    background-repeat: no-repeat;
+}
+
+/*textarea of a new item input*/
+
+textarea.new_item {
+    width: 90%;
+    border: 1px solid #fff;
+    border-radius: 0.35em;
+    outline: none;
+    padding-left: 0.5em;
+    /*for auto expantion jQuery code*/
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/*The add button*/
+
+.add_btn {
+    background-color: transparent;
+    color: #fff;
+    padding: 0.25em 1.2em;
+    border: 0.12em solid #fff;
+    border-radius: 0.5em;
+}
+.add_btn:hover {
+    color: #222;
+    border-color: #222;
+}
+textarea.expandable {
+    box-sizing: border-box;
+    /*remove the user resizing for the text fields*/
+    resize: none;
+}
+span.chars {
+    font-size: 1.1em;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* ----------------------------------------
+           FIELD ID ICONS
+  -----------------------------------------*/
+
+
+/*  Background images for each field (field icons)*/
+
+.field_01 {
+    background-image: url('../icons/field1.svg');
+}
+.field_02 {
+    background-image: url('../icons/field2.svg');
+}
+.field_03 {
+    background-image: url('../icons/field3.svg');
+}
+.field_04 {
+    background-image: url('../icons/field4.svg');
+}
+.field_05 {
+    background-image: url('../icons/field5.svg');
+}
+.field_06 {
+    background-image: url('../icons/field6.svg');
+}
+.field_07 {
+    background-image: url('../icons/field7.svg');
+}
+.field_08 {
+    background-image: url('../icons/field8.svg');
+}
+.field_09 {
+    background-image: url('../icons/field9.svg');
+}
+.field_10 {
+    background-image: url('../icons/field10.svg');
+}
+.field_11 {
+    background-image: url('../icons/field11.svg');
+}
+.field_12 {
+    background-image: url('../icons/field12.svg');
+}
+
+/*general background options for all fields*/
+
+.field_01, .field_02, .field_03, .field_04, .field_05, .field_06, .field_07, .field_08, .field_09, .field_10, .field_11, .field_12 {
+    /*make the svg images cover the whole width*/
+    background-size: 106%;
+    background-position: 100% 100%;
+    /*background-position:bottom left;*/
+    background-repeat: no-repeat;
+}
+
+/* ---------------------------------
+     FORM Import & Export buttons
+  ----------------------------------- */
+
+.imp-exp-btn {
+    margin-top: 2.5em;
+}
+button.json_exp, button.share_canvas, .pdf_exp {
+    border: none;
+    border-radius: 0.5em;
+    padding: 1em 0;
+    width: 60%;
+    outline: none;
+}
+button.json_exp:hover, button.share_canvas:hover, .pdf_exp:hover {
+    opacity: 0.6;
+}
+button.json_exp {
+    background-color: #aed581;
+    margin: 1em auto 0 auto;
+}
+button.share_canvas {
+    background-color: #a67de0;
+    margin: 0.5em auto 0.4em auto;
+}
+.pdf_exp {
+    background-color: #85ade5;
+    margin: 0.5em auto 0.4em auto;
+}
+
+/*the sign up or login to save link for unregistered users*/
+
+a.login-to-save {
+    display: block;
+    padding: 1em;
+    color: #444;
+    border: none;
+    border-radius: 0.5em;
+    padding: 1em 0;
+    width: 60%;
+    outline: none;
+    margin: 1em auto 0 auto;
+    background-color: #aed581;
+}
+
+/*The save canvas php under the save/export buttons*/
+
+.save-canvas-feedback p {
+    text-align: center;
+    color: #15af97;
+}
+.save-canvas-feedback span {
+    color: #15af97;
+    margin-right: 0.4em;
+}
+.save-canvas-feedback-fail p {
+    text-align: center;
+    color: #37474f;
+}
+.save-canvas-feedback-fail span {
+    color: #37474f;
+    margin-right: 0.4em;
+}
+/*SHARING THE CANVAS*/
+/*share canvas button*/
+.share_canvas{
+
+}
+.share_canvas_email{
+  display:none;
+}
+.share_canvas_email input{
+  width:80%;
+  padding:1em;
+  border-radius:5px;
+  border:1px solid #444;
+
+}
+.share_canvas_email input:focus{
+outline :none;
+}
+/*the send btn*/
+.share_canvas_send{
+  border: none;
+  border-radius: 0.5em;
+  padding: 1em 0;
+  width: 25%;
+  outline: none;
+  background-color:#546e7a;
+  color:#fff;
+}
+/* ------------------------------
+        Footer
+ ------------------------------ */
+
+footer {
+    font-size: 1em;
+    margin-top: 2em;
+    padding: 1.5em;
+    background-color: #37474f;
+    color: white;
+}
+footer .license a {
+    color: #759BCF;
+}
+footer .license {
+    margin: 0.5em auto 1.8em auto;
+}
+footer .contact p {
+    color: #18AE90;
+}
+footer .contact h2 {
+    color: #6bb5b4;
+}
+footer p.ethics-copy.terms, footer p.ethics-copy.privacy {
+    text-decoration: none;
+    padding: 0 0.5em;
+    display: inline-block;
+}
+footer p.cc {
+    margin-top: 2.8em;
+}
+footer p.terms, footer p.privacy {
+    margin: 1.9em auto;
+}
+footer .privacy a {
+    color: #a67de0;
+}
+footer .terms a {
+    color: #aed581;
+}
+
+/*footer license icons */
+
+footer .license-icons ul {
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+footer .license-icons li {
+    display: inline-block;
+    margin: 1.2em 0.2em;
+}
+footer .license-icons ul img {
+    width: 3.5em;
+}
+
+/* ------------------------------
+        Masonry Colors (ADAPT)
+ ------------------------------ */
+
+.bg--blue {
+    background-color: #7297ce;
+    background-color: #85ade5;
+}
+.bg--darkblue {
+    background-color: #7986cb;
+    background-color: #8b99e0;
+}
+.bg--green {
+    /*background-color: #94c356;
+    background-color: #9dc963;*/
+    background-color: #aed581;
+}
+.bg--seagreen {
+    /*background-color: #48D1CC;*/
+    background-color: #6bb5b4;
+}
+.bg--purple {
+    /*background-color: #59358c;*/
+    background-color: #a281d1;
+}
+.bg--green1 {
+    /*background-color: #15af97;*/
+    background-color: #29bca4;
+}
+.bg--x {
+    background-color: #ce93d8;
+}
+.bg--mineral {
+    background-color: #607d8b;
+}
+
+/* =================================================
+           MEDIA QUERIES
+ ==================================================*/
+
+
+/* ----------------- 1 COL ------------------  */
+
+@media (max-width: 499px) {
+    .masonry-layout8-5 {
+        column-count: 1;
+        column-gap: 0;
+    }
+    .masonry-layout4 {
+        column-count: 1;
+        column-gap: 0;
+    }
+    /*Adjust the height of culumns to maintain the layout*/
+    .field_01, .field_06, .field_12, .field_08 {
+        min-height: 250px;
+    }
+    .field_05, .field_11, .field_07, .field_02 {
+        min-height: 250px;
+    }
+    .field_03, .field_09, .field_10, .field_04 {
+        min-height: 250px;
+    }
+    /* Form Header */
+    .form-header {
+        width: 100%;
+        padding-bottom: 2em;
+    }
+    .form-header h1 {
+        margin-bottom: 1em;
+    }
+    .form-header label {
+        margin-top: 0.6em;
+        display: block;
+        text-align: left;
+    }
+    .form-header input {
+        width: 95%;
+        display: block;
+    }
+    .form-header p {
+        margin-top: 1.85em;
+    }
+    /*User area button and dropdown menu in the header :
+     only shown when logged in*/
+    .form-header .user-profile {
+        margin-left: 0;
+        width: 95%;
+    }
+    /*The button When the drop down menu is open*/
+    .dropdown button#dropdownMenu1 {
+        width: 100%;
+        margin: auto;
+    }
+    /*Boortstrap dropdown classes*/
+    ul.dropdown-menu {
+        margin-left: 0;
+        width: 100%;
+        margin: auto;
+    }
+}
+
+/* ----------------- 2 COL ------------------  */
+
+@media (min-width: 500px) and (max-width: 934px) {
+    .masonry-layout8-5 {
+        column-count: 2;
+        column-gap: 0;
+    }
+    .masonry-layout4 {
+        column-count: 2;
+        column-gap: 0;
+    }
+    /*Adjust the height of culumns to maintain the layout*/
+    .field_01, .field_06, .field_12, .field_08 {
+        min-height: 460px;
+    }
+    .field_05, .field_11, .field_07, .field_02 {
+        min-height: 460px;
+    }
+    .field_03, .field_09, .field_10, .field_04 {
+        min-height: 460px;
+    }
+    /* Form Header */
+    .form-header {
+        width: 100%;
+    }
+    .form-header h1 {
+        text-align: center;
+    }
+    .form-header label {
+        margin-top: 1.8em;
+        display: block;
+        text-align: center;
+    }
+    .form-header input {
+        width: 50%;
+        display: block;
+        margin: auto;
+    }
+    .form-header p {
+        margin-top: 1.85em;
+    }
+    a.logo img {
+        display: block;
+        width: 40%;
+        margin: auto;
+    }
+    /*User area button and dropdown menu in the header :
+     only shown when logged in*/
+    .form-header .user-profile {
+        margin-left: 0;
+        width: 50%;
+        margin: 2em auto;
+    }
+    /*The button When the drop down menu is open*/
+    .dropdown button#dropdownMenu1 {
+        width: 60%;
+        margin: 0 20%;
+    }
+    /*Boortstrap dropdown classes*/
+    ul.dropdown-menu {
+        margin-left: 0;
+        width: 60%;
+        margin: 0 20%;
+    }
+}
+@media (min-width: 502px)and (max-width: 708px) {
+    /*adjusting textarea heights*/
+    .added_item textarea {
+        height: 8em;
+        /*background-color:orange;*/
+    }
+}
+
+/* ----------------- 4 COL Smaller------------------- */
+
+@media (min-width: 935px) and (max-width: 991px) {
+    .masonry-layout8-5 {
+        column-count: 4;
+        column-gap: 0;
+    }
+    .masonry-layout4 {
+        column-count: 4;
+        column-gap: 0;
+    }
+    /*Adjust the height of culumns to maintain the layout*/
+    .field_01, .field_06, .field_12, .field_08 {
+        min-height: 500px;
+    }
+    .field_05, .field_11, .field_07, .field_02 {
+        min-height: 500px;
+    }
+    .field_03, .field_09, .field_10, .field_04 {
+        min-height: 500px;
+    }
+    /* Form Header */
+    .form-header {
+        width: 100%;
+    }
+    .form-header h1 {
+        text-align: center;
+    }
+    .form-header label {
+        margin-top: 1.8em;
+        display: block;
+        text-align: center;
+    }
+    .form-header input {
+        width: 50%;
+        display: block;
+        margin: auto;
+    }
+    .form-header p {
+        margin-top: 1.85em;
+    }
+    /*User area button and dropdown menu in the header :
+     only shown when logged in*/
+    .form-header .user-profile {
+        margin-left: 0;
+        width: 60%;
+        margin: 2em auto;
+        transition: all 0.4s;
+    }
+    /*The button When the drop down menu is open*/
+    .dropdown button#dropdownMenu1 {
+        width: 62%;
+        margin: 0 18%;
+    }
+    /*Boortstrap dropdown classes*/
+    ul.dropdown-menu {
+        margin-left: 0;
+        width: 62%;
+        margin: 0 18%;
+    }
+}
+@media (min-width: 935px) and (max-width: 1153px) {
+    /*adjusting textarea heights*/
+    .added_item textarea {
+        height: 8.6em;
+        /*background-color:seagreen;*/
+    }
+}
+
+/* ------------   COL 4 Large ----------------  */
+
+@media (min-width: 992px) and (max-width: 1153px) {
+    .masonry-layout8-5 {
+        column-count: 4;
+        column-gap: 0;
+    }
+    .masonry-layout4 {
+        column-count: 4;
+        column-gap: 0;
+    }
+    /*DESKTOP version: HOLDING THE CANVAS DEFAULT LAYOUT FORM*/
+    /*Adjust the height of culumns to maintain the layout*/
+    .field_01, .field_06, .field_12, .field_08 {
+        min-height: 480px;
+    }
+    .field_05, .field_11, .field_07, .field_02 {
+        min-height: 480px;
+    }
+    .field_03, .field_09, .field_10, .field_04 {
+        min-height: 480px;
+    }
+    /* Form Header */
+    .form-header {
+        width: 100%;
+        min-height: 8em;
+    }
+    .form-header h1 {
+        font-size: 1.7em;
+    }
+    .form-header label {
+        margin-top: 1.8em;
+        display: block;
+        text-align: left;
+    }
+    .form-header input {
+        width: 100%;
+        display: block;
+    }
+    .form-header p {
+        margin-top: 2em;
+    }
+}
+@media (min-width: 1052px) and (max-width: 1152px) {
+    /*adjusting textarea heights*/
+    .added_item textarea {
+        height: 6.5em;
+        /*background-color:khaki;*/
+    }
+    .new_item {}
+}
+
+/* --------------- 5 COL -----------------  */
+
+@media (min-width: 1154px) and (max-width: 1650px) {
+    /*DESKTOP version: HOLDING THE CANVAS DEFAULT LAYOUT FORM*/
+    /*Adjust the height of culumns to maintain the layout*/
+    .field_01, .field_02 {
+        min-height: 894px;
+    }
+    .field_05, .field_07, .field_11 {
+        min-height: 405px;
+    }
+    .field_06, .field_08, .field_12 {
+        min-height: 478px;
+    }
+    .field_03, .field_09, .field_10, .field_04 {
+        min-height: 390px;
+    }
+}
+@media (min-width: 1154px)and (max-width: 1702px) {
+    /*adjusting textarea heights*/
+    .added_item textarea {
+        height: 8.5em;
+        /*background-color:#535353;*/
+    }
+    .new_item {}
+}
+
+/* ----------------------------------------- */
+
+@media (min-width: 1651px) {
+    /*DESKTOP version: HOLDING THE CANVAS DEFAULT LAYOUT FORM*/
+    /*Adjust the height of culumns to maintain the layout*/
+    .field_01, .field_02 {
+        min-height: 765px;
+    }
+    .field_05, .field_07, .field_11 {
+        min-height: 365px;
+    }
+    .field_06, .field_08, .field_12 {
+        min-height: 390px;
+    }
+    .field_03, .field_09, .field_10, .field_04 {
+        min-height: 340px;
+    }
+}

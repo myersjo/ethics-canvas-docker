@@ -1,0 +1,176 @@
+a {
+    text-decoration: none!important;
+}
+
+/*logo*/
+
+a.logo {
+    display: block;
+}
+a.logo img {
+    display: block;
+    width: 60%;
+    margin: auto;
+}
+
+/*The User Profile bar */
+
+.user-bar {
+    margin-top: 2.8em;
+    margin-bottom: 3.1em;
+}
+.user-bar span {
+    font-size: 2em;
+}
+.user-bar img {
+    margin-right: 1.2em;
+    vertical-align: middle;
+}
+
+/*--------------------------------
+   create new canvas
+----------------------------------*/
+
+.create-canvas-btn {
+    display: block;
+    border: 2px solid #546e7a;
+    color: #546e7a;
+    border-radius: 5px;
+    padding: 1.8em;
+    margin-top: 2.8em;
+    margin-bottom: 3.2em;
+    font-size: 1.25em;
+    transition: 0.2s all;
+}
+
+/*the icon for the add canvas*/
+
+.create-canvas-btn span {
+    margin-right: 0.25em;
+    font-size: 1.5em;
+    vertical-align: middle;
+    margin-bottom: 0.1em;
+}
+.create-canvas-btn:hover {
+    background-color: #546e7a;
+    color: #fff;
+}
+
+/*-------------------------------
+    CANVAS GALARY
+---------------------------------*/
+.canvas-gallery-item {
+
+    margin-bottom: 1.8%;
+
+}
+.canvas-gallery-item .col-md-12 {
+    width: 95%;
+    margin: 2.5% 2.5% 0 2.5%;
+    background-color: #546e7a;/*default*/
+    border-radius: 5px;
+    padding: 1em;
+    height:15em;
+    transition:all 0.3s;
+}
+.canvas-gallery-item .col-md-12:hover {
+
+    background-color: #546e7a!important;
+    color:white;
+}
+
+/*These colors will be dynamically added by jQuery*/
+
+.canvas-gallery-item .col-md-12.color0 {
+    background-color: #85ade5;
+}
+.canvas-gallery-item .col-md-12.color1 {
+    background-color: #aed581;
+}
+.canvas-gallery-item .col-md-12.color2 {
+    background-color: #6bb5b4;
+}
+.canvas-gallery-item .col-md-12.color3 {
+    background-color: #a281d1;
+}
+.canvas-gallery-item .col-md-12.color4 {
+    background-color: #29bca4;
+}
+
+/*Remove Button*/
+/*<button type="button" class="remove-canvas"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>Remove canvas</button>*/
+.remove-canvas{
+  color:#37474f;
+  margin-top:0;
+  border:none;
+  border-radius: 0 0 5px 5px;
+  padding:0.5em;
+  background-color:#cfd8dc;
+  transition:all 0.3s;
+}
+.remove-canvas:hover{
+  color:#fff;
+  background-color:#546e7a;
+}
+.remove-canvas span{
+  margin-right:0.5em;
+
+}
+/* ------------------------------
+        Footer
+ ------------------------------ */
+
+footer {
+    font-size: 1em;
+    clear: both;
+    margin-top: 2em;
+    padding: 1.5em;
+    background-color: #37474f;
+    ;
+    color: white;
+}
+footer .license a {
+    color: #759BCF;
+}
+footer .contact p{
+  color: #18AE90;
+  font-size:1em;
+}
+footer .contact h2{
+  color:#6bb5b4;
+}
+footer .license {
+    margin: 0.5em auto 1.8em auto;
+}
+footer p.ethics-copy.terms, footer p.ethics-copy.privacy {
+    text-decoration: none;
+    padding: 0 0.5em;
+    display: inline-block;
+}
+footer p.cc {
+    margin-top: 2.8em;
+}
+footer p.terms, footer p.privacy {
+    margin: 1.9em auto;
+}
+footer .privacy a {
+    color: #a67de0;
+}
+footer .terms a {
+    color: #aed581;
+}
+
+/*footer license icons */
+
+footer .license-icons ul {
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+footer .license-icons li {
+    display: inline-block;
+    margin: 1.2em 0.2em;
+}
+footer .license-icons ul img {
+    width: 3.5em;
+}

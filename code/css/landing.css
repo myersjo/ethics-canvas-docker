@@ -1,0 +1,947 @@
+html, body {
+    height: 100%;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    background-image: url('../img/texture2.jpg');
+    background-repeat: repeat;
+}
+p {
+    font-size: 1.1em;
+    line-height: 1.5;
+    color:#444;
+}
+h2 {
+    font-size: 1.95em;
+}
+h2,h3 {
+    line-height: 1.4;
+
+}
+pre {
+    border: none;
+}
+
+/* ------------------------------
+          HEADR
+ ------------------------------ */
+
+.header, footer {
+
+    background-color: rgba(38, 50, 56, 0.85);
+    clear:both;
+
+}
+.header {
+    /*margin-top:0em;*/
+    padding-bottom: 0.80em;
+    padding-top: 1em;
+    color: white;
+}
+a.logo {
+    display: block;
+    /*text-decoration: none;
+    color: #333;
+    width: 30%;
+    margin: 0 auto 1.4em auto;
+    padding: 1.9em;*/
+    /*background-image: url('../icon/logo.svg');*/
+    /*background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;*/
+}
+a.logo img {
+    display: block;
+    width: 58%;
+    margin: 0.28em auto;
+}
+.page-title {
+    margin: 0.12em auto;
+    font-size: 2em;
+    display: none;
+}
+
+/* ------------------------------
+          CAROUSEL
+ ------------------------------ */
+
+.slider-area {
+    /*prevent horizontal scrolling*/
+    width: 100%;
+    padding: 0;
+    margin: auto;
+}
+.slickCarousel {
+    background-color: #ddd;
+    margin-top: 0;
+    /*height:25em;*/
+}
+.carousel-content {
+    height: 40em;
+    width: 100%;
+    border-radius: 5px;
+    background-repeat: no-repeat;
+    /*Make the background image responsive*/
+    background-size: cover;
+}
+.carousel-content:nth-of-type(1) {
+    background-image: url('../img/ethics-canvas1.jpg');
+}
+.carousel-content:nth-of-type(2) {
+    background-image: url('../img/ethics-canvas2.jpg');
+    background-position: bottom;
+}
+.carousel-content:nth-of-type(3) {
+    background-image: url('../img/ethics-canvas3.jpg');
+}
+
+/*the box with the texts on the slider*/
+
+.carousel-content-elements {
+    background-color: rgba(255, 255, 255, 0.64);
+    height: 40em;
+    /*like the .carousel-content */
+    position: relative;
+    /* to vertically centerize the child text inside*/
+}
+.carousel-content-elements p {
+    font-size: 1.51em;
+    margin-top: 1em;
+    padding: 1em;
+    /* to vertically centerize the text inside its parent*/
+    position: absolute;
+    top: 40%;
+    transform: translateY(-40%);
+}
+.carousel-content-elements h2 {
+    font-size: 1.8em;
+}
+
+/* ------------------------------
+     CONTENT: HOW IT WORKS
+ ------------------------------ */
+
+.how-it-works {
+    margin-bottom: 3em;
+}
+.how-it-works img {
+    width: 80%;
+    display: block;
+    margin: 2em auto;
+}
+.how-it-works h2 {
+    margin: 2.5em 0 1em 0;
+}
+.how-it-works p {
+    margin-bottom: 3em;
+}
+
+/* ------------------------------------
+     CONTENT: ABOUT THE ETHICS CANVAS
+ -------------------------------------- */
+
+.about-ethics-canvas {
+    margin-bottom: 1em;
+}
+.about-ethics-canvas img {
+    width: 80%;
+    display: block;
+    margin: 2em auto;
+}
+.about-ethics-canvas h2 {
+    margin: 2.5em 0 1em 0;
+}
+.about-ethics-canvas p {
+    margin-bottom: 1em;
+}
+
+.chalky-canvas img{
+width:60%;
+border-radius: 5px;
+
+
+}
+.chalky-canvas{
+margin:1em auto;
+
+}
+
+/* ------------------------------------
+     CONTENT: MEET THE TEAM
+ -------------------------------------- */
+
+.meet-the-team {
+
+  padding: 2.5em 0;
+}
+.team-member.col-md-4{
+background-color: rgba(255, 255, 255, 0.45);
+margin:1%;
+width:30%;
+border-radius: 10px;
+min-height:65em;
+}
+/*Tell the parent to clear it's children*/
+.meet-the-team div:after {
+content: "";
+display: table;
+clear: both;
+
+}
+
+.team-member p {
+    margin-bottom: 3em;
+    padding: 0.5em 1em 2em 1em;
+    max-width: 340px;
+    margin: auto;
+
+}
+.meet-the-team p.team-intro {
+margin-bottom: 3em;
+}
+.meet-the-team p.member-role{
+  margin-bottom: 0;
+  text-align:center;
+  padding-bottom: 0;
+  }
+.meet-the-team p.member-contact {
+  margin-bottom: 0;
+  text-align:center;
+  padding-bottom: 1em;
+}
+
+.meet-the-team h2 {
+    margin: 2.5em 0 1em 0;
+}
+
+
+
+.team-member h2, .team-member h3 {
+    padding: 0.5em 1em;
+
+}
+.team-member h3 {
+    margin-top: 2em auto 0 auto;
+    text-align: center;
+}
+.team-member.wessel h3,
+.team-member.wessel .member-contact {
+    color: #18AE90;
+}
+
+.team-member.killian h3,
+ .team-member.killian .member-contact{
+    color:#606eb2;
+}
+
+.team-member.dave h3,
+.team-member.dave .member-contact{
+    color:#80BF63;
+}
+.team-member.arturo h3,
+.team-member.arturo .member-contact{
+    color:#6589B9;
+}
+.team-member.farnoosh h3 ,
+.team-member.farnoosh .member-contact{
+    color:#7E67A7;
+}
+/*Member pictures*/
+
+.team-member img {
+    display: block;
+    margin: 0.5em auto;
+    /*padding: 0.5em 1.5em;*/
+    width: 250px;
+
+    border-radius: 5px;
+    background-color:rgba(255,255,255,0.6);
+}
+a.adapt {
+    color: #7986cb;
+}
+
+/* ------------------------------
+     CONTENT: OUR VALUES
+ ------------------------------ */
+
+.our-values {
+    margin-bottom: 3em;
+    padding: 1.5em;
+}
+.our-values div{
+min-height:47em;
+}
+.our-values div.col-md-3{
+background-color: rgba(255, 255, 255, 0.45);
+margin:1%;
+width:23%;
+padding-top:1em;
+border-radius: 10px;
+}
+
+.our-values img {
+    display: block;
+    margin: 1em auto;
+    width: 50%;
+}
+.our-values h2 {
+    margin-bottom: 1.5em;
+    margin-left: 0.5em;
+}
+.our-values p {
+    margin-bottom: 2em;
+    margin-top: 2em;
+    padding: 0.5em;
+}
+.our-values h3 {
+    margin: 2.5em 0 1em 0;
+    text-align: center;
+}
+.our-values .nonprofit h3 {
+    color: #7E67A7;
+}
+.our-values .inclusive h3 {
+    color: #18AE90;
+}
+.our-values .open-source h3 {
+    color: #6589B9;
+}
+.our-values .data-privacy h3 {
+    color: #80BF63;
+}
+/* ------------------------------
+     CONTENT: OUR PARTNERS
+ ------------------------------ */
+
+.our-partners {
+    margin-bottom: 3em;
+    padding: 1.5em;
+}
+.our-partners div{
+    min-height:26em;
+}
+.our-partners  div.col-md-3{
+background-color: rgba(255, 255, 255, 0.45);
+margin:1%;
+width:23%;
+padding-top:1em;
+border-radius: 10px;
+}
+.our-partners a{
+  text-decoration: none;
+}
+.our-partners  img {
+    display: block;
+    margin: 2em auto;
+    width: 50%;
+}
+.our-partners  h3 {
+    margin-bottom: 2em;
+    margin-left: 0.5em;
+    color:#444;
+}
+.our-partners  p {
+    margin-bottom: 2em;
+    margin-top: 2em;
+    padding: 0.5em;
+}
+.our-partners h3 {
+    margin: 2.5em 0 1em 0;
+    text-align: center;
+}
+/* ------------------------------
+    USER AREA FORMS
+  (try, sign-up, download)
+ ------------------------------ */
+
+form.sign-up-form p, form.log-in-form p,
+form.reset-password-form p {
+    margin: 0 auto;
+    padding: 0.6em 0.6em 0.3em 0.6em;
+}
+form.sign-up-form label, form.log-in-form label,
+form.reset-password-form label {
+    margin-bottom: 0;
+    margin-left: 1em;
+}
+form.sign-up-form input, form.log-in-form input,
+form.reset-password-form input {
+    width: 90%;
+    padding: 0.6em;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(84, 110, 122, 0.2);
+    color: #555;
+}
+form.sign-up-form input:focus, form.log-in-form input:focus,
+form.reset-password-form input:focus {
+    outline: none;
+}
+/*FORGOT PASSWORD*/
+.forgot-password a{
+  color:#15af97;
+  display:block;
+  padding:1em;
+  margin:0 0 1em 1em;
+
+}
+/* ---------------------------------------
+     USER AREA GENERAL SETTINGS OF
+     BOTTONS & LINKS
+     (try, sign-up, download)
+ ----------------------------------------- */
+
+.btn {
+    color: #fff;
+    text-decoration: none;
+    padding: 1em;
+    outline: none;
+    transition: all 0.5s;
+    width: 40%;
+    margin: 2%;
+
+}
+
+/*remove the dottet corder around the clicked buttons in Firefox*/
+
+.btn:focus {
+    border: 0;
+    outline: none;
+}
+.btn:hover, .btn:active {
+    color: #fff;
+
+    -ms-transform: rotate(5deg); /* IE 9 */
+    -ms-transform-origin: 51% top; /* IE 9 */
+    -webkit-transform: rotate(5deg); /* Chrome, Safari, Opera */
+  -webkit-transform-origin: 51% top; /* Chrome, Safari, Opera */
+       transform: rotate(5deg);
+        transform-origin: 51% top;
+}
+.user-area h2 {
+    color: #444;
+    margin: 1em 0 1em 0.5em;
+}
+.user-area p {
+    padding: 1em;
+}
+
+/*bottons & links*/
+
+.user-area a.btn, .user-area button.btn {
+    display: block;
+    text-align: center;
+    margin: 2em auto;
+    padding: 4em 7em 4em 7em;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+
+}
+.user-area button.btn {
+    border: none;
+    background-color: transparent;
+}
+.user-area button.btn:active {
+    border: none;
+    outline: none;
+
+}
+/*keep the link text in html for SEO and accessibility*/
+
+.user-area .btn span {
+    color:transparent;
+}
+
+/* --- 3 PAGE CONTENT COLUMNS --- */
+
+.try-online, .sign-up-in, .download-pdf {
+    margin-bottom: 4.5em;
+}
+
+/* --- #Try Online --- */
+
+.try-online {
+    background-color: transparent;
+}
+.try-online a.btn {
+    background-image: url('../icon/TryOnline-Btn.svg');
+}
+.try-online h2 {
+    color: #759BCF;
+}
+
+/* ---- #Sign Up ---- */
+
+.sign-up-in {
+    background-color: transparent;
+}
+button.btn.sign-up {
+    background-image: url('../icon/SignIn-Btn.svg');
+}
+.sign-up-in h2 {
+    color: #9dc963;
+}
+
+/* ---- #Log In ---- */
+
+button.btn.log-in {
+    background-image: url('../icon/LogIn-Btn.svg');
+}
+.log-in-form h2 {
+    color: #555;
+}
+/* ---- #Reset password ---- */
+button.reset-password{
+  background-image: url('../icon/Reset-password-Btn.svg');
+}
+
+/* ---- #Download pdf ---- */
+
+.download-pdf {
+    background-color: transparent;
+}
+.download-pdf a.btn {
+    background-image: url('../icon/DownloadPDF.svg');
+}
+.download-pdf h2 {
+    color: #9881c1;
+}
+
+/* -------------
+     TAB NAV
+ --------------*/
+
+.nav-tabs {
+    width: 85%;
+    margin: 0 0 1em 1em;
+    border-bottom: 1px solid rgba(84, 110, 122, 0.4);
+    padding-bottom: 0.07em;
+}
+.nav-tabs li:nth-of-type(1){
+    /*width: 22%;*/
+
+}
+.nav-tabs li.active a, .nav-tabs li.active a:hover, .nav-tabs li.active a:active {
+    background-color: rgba(84, 110, 122, 0.7)!important;
+    color: #fff;
+    transition: all 0.5s;
+}
+.nav-tabs li a {
+    background-color: rgba(255, 255, 255, 0.5)!important;
+    padding: 0.65em;
+    color: #84bc58;
+}
+.nav-tabs li a:nth-of-type(1) {
+    color: #84bc58;
+}
+/*needed for the first active tab*/
+.nav-tabs li.active a:nth-of-type(1) {
+    color: #fff;
+}
+/*No need to show the pill/tab*/
+/*we show the pill content when we click on "Forgot your password link under the log  in area"*/
+.nav-tabs li#forgot-password-pill{
+  display:none;
+}
+
+/* The tab pills area*/
+
+.sign-up-in .nav-pills {
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+.nav-pills li:nth-of-type(1) {
+    margin-left: 2em;
+}
+.nav-pills li:nth-of-type(2) {
+    float: right;
+}
+.nav-pills li:nth-of-type(2) {
+    margin-right: 2em;
+}
+.nav-pills li:nth-of-type(2) a {
+    color: #9dc963;
+}
+
+/*-------------------------------
+    FORM HANDLING MESSAGES
+---------------------------------*/
+/* Dymanically added class by jQuery*/
+/*activating email fails, shown in the page header
+after the user is redirected to the page*/
+.failed-activation,
+.success-activation {
+margin:3em auto 1.6em auto;
+
+}
+.failed-activation p,
+.success-activation p
+{
+  color: #759BCF;
+
+}
+.failed-activation a,
+.success-activation a{
+  text-decoration:none;
+  color: #9dc963;
+
+}
+/* email activation successful*/
+.success-activation a{
+ border:1px solid #9dc963;
+ border-radius: 3px;
+ display:block;
+ padding:1em;
+ width:50%;
+ margin:0.75em auto;
+
+}
+
+/* Dymanically added class by jQuery*/
+/* inline form field feedback messages from jQuery validation*/
+.message-field {
+    border: 1px solid transparent;
+    color: #fff;
+    background-color: rgba(84, 110, 122, 0.7);
+    border-radius: 10px;
+    height: 1.55em;
+    width: 80%;
+    margin: 0 0 0.5em 1.5em;
+    padding-left: 1em;
+}
+
+/*After trying to sign up
+(feedback on top of the form from the server)*/
+
+.form-server-feedback {
+    transition: all 0.5s;
+}
+
+/* Dymanically added class by jQuery*/
+
+.info-feedback,
+.success-feedback,
+.warning-feedback {
+
+    min-height: 1.6em;
+    width: 90%;
+    margin: 1em 0;
+    background-color: rgba(84, 110, 122, 0.82);
+    border-radius: 10px;
+}
+.info-feedback p{
+    color: #64ffda;
+    padding: 0.75em;
+    margin-bottom: 0;
+}
+
+.warning-feedback p{
+    color: #ffca99;
+    padding: 0.75em;
+    margin-bottom: 0;
+}
+
+/* Dymanically added class by jQuery*/
+
+
+.success-feedback p{
+    color: #aed581;
+    padding: 0.75em;
+      margin-bottom: 0;
+}
+
+/*the button to resend the activation email, on top of the form
+ when trying to log in with an unactivated email*/
+button.resend-activation {
+  border:1px solid #fff;
+  color:#fff;
+  background-color:transparent;
+  margin:0 auto 1em 1em;
+  border-radius: 5px;
+}
+button.resend-activation:active,
+ button.resend-activation:focus{
+  outline:none;
+}
+button.resend-activation:hover{
+  border:1px solid #fff;
+  color:#fff;
+  background-color:transparent;
+}
+/* ------------------------------
+        Footer
+ ------------------------------ */
+
+footer {
+font-size:1em;
+
+    margin-top: 2em;
+    padding: 1.5em;
+    background-color: #37474f;
+
+}
+footer p{
+    color: white;
+}
+footer .contact p{
+  color: #18AE90;
+}
+footer .contact h2{
+  color:#6bb5b4;
+}
+footer .license a{
+  color:#759BCF;
+}
+
+footer .license {
+  margin:0.5em auto 1.8em auto;
+}
+
+footer p.ethics-copy.terms,
+footer p.ethics-copy.privacy
+{
+
+    text-decoration:none;
+    padding: 0 0.5em;
+    display:inline-block;
+
+
+}
+footer p.cc{
+  margin-top:2.8em ;
+}
+footer p.terms,
+footer p.privacy{
+  margin:1.9em auto;
+}
+footer .privacy a{
+  color:#a67de0;
+}
+footer .terms a{
+  color:#aed581;
+}
+/*footer license icons */
+footer .license-icons ul{
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+footer .license-icons li{
+  display:inline-block;
+  margin: 1.2em 0.2em;
+}
+footer .license-icons ul img{
+  width:3.5em;
+
+}
+/* ------------------------------
+         ADAPT Colors
+ ------------------------------ */
+
+
+/*
+.bg--blue {
+    background-color: #7297ce;
+      color: #759BCF;
+}
+.bg--darkblue {
+    background-color: #7986cb;
+
+}
+.bg--green {
+    color:#80BF63;
+    background-color: #aed581;
+    background-color: #9dc963;
+}
+.bg--seagreen {
+    background-color: #6bb5b4;
+}
+.bg--purple {
+    background-color: #59358c;
+    color:#7E67A7;
+    background-color: #8f68c5;
+}
+.bg--green1 {
+     color:#18AE90;
+    background-color: #15af97;
+}
+.bg--violet {
+    background-color: #ce93d8;
+}
+.bg--mineral {
+    background-color: #607d8b;
+}
+.bg--roasted {
+    background-color: #F7B36B;
+    color: #ffca99;
+}F7B36B
+*/
+
+/* ------------------------------
+    NEW PASSWORD in reset.html
+ ------------------------------ */
+.new-password{
+  background-color:rgba(255,255,255,0.6);
+  margin-top:2em;
+  padding-left: 3em;
+  padding-bottom: 1.2em;
+}
+.new-password h1{
+  font-size:2em;
+}
+.new-password label{
+  margin-top:1em;
+  margin-bottom:0;
+}
+.new-password input{
+  width: 90%;
+  padding: 0.6em;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(84, 110, 122, 0.2);
+  color: #555;
+}
+.new-password button{
+  color: #fff;
+  background-color:#15af97 ;
+  text-decoration: none;
+  outline: none;
+  transition: all 0.5s;
+  width: 89%;
+  height:2.5em;
+  margin-top:1em;
+  border:none;
+  border-radius: 5px;
+}
+
+.new-password button:focus{
+  border: 0;
+  outline: none;
+}
+
+.new-password button:hover,
+.new-password button:active {
+    color: #fff;
+    background-color:#6bb5b4 ;
+}
+/* =================================================
+           MEDIA QUERIES
+ ==================================================*/
+
+
+/* ----------------- 1 COL ------------------  */
+
+@media (max-width: 499px) {
+    .btn {
+        width: 80%;
+        margin: 2% 1em 2% 0.5em;
+    }
+    .carousel-content-elements p {
+        font-size: 1.35em;
+    }
+    .nav-pills li:nth-of-type(1) {
+        float: left;
+        width: 60%;
+        margin: 1em 20%;
+    }
+    .nav-pills li:nth-of-type(2) {
+        float: left;
+        width: 60%;
+        margin: 1em 20%;
+    }
+    a.logo img {
+        display: block;
+        width: 40%;
+        margin: 0 auto;
+    }
+    /*COLUMNS*/
+    .team-member.col-md-4{
+
+    margin:1%;
+    width:98%;
+
+    }
+    .our-values div.col-md-3{
+    background-color: rgba(255, 255, 255, 0.45);
+    margin:1%;
+    width:98%;
+
+    }
+    .chalky-canvas img{
+      width:98%;
+    }
+}
+@media (min-width: 500px) and (max-width: 991px) {
+    .carousel-content {
+        height: 30em;
+        width: 100%;
+        border-radius: 5px;
+        background-repeat: no-repeat;
+        /*Make the background image responsive*/
+        background-size: cover;
+    }
+    a.logo img {
+        display: block;
+        width: 38%;
+        margin: 0.28em auto;
+    }
+    .team-member:last-of-type {
+        clear: both;
+    }
+    /*COLUMNS*/
+    .team-member.col-md-4{
+    margin:1em auto;
+    width:60%;
+    float:none;
+
+    }
+    .team-member.col-sm-6{
+    margin:1em auto;
+    width:60%;
+  float:none;
+    }
+    /*overriding bootstrap settings -> */
+    .our-values .col-md-3{
+      margin:1em auto!important;
+      width:60%!important;
+      float:none;
+
+    }
+    .chalky-canvas img{
+      width:70%;
+    }
+
+
+}
+@media (min-width: 991px) and (max-width: 1050px) {
+    .btn {
+        width: 80%;
+        margin: 2% 1em 2% 0.5em;
+    }
+    .carousel-content-elements p {
+        width: 85%;
+    }
+    a.logo img {
+        display: block;
+        width: 67%;
+        margin: 0.28em auto;
+    }
+}
+@media (min-width: 992px) and (max-width: 1286px) {
+    .nav-pills li:nth-of-type(1) {
+        float: left;
+        width: 70%;
+        margin: 1em 15%;
+    }
+    .nav-pills li:nth-of-type(2) {
+        float: left;
+        width: 70%;
+        margin: 1em 15%;
+    }
+}
