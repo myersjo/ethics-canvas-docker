@@ -11,9 +11,12 @@ services:
         networks:
             - code-network
     php:
-        image: php:fpm
+        # image: php:fpm
+        build: .
+        dockerfile: php-fpm/Dockerfile
         volumes:
             - ./code:/code
+            - ./php-fpm/php-ini-overrides.ini:/etc/php5/fpm/conf.d/99-overrides.ini
         networks:
             - code-network
     db:
