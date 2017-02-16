@@ -20,3 +20,9 @@ CREATE TABLE user
 ALTER TABLE user
   ALTER activated SET DEFAULT 1
 ;
+
+CREATE TABLE canvas_json
+(
+  canvas_id varchar(128) NOT NULL primary key,
+  canvas_content JSON
+);
