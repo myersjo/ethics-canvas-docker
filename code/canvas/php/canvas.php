@@ -18,22 +18,23 @@ if (!empty($post_data)) {
     //$filename = $dir.$file.'.txt';
      // Write to file
     // fwrite($handle, $post_data);
-}
     // Close the file
     //  fclose($handle);
 
     require_once('../../php/db_utils.php');
     $conn = db_connect(); // Connect to the database
 
-    // Check if the username already exists
-
     // Save this canvas
-    if(!mysqli_query($conn, "INSERT INTO canvas_json (canvas_id, canvas_content) VALUES ('$canvas_id_data', '$post_data')")) {
+    if(!($result = mysqli_query($conn, "SELECT COUNT(*) FROM canvas_json WHERE canvas_id='$canvas_id_data'"))) {
       echo 400; // Wrong query
       echo " #Wrong query :/ ";
+    } else if (mysqli_num_rows($result) == 0) { // Canvas has not yet been saved
+      mysqli_query($conn, "INSERT INTO canvas_json (canvas_id, canvas_content) VALUES ('$canvas_id_data', '$post_data')")
+    } else { // Update previously saved canvas
+      mysqli_query($conn, "UPDATE canvas_json SET canvas_content='$post_data' WHERE canvas_id='$canvas_id_data'")
     }
-    else { // Return canvas_id and save it in the current session
-      $_SESSION['canvas_id'] = $canvas_id;
-      echo $canvas_id;
-    }
+    // Return canvas_id and save it in the current session
+    $_SESSION['canvas_id'] = $canvas_id;
+    echo $canvas_id;
+}
 ?>
