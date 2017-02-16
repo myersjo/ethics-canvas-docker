@@ -28,7 +28,7 @@ if (!empty($post_data)) {
     // Check if the username already exists
 
     // Save this canvas
-    if(!mysqli_query($conn, "INSERT INTO canvas_json (canvas_id, canvas_content) VALUES ('$canvas_id', '$post_data')")) {
+    if(!mysqli_query($conn, "INSERT INTO canvas_json (canvas_id, canvas_content) VALUES ('$canvas_id_data', '$post_data')")) {
       echo 400; // Wrong query
       echo " #Wrong query :/ ";
     }
