@@ -36,7 +36,7 @@ if (!empty($post_data)) {
       mysqli_query($conn, "UPDATE canvas_json SET canvas_content='$post_data' WHERE canvas_id='$canvas_id_data'");
     }
     // Return canvas_id and save it in the current session
-
+    echo $result;
     $_SESSION['canvas_id'] = $canvas_id;
     echo $canvas_id;
 }
