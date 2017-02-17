@@ -32,13 +32,13 @@ if (!empty($post_data)) {
     else if (mysqli_num_rows($result) != 1) { // Canvas has not yet been saved
       if (!mysqli_query($conn, "INSERT INTO canvas_json (canvas_id, canvas_content) VALUES ('$canvas_id_data', '$post_data')")) {
         echo 400; // Wrong query
-        echo " #Wrong query :/ ";
+        echo " #Wrong insert query :/ ";
       }
     }
     else { // Update previously saved canvas
       if (!mysqli_query($conn, "UPDATE canvas_json SET canvas_content='$post_data' WHERE canvas_id='$canvas_id_data'")) {
         echo 400; // Wrong query
-        echo " #Wrong query :/ ";
+        echo " #Wrong update query :/ ";
       }
     }
     // Return canvas_id and save it in the current session
