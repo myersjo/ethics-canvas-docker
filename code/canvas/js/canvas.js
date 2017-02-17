@@ -70,11 +70,12 @@ $(function() {
     // if a canvas is chosen by the user to be loaded
     if (current_canvas_id !== '') {
 
-        var url = 'json/' + current_canvas_id + '.json';
+        // var url = 'json/' + current_canvas_id + '.json';
+        var url = 'php/load-canvas.php'
         // var url= 'json/test_canvas.json';
 
         // get the saved ISON object in the sendJSON.text file
-        $.getJSON(url, function(returnedObj) {
+        $.getJSON(url, current_canvas_id, function(returnedObj) {
 
             //Display the json data in the html
 
@@ -501,7 +502,7 @@ $(function() {
                 if (data == 200) { // canvas successfully shared
                     $('.canvas-form').find('.imp-exp-btn ').append('<div class="save-canvas-feedback"><p><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Your canvas has been shared by email</p></div>')
                 }
-                else { 
+                else {
                    $('.canvas-form').find('.imp-exp-btn ').append('<div class="save-canvas-feedback"><p><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Your canvas could not be shared by email</p></div>')
                 }
             }); // end of post email
