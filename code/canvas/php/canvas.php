@@ -31,7 +31,7 @@ if (!empty($post_data)) {
     }
     else if (mysqli_num_rows($result) != 1) { // Canvas has not yet been saved
       if (!mysqli_query($conn, "INSERT INTO canvas_json (canvas_id, canvas_content) VALUES ('$canvas_id_data', $post_data)")) {
-        echo $result;
+        echo mysqli_num_rows($result);
         echo 400; // Wrong query
         echo " #Wrong insert query :/ ";
       }
