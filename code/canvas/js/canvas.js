@@ -72,10 +72,11 @@ $(function() {
 
         // var url = 'json/' + current_canvas_id + '.json';
         var url = 'php/load-canvas.php'
+        var params = 'current_canvas_id=' + current_canvas_id;
         // var url= 'json/test_canvas.json';
 
         // get the saved ISON object in the sendJSON.text file
-        $.getJSON(url, current_canvas_id, function(returnedObj) {
+        $.getJSON(url, params, function(returnedObj) {
 
             //Display the json data in the html
 
