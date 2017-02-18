@@ -81,9 +81,9 @@ $(function() {
             //Display the json data in the html
 
             var itemListHTML = '';
-            var returnedJSON = JSON.parse(returnedObj);
+            // var returnedJSON = JSON.parse(returnedObj);
             //iterate through the object
-            $.each(returnedJSON, function(key, value) {
+            $.each(returnedObj, function(key, value) {
                 /* project name and tem field*/
                 if (key === 'field_00[]') {
 

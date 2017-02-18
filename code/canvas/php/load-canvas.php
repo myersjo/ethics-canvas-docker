@@ -16,7 +16,7 @@
    }
    else { // Canvas exists: retrieve canvas
      $r = mysqli_fetch_object($result);
-     echo json_encode($r->canvas_content);
+     echo ($r->canvas_content);
    }
    mysqli_free_result($result);
    db_close($conn); // Close the database
