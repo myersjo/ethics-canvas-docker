@@ -25,10 +25,13 @@
      if(!mysqli_query($conn, "DELETE FROM canvas WHERE canvas_id = '$canvas_id'")) {
        echo 400; // Wrong query
      }
-     else { // Canvas successfully deleted: remove json file
-       unlink("../json/$canvas_id.json");
-       echo 200;
+     if(!mysqli_query($conn, "DELETE FROM canvas_json WHERE canvas_id = '$canvas_id'")) {
+       echo 400; // Wrong query
      }
+    //  else { // Canvas successfully deleted: remove json file
+    //    unlink("../json/$canvas_id.json");
+    //    echo 200;
+    //  }
    }
 
    mysqli_free_result($result);
