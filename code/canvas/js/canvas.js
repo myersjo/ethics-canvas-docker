@@ -82,7 +82,7 @@ $(function() {
 
             var itemListHTML = '';
             //iterate through the object
-            $.each(returnedObj, function(key, value) {
+            $.each(JSON.parse(returnedObj), function(key, value) {
                 /* project name and tem field*/
                 if (key === 'field_00[]') {
 
