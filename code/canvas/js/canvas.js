@@ -411,7 +411,7 @@ $(function() {
 
         var save_canvas = $.param(save_canvas_obj);
         /*  Post the JSON stringified object to the php file
-        (the php script will save it in a .json file )*/
+        (the php script will save it in a database )*/
         var save_reg_url = "php/save-canvas.php";
 
         $.post(save_reg_url, {
@@ -441,8 +441,7 @@ $(function() {
             /*#########################################################*/
 
             /*----------------------------------------
-              B: Exporing the form data json to a file
-             and save it on the server
+              B: Exporting the form data json to a database
              ----------------------------------------*/
 
             // $('#result').text(JSON.stringify($('.canvas-form').serializeObject()));
@@ -452,8 +451,8 @@ $(function() {
             var JSONstrObj = JSON.stringify($('.canvas-form').serializeObject());
             var url = "php/canvas.php";
             /*  Post the JSON stringified object to the php file
-            (the php script will save it in a .json file )*/
-            //also, send the canvas_id and use it for naming the file
+            (the php script will save it in a database )*/
+            //also, send the canvas_id to use as the key
             $.post(url, {
                 JSONstrObj: JSONstrObj,
                 canvas_id: canvas_id
