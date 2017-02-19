@@ -280,6 +280,7 @@ $(function() {
         } // end of if(new_item){
         //clear the new item the text area value
         $(this).closest('.card').find('.new_item').val('');
+        saveCanvas();
         /* When clicking on "add idea",  hide the  input field for adding a new item (slideUp() doesn't work nicely here)*/
         $(this).closest('.card').find('.user-input').hide("fast", function() {
             // Animation complete.
