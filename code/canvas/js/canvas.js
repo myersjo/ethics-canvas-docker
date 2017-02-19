@@ -280,7 +280,9 @@ $(function() {
         } // end of if(new_item){
         //clear the new item the text area value
         $(this).closest('.card').find('.new_item').val('');
-        saveCanvas();
+        if (email_save_canvas != '') {}
+          saveCanvas();
+        }
         /* When clicking on "add idea",  hide the  input field for adding a new item (slideUp() doesn't work nicely here)*/
         $(this).closest('.card').find('.user-input').hide("fast", function() {
             // Animation complete.
@@ -343,7 +345,9 @@ $(function() {
     // remove that list item
     $('.card').on('click', 'span.remove', function() {
         $(this).closest('li').remove();
-        saveCanvas();
+        if (email_save_canvas != '') {}
+          saveCanvas();
+        }
     });
 
     /*================================
