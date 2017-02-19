@@ -343,6 +343,7 @@ $(function() {
     // remove that list item
     $('.card').on('click', 'span.remove', function() {
         $(this).closest('li').remove();
+        saveCanvas();
     });
 
     /*================================
