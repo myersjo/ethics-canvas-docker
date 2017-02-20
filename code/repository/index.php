@@ -99,14 +99,14 @@
         <!--Search Box -->
         <div class="row">
           <div class="col-lg-12">
-            <div class="input-group">
               <form class="search-box" action="search.php" method="get">
-                <input type="text" class="form-control" placeholder="Enter a keyword..">
-                <span class="input-group-btn">
-                  <button class="btn btn-default" type="button">Go!</button>
-                </span>
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Enter a keyword..">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">Go!</button>
+                  </span>
+                </div><!-- /input-group -->
               </form>
-            </div><!-- /input-group -->
           </div><!-- /.col-lg-6 -->
         </div><!-- /.row -->
 
