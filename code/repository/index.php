@@ -76,6 +76,7 @@
         </div>
       </nav> <!-- End of navbar-->
 
+
       <div class="container-fluid">
 
         <!--Search Box -->
