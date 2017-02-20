@@ -36,8 +36,8 @@
     <body>
 
       <!-- Navigation -->
-      <div class="navbar navbar-inverse" role="navigation" >
-        <div class="container-fluid">
+      <nav class="navbar navbar-inverse" role="navigation" >
+        <div class="container">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
                   <span class="sr-only">Toggle navigation</span>
@@ -50,8 +50,28 @@
               <!-- <img src="../icon/logo.svg" alt="Online Ethics Canvas"/> -->
             </a>
           </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="../index.html">Home</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#">Dropdown 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Dropdown 2</a>
+                        </li>
+                    </ul>
+                </li>
+              </ul>
+          </div>
+          <!-- /.navbar-collapse -->
         </div>
-      </div> <!-- End of navbar-->
+      </nav> <!-- End of navbar-->
 
       <div class="container-fluid">
 
