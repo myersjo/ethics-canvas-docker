@@ -21,12 +21,16 @@
 
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-        <!-- Custom CSS -->
-        <link href="css/repository.css" rel="stylesheet" type="text/css">
         <!-- Font Awesome -->
         <script src="https://use.fontawesome.com/f05ce90ed7.js"></script>
         <!-- Google font -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+        <!-- Slick Carousel Theme style (Creates a basic layout)-->
+        <link rel="stylesheet" type="text/css" href="../css/slick-theme.css">
+        <!-- HomePage Style -->
+        <link rel="stylesheet" type="text/css" href="../css/landing.css">
+        <!-- Custom CSS -->
+        <link href="css/repository.css" rel="stylesheet" type="text/css">
         <!-- php variables have to be retieved here as js variables -->
         <script type="text/javascript">
           var email_save_canvas = '<?php echo $email; ?>';
