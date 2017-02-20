@@ -1,3 +1,166 @@
 body {
     padding-top: 65px;
 }
+
+/* ------------------------------
+        Footer
+ ------------------------------ */
+
+footer {
+font-size:1em;
+
+    margin-top: 2em;
+    padding: 1.5em;
+    background-color: #37474f;
+
+}
+footer p{
+    color: white;
+}
+footer .contact p{
+  color: #18AE90;
+}
+footer .contact h2{
+  color:#6bb5b4;
+}
+footer .license a{
+  color:#759BCF;
+}
+
+footer .license {
+  margin:0.5em auto 1.8em auto;
+}
+
+footer p.ethics-copy.terms,
+footer p.ethics-copy.privacy
+{
+
+    text-decoration:none;
+    padding: 0 0.5em;
+    display:inline-block;
+
+
+}
+footer p.cc{
+  margin-top:2.8em ;
+}
+footer p.terms,
+footer p.privacy{
+  margin:1.9em auto;
+}
+footer .privacy a{
+  color:#a67de0;
+}
+footer .terms a{
+  color:#aed581;
+}
+/*footer license icons */
+footer .license-icons ul{
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+footer .license-icons li{
+  display:inline-block;
+  margin: 1.2em 0.2em;
+}
+footer .license-icons ul img{
+  width:3.5em;
+
+}
+
+
+
+/*!
+ * Start Bootstrap - Modern Business HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+/* Global Styles */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    padding-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+.img-portfolio {
+    margin-bottom: 30px;
+}
+
+.img-hover:hover {
+    opacity: 0.8;
+}
+
+/* Home Page Carousel */
+
+header.carousel {
+    height: 50%;
+}
+
+header.carousel .item,
+header.carousel .item.active,
+header.carousel .carousel-inner {
+    height: 100%;
+}
+
+header.carousel .fill {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+/* 404 Page Styles */
+
+.error-404 {
+    font-size: 100px;
+}
+
+/* Pricing Page Styles */
+
+.price {
+    display: block;
+    font-size: 50px;
+    line-height: 50px;
+}
+
+.price sup {
+    top: -20px;
+    left: 2px;
+    font-size: 20px;
+}
+
+.period {
+    display: block;
+    font-style: italic;
+}
+
+/* Footer Styles */
+
+footer {
+    margin: 50px 0;
+}
+
+/* Responsive Styles */
+
+@media(max-width:991px) {
+    .customer-img,
+    .img-related {
+        margin-bottom: 30px;
+    }
+}
+
+@media(max-width:767px) {
+    .img-portfolio {
+        margin-bottom: 15px;
+    }
+
+    header.carousel .carousel {
+        height: 70%;
+    }
+}

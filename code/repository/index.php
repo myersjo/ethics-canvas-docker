@@ -22,13 +22,11 @@
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
         <!-- Custom CSS -->
-        <link href="css/repository.css" rel="stylesheet">
+        <link href="css/repository.css" rel="stylesheet" type="text/css">
         <!-- Font Awesome -->
         <script src="https://use.fontawesome.com/f05ce90ed7.js"></script>
         <!-- Google font -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
-        <!-- App style -->
-        <link rel="stylesheet" type="text/css" href="css/repository.css">
         <!-- php variables have to be retieved here as js variables -->
         <script type="text/javascript">
           var email_save_canvas = '<?php echo $email; ?>';
@@ -168,7 +166,7 @@
                <div class="license-icons">
                  <ul>
                    <li><img src="../icon/by.large.png" alt="ethics-canvas-by-icon"/> </li>
-                      <li><img src="../icon/share.large.png" alt="ethics-canvas-share-icon"/> </li>
+                   <li><img src="../icon/share.large.png" alt="ethics-canvas-share-icon"/> </li>
                    <li><img src="../icon/cc.large.png" alt="ethics-canvas-cc-icon"/> </li>
                    <li> <img src="../icon/remix.large.png" alt="ethics-canvas-remix-icon"/></li>
                    <li> <img src="../icon/sa.large.png" alt="ethics-canvas-sa-icon"/></li>
