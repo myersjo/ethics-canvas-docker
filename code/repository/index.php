@@ -34,27 +34,21 @@
     </head>
 
     <body>
-      <div class="navbar">
-        <div class="container">
+
+      <!-- Navigation -->
+      <div class="navbar navbar-inverse" role="navigation" >
+        <div class="container-fluid">
           <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                  <span class="sr-only">Toggle navigation</span>
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
-              </button>
-                  <!--logo -->
-                  <h1 class="page_title text-center">
-                      <a class="logo " href="index.html">
-                          <img src="icon/logo.svg" alt="Online Ethics Canvas"/>
-                      </a>
-                  </h1>
-                  <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                  <li>
-                    <a href="~/">Home</a>
-                  </li>
-                </ul>
-            </div>
+            </button>
+            <a class="navbar-brand" href="../index.html">
+              The Ethics Canvas
+              <!-- <img src="../icon/logo.svg" alt="Online Ethics Canvas"/> -->
+            </a>
           </div>
         </div>
       </div> <!-- End of navbar-->
