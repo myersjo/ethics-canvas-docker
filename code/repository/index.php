@@ -98,7 +98,7 @@
 
         <!--Search Box -->
         <div class="row">
-          <div class="col-lg-12">
+          <div class="col-lg-6 col-lg-offset-3">
               <form class="search-box" action="search.php" method="get">
                 <div class="input-group">
                   <input type="text" class="form-control" placeholder="Enter a keyword..">
