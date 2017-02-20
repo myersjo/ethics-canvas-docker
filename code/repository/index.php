@@ -23,6 +23,8 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
         <!-- Custom CSS -->
         <link href="css/repository.css" rel="stylesheet">
+        <!-- Font Awesome -->
+        <script src="https://use.fontawesome.com/f05ce90ed7.js"></script>
         <!-- Google font -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
         <!-- App style -->
@@ -76,12 +78,23 @@
         </div>
       </nav> <!-- End of navbar-->
 
-
+      <!-- Page Content -->
       <div class="container-fluid">
+
+        <div class="row">
+          <div class="col-lg-12">
+              <h1 class="page-header">
+                  Canvas Repository
+              </h1>
+          </div>
+          <div class="col-md-12">
+            Search for a canvas or browse the featured canvases below.
+          </div>
+        </div>
 
         <!--Search Box -->
         <div class="row">
-          <div class="col-lg-6">
+          <div class="col-lg-12">
             <div class="input-group">
               <input type="text" class="form-control" placeholder="Enter a keyword..">
               <span class="input-group-btn">
@@ -90,6 +103,42 @@
             </div><!-- /input-group -->
           </div><!-- /.col-lg-6 -->
         </div><!-- /.row -->
+
+        <div class="row">
+          <div class="col-md-4">
+              <div class="panel panel-default">
+                  <div class="panel-heading">
+                      <h4><i class="fa fa-fw fa-check"></i> Featured Canvas 1</h4>
+                  </div>
+                  <div class="panel-body">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
+                      <a href="#" class="btn btn-default">View</a>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="panel panel-default">
+                  <div class="panel-heading">
+                      <h4><i class="fa fa-fw fa-gift"></i> Featured Canvas 2</h4>
+                  </div>
+                  <div class="panel-body">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
+                      <a href="#" class="btn btn-default">View</a>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="panel panel-default">
+                  <div class="panel-heading">
+                      <h4><i class="fa fa-fw fa-compass"></i> Featured Canvas 3</h4>
+                  </div>
+                  <div class="panel-body">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
+                      <a href="#" class="btn btn-default">View</a>
+                  </div>
+              </div>
+          </div>
+        </div>
 
         <!-- FOOTER -->
         <div class="row">
