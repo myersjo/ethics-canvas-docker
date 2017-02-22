@@ -37,10 +37,11 @@
 
     </head>
     <body>
-
+        
         <div class="container-fluid">
-
+            
             <form class="canvas-form form" action="mpdf/canvas-pdf.php" method="post" target="_blank">
+                
                 <!-- Canvas Form Header -->
                 <div class="form-header row text-center">
                     <div class="col-md-3 ">
@@ -681,14 +682,41 @@
                 </div>
                 <!-- end of .canvas.box -->
                 <!-- FORM BUTTON BOX -->
+              
+                
                 <div class="row">
 
                     <div class="imp-exp-btn col-md-4 col-md-offset-4">
 
                         <!-- form buttons -->
+                        
+                   <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h2 class="field-title">
+                                    <!-- Field 4 -->
+                                    Temporary
+                                </h2>
+                                <p class="intro">
+                                   If you do not know which canvas use, put your idea in this canvas</p>
+                                <!-- Into text toggler -->
+                        
+                           <label>Your Idea</label><br>
+                                        <p>
+                                            <textarea class="new_item expandable" rows="2" maxlength="100" data-limit-rows="true" data-autoresize type="text" name="new_item" placeholder="Write an idea here ..."></textarea>
+                                        </p>
+                      </div>
+                      <div class="panel-footer">
+                          <button type="button" class="add_btn">Add</button>
+                       </div>
+                    </div>
 
 
+
+                     
+                        
                         <?php if (!empty($name)) { ?>
+                        
+                           
 
                           <p class="text-center">
                             <!-- Export JSON and also save the canvas for the registered user -->
@@ -714,20 +742,21 @@
 
 
                         <?php } else{?>
-
+                        
                           <p class="text-center">
                             <!-- Export JSON and also save the canvas for the registered user -->
                               <a class="login-to-save"  href="../index.html">Sign up or login to save your canvas</a>
                           </p>
   <?php }?>
-
-
+                        
+                     
                         <!-- BEGIN EXPORT PDF -->
                         <p class="text-center">
                           <input class="pdf_exp" type="submit" name="export-pdf" value="Download as PDF">
                         </p>
                         <!-- END EXPORT PDF -->
-                        
+
+                           
                     </div>
 
                 </div>
