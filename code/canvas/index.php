@@ -55,10 +55,12 @@
                         <label class="project_title">Project Title</label>
                         <input class="proj_title" name="field_00[]" type="text"/>
                     </div>
-                    <div class="col-md-3  ">
-                        <label class="project_date">Date</label>
-                        <input class="proj_date" name="field_00[]" type="date"/>
-                    </div>
+			<p class=“text-center”>
+				<a href=“www.facebook.com”>
+					<button class= “guidelines” type=“button” name=“guidelines”> Guidelines pdf</button>
+				</a>
+			</p>
+                    <!—— date removed dylan —->
                     <!-- login coming soon -->
                     <div class="col-md-3  ">
                     <?php if (!empty($name)) { ?>
@@ -727,6 +729,8 @@
                           <input class="pdf_exp" type="submit" name="export-pdf" value="Download as PDF">
                         </p>
                         <!-- END EXPORT PDF -->
+
+			
                         
                     </div>
 
