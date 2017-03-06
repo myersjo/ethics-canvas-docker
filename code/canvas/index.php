@@ -48,7 +48,7 @@
                         <!--logo -->
                         <h1 class="page_title ">
                             <a class="logo" href="../index.html">
-                                <img src="icons/logo-black-text.svg" alt="Online Ethics Canvas"/>
+                                <img src="icons/logo-black-text.png" alt="Ethics Canvas"/>
                             </a>
                         </h1>
                     </div>
