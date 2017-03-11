@@ -26,3 +26,18 @@ CREATE TABLE canvas_json
   canvas_id varchar(128) NOT NULL primary key,
   canvas_content JSON
 );
+
+CREATE TABLE tags
+(
+	id int NOT NULL primary key,
+	tag_name varchar(50) NOT NULL
+);
+
+CREATE TABLE tag_relation
+(
+	tag_id int NOT NULL,
+	canvas_id varchar(128) NOT NULL,
+	PRIMARY KEY(tag_id, canvas_id),
+	FOREIGN KEY(tag_id) REFERENCES tags(id),
+	FOREIGN KEY(canvas_id) REFERENCES canvas(id)
+);
