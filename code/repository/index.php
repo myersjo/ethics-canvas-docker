@@ -101,7 +101,7 @@
           <div class="col-lg-6 col-lg-offset-3">
               <form class="search-box" action="search.php" method="get">
                 <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Enter a keyword..">
+                  <input type="text" class="form-control" id="search-box-input" placeholder="Enter a keyword..">
                   <span class="input-group-btn">
                     <button class="btn btn-default" type="button">Go!</button>
                   </span>
