@@ -6,7 +6,7 @@ $(function() {
   $('.search-box').on('submit', function(event) {
     var url = "../php/search.php";
     var query = $('#search-box-input').val();
-    $.getJSON(url, query, function(returnedData) {
+    $.getJSON(url, {query: query}, function(returnedData) {
       var canvases = [];
       var resultHTML = '';
 
