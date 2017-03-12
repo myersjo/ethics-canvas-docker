@@ -5,7 +5,7 @@
 
    require_once('../../php/db_utils.php');
    $conn = db_connect(); // Connect to the database
-   $canvases = array(
+/*   $canvases = array(
      "canvas_id" => array (
        "canvas_name" => 'Test 2',
        "user_id" => 'jord@live.ie',
@@ -16,7 +16,7 @@
        )
      )
    );
-
+*/
    // Check if the canvas exists
    if(!($result = mysqli_query($conn, "SELECT * FROM canvas WHERE canvas_name LIKE '%$query%'"))) {
      echo 400; // Wrong query
@@ -32,7 +32,7 @@
          )
        );
        if ($tags = mysqli_query($conn, "SELECT * FROM tag_relation WHERE canvas_id='$canvas_id'")) {
-         
+
        }
      }
    }
