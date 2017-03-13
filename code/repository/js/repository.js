@@ -12,11 +12,12 @@ $(function() {
 
       // an array of canvas_id's is returned
       $.each(returnedData, function(index, value) {
-        var canvas = {};
-        canvas.name; // from canvas table
-        canvas.username; // from canvas table
-        canvas.tags[]; // from tag_relation table
-        canvases.push(canvas);
+        console.log(index + " " + value);
+        // var canvas = {};
+        // canvas.name; // from canvas table
+        // canvas.username; // from canvas table
+        // canvas.tags[]; // from tag_relation table
+        // canvases.push(canvas);
       }) //end of $.each(returnedData)
 
     }); // end of $.getJSON
