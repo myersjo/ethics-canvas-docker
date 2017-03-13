@@ -103,7 +103,7 @@
                 <div class="input-group">
                   <input type="text" class="form-control" id="search-box-input" placeholder="Enter a keyword..">
                   <span class="input-group-btn">
-                    <button class="btn btn-default" type="button">Go!</button>
+                    <button class="btn btn-default" type="submit" id="search-go-btn" name="search">Go!</button>
                   </span>
                 </div><!-- /input-group -->
               </form>
