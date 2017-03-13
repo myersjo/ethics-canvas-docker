@@ -5,7 +5,7 @@ $(function() {
   ======================*/
   $('.search-box').on('submit', function(event) {
     event.preventDefault();
-    var url = "/php/search.php";
+    var url = "php/search.php";
     var query = $('#search-box-input').val();
     $.getJSON(url, {query: query}, function(returnedData) {
       var canvases = [];
