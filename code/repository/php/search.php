@@ -17,11 +17,12 @@
      )
    );
 */
-   // Check if the canvas exists
+$canvases;
+   // Search canvases by name
    if(!($result = mysqli_query($conn, "SELECT * FROM canvas WHERE canvas_name LIKE '%$query%'"))) {
      echo 400; // Wrong query
    }
-   else { // Canvas exists: retrieve canvas
+   else {
      while ($row = mysqli_fetch_assoc(result)) {
        $canvas_id = $row[canvas_id];
        $canvases[$canvas_id] = array(
@@ -32,10 +33,35 @@
          )
        );
        if ($tags = mysqli_query($conn, "SELECT * FROM tag_relation WHERE canvas_id='$canvas_id'")) {
-
+         while ($tagRow = mysqli_fetch_assoc(tags)) {
+         	$canvases[$canvas_id][tags][] => $tagRow[tag_name];
+         }
        }
      }
+     echo json_encode($canvases);
    }
+
+   // Search canvases by tags
+/*   if(!($result = mysqli_query($conn, "SELECT * FROM tags WHERE tag_name LIKE '%$query%'"))) {
+      echo 400; // Wrong query
+   }
+   else {
+      while ($row = mysqli_fetch_assoc(result)) {
+      		$canvas_id = $row[canvas_id];
+       		$canvases[$canvas_id] = array(
+         			"canvas_name" => $row[canvas_name],
+         			"user_id" => $row[user_id],
+             	"canvas_date" => $row[canvas_date],
+             	"tags" => array(
+         			)
+       		);
+       		if ($tags = mysqli_query($conn, "SELECT * FROM tag_relation WHERE canvas_id='$canvas_id'")) {
+
+          }
+     }
+}
+*/
+
    mysqli_free_result($result);
    db_close($conn); // Close the database
 ?>
