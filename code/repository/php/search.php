@@ -34,7 +34,9 @@ $canvases;
        );
        if ($tags = mysqli_query($conn, "SELECT * FROM tag_relation WHERE canvas_id='$canvas_id'")) {
          while ($tagRow = mysqli_fetch_assoc(tags)) {
-         	$canvases[$canvas_id][tags][] => $tagRow[tag_name];
+         	$canvases[$canvas_id][tags] = array(
+            $tagRow[tag_name]
+          );
          }
        }
      }
@@ -61,7 +63,7 @@ $canvases;
      }
 }
 */
-
+  echo 'finished';
    mysqli_free_result($result);
    db_close($conn); // Close the database
 ?>
