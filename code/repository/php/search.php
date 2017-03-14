@@ -26,7 +26,7 @@
     if(!($result = mysqli_query($conn, "SELECT * FROM canvas WHERE canvas_name LIKE \"%$query%\""))) {
       echo 400; // Wrong query
     }
-    else {
+    else if (mysqli_num_rows($result) >= 1) {
       // get details from canvas table
       while ($row = mysqli_fetch_assoc($result)) {
         $canvas_id = $row["canvas_id"];
@@ -59,11 +59,12 @@
     * Search canvases by tag   *
     ****************************
     */
-    $sql = "SELECT DISTINCT tag_relation.canvas_id as canvas_id FROM tag_relation INNER JOIN tags ON tag_relation.tag_id=tags.id WHERE tags.tag_name LIKE '%est%'";
+    $sql = "SELECT DISTINCT tag_relation.canvas_id as canvas_id FROM tag_relation INNER JOIN tags ON tag_relation.tag_id=tags.id WHERE tags.tag_name LIKE '%$query%'";
      if(!($result = mysqli_query($conn, $sql))) {
         echo 400; // Wrong query
     }
-    else {      // get details from canvas table
+    else if (mysqli_num_rows($result) >= 1){
+      // get details from canvas table
       while ($row = mysqli_fetch_assoc($result)) {
         $canvas_id = $row["canvas_id"];
         if(!array_key_exists($canvas_id, $canvases)) {
