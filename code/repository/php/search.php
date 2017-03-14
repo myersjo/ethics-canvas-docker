@@ -22,6 +22,9 @@ $canvases;
    if(!($result = mysqli_query($conn, "SELECT * FROM canvas WHERE canvas_name LIKE \"%$query%\""))) {
      echo 400; // Wrong query
    }
+   elseif(mysqli_num_rows($result) == 0) {
+     echo 'No results ; ';
+   }
    else {
      while ($row = mysqli_fetch_assoc(result)) {
        $canvas_id = $row[canvas_id];
