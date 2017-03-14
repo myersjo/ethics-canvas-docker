@@ -24,19 +24,19 @@ $canvases;
    }
    else {
      while ($row = mysqli_fetch_assoc($result)) {
-       $canvas_id = $row[canvas_id];
+       $canvas_id = $row["canvas_id"];
        $canvases[$canvas_id] = array(
-         "canvas_name" => $row[canvas_name],
-         "user_id" => $row[user_id],
-         "canvas_date" => $row[canvas_date],
+         "canvas_name" => $row["canvas_name"],
+         "user_id" => $row["user_id"],
+         "canvas_date" => $row["canvas_date"],
          "tags" => array(
          )
        );
-       if (($tags = mysqli_query($conn, "SELECT * FROM tag_relation WHERE canvas_id='$canvas_id'")) {
+       if (($tags = mysqli_query($conn, "SELECT tags.tag_name as tag_name FROM tag_relation INNER JOIN tags ON tag_relation.tag_id=tags.id WHERE tag_relation.canvas_id=’$canvas_id’")) {
          while ($tagRow = mysqli_fetch_assoc(tags)) {
-           print_r($tagRow);
-         	$canvases[$canvas_id][tags] = array(
-            $tagRow[tag_name]
+           printf("$tagRow["tag_name"] ")
+         	$canvases["$canvas_id"]["tags"] = array(
+            $tagRow["tag_name"]
           );
          }
        }
