@@ -10,7 +10,7 @@ $(function() {
     $.getJSON(url, {query: query}, function(returnedData) {
       var resultHTML = '';
 
-      var canvases = JSON.parse(returnedData[0]);
+      var canvases = JSON.parse(returnedData[0].stringify);
       console.log("Canvases: " + JSON.stringify(returnedData) + "\n");
 
       $.each(canvases, function(key, value) {
