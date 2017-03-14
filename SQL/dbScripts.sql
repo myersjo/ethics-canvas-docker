@@ -5,7 +5,8 @@ CREATE TABLE canvas
   canvas_id varchar(128) NOT NULL primary key,
   user_id varchar(50) NOT NULL,
   canvas_name varchar(50),
-  canvas_date date
+  canvas_date date,
+  is_public boolean DEFAULT 0
 );
 
 CREATE TABLE user
