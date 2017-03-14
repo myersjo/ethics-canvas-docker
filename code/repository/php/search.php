@@ -69,7 +69,7 @@
         $canvas_id = $row["canvas_id"];
 
         if(!array_key_exists($canvas_id, $canvases)) {  // if canvas not already in $canvases[]
-          if(!($details = mysqli_query($conn, "SELECT * FROM canvas WHERE canvas_id=$canvas_id"))) { // get canvas details
+          if(!($details = mysqli_query($conn, "SELECT * FROM canvas WHERE canvas_id='$canvas_id'"))) { // get canvas details
             echo 400; // Wrong query
           } 
           else {  // add details to $canvases[]
