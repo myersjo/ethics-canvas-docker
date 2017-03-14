@@ -23,7 +23,7 @@ $(function() {
         resultHTML+= '</div></div></div>';
         console.log(resultHTML);
       }) //end of $.each(returnedData)
-      $('body').find('#canvases-row').append(resultHTML);
+      $('body').find('#canvases-row').empty().append(resultHTML);
     }); // end of $.getJSON
   }); // end of $('.search-box').on('submit' ...
 });
