@@ -10,8 +10,10 @@ $(function() {
     $.getJSON(url, {query: query}, function(returnedData) {
       var resultHTML = '';
 
-      $.each(returnedData, function(index, value) {
-        console.log(JSON.stringify(returnedData));
+      var canvases = JSON.parse(returnedData);
+
+      $.each(canvases, function(index, value) {
+        console.log(index + " " + value);
       }) //end of $.each(returnedData)
 
     }); // end of $.getJSON
