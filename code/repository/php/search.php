@@ -41,8 +41,10 @@
           }
           $canvases[$canvas_id]["tags"] = $tagsArr;
         }
-        else 
+        else { 
           echo ' else here ; ';
+          echo mysqli_num_rows($tags);
+        }
       }
       echo json_encode($canvases);
     }
