@@ -36,7 +36,7 @@
       }
       mysqli_free_result($result);
       foreach($canvases as $canvas_id => $canvas) {
-        if (($tags = mysqli_query($conn, "SELECT tags.tag_name as tag_name FROM tag_relation INNER JOIN tags ON tag_relation.tag_id=tags.id WHERE tag_relation.canvas_id=’$canvas_id’"))) {
+        if (($tags = mysqli_query($conn, "SELECT tags.tag_name as tag_name FROM tag_relation INNER JOIN tags ON tag_relation.tag_id=tags.id WHERE tag_relation.canvas_id='$canvas_id'"))) {
           echo ' here ; ';
           $tagsArr = array();
           while ($tagRow = mysqli_fetch_assoc(tags)) {
