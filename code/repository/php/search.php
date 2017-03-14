@@ -23,7 +23,7 @@
       echo 400; // Wrong query
     }
     else {
-      $canvases = mysqli_fetch_all(result);
+      $canvases = mysqli_fetch_all($result);
       // while ($row = mysqli_fetch_assoc($result)) {
       //   $canvas_id = $row["canvas_id"];
       //   $canvases[$canvas_id] = array(
@@ -48,7 +48,6 @@
       //   }
       //   mysqli_free_result($tags);
       // }
-      print_r($canvases);
       echo json_encode($canvases);
     }
 
