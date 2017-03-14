@@ -25,10 +25,8 @@
     else {
       // $canvases = mysqli_fetch_all($result);
       while ($row = mysqli_fetch_assoc($result)) {
-        // $canvas_id = $row["canvas_id"];
-        // $canvases[$canvas_id] = array(
-        $canvases[] = array(
-          "canvas_id" => $row["canvas_id"],
+        $canvas_id = $row["canvas_id"];
+        $canvases[$canvas_id] = array(
           "canvas_name" => $row["canvas_name"],
           "user_id" => $row["user_id"],
           "canvas_date" => $row["canvas_date"],
