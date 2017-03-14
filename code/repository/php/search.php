@@ -42,7 +42,7 @@
           while ($tagRow = mysqli_fetch_assoc(tags)) {
             array_push($tagsArr, $tagRow["tag_name"]);
           }
-          $canvas["tags"] = $tagsArr;
+          $canvases[$canvas_id]["tags"] = $tagsArr;
         }
         else { 
           // echo ' else here ; ';
