@@ -67,13 +67,20 @@
       // get details from canvas table
       while ($row = mysqli_fetch_assoc($result)) {
         $canvas_id = $row["canvas_id"];
-        if(!array_key_exists($canvas_id, $canvases)) {
-          $canvases[$canvas_id] = array(
-            "canvas_name" => $row["canvas_name"],
-            "user_id" => $row["user_id"],
-            "canvas_date" => $row["canvas_date"]
-          );
+
+        if(!array_key_exists($canvas_id, $canvases)) {  // if canvas not already in $canvases[]
+          if(!($details = mysqli_query($conn, "SELECT * FROM canvas WHERE canvas_id=$canvas_id"))) { // get canvas details
+            echo 400; // Wrong query
+          } 
+          else {  // add details to $canvases[]
+            $canvases[$canvas_id] = array(
+              "canvas_name" => $details["canvas_name"],
+              "user_id" => $details["user_id"],
+              "canvas_date" => $details["canvas_date"]
+            );
+          }
         }
+        mysqli_free_result($details);
       }
       mysqli_free_result($result);
       // get tags for each canvas from tag_relation table
