@@ -1,6 +1,7 @@
   <?php
-
-    // Retrieve user credentials
+  /* Retrieves the data from the database for the search box*/
+  
+    // Retrieve query entered by user in the search box
     $query = $_GET['query'];
 
     require_once('../../php/db_utils.php');
@@ -40,12 +41,10 @@
       // get tags for each canvas from tag_relation table
       foreach($canvases as $canvas_id => $canvas) {
         if (($tags = mysqli_query($conn, "SELECT tags.tag_name as tag_name FROM tag_relation INNER JOIN tags ON tag_relation.tag_id=tags.id WHERE tag_relation.canvas_id='$canvas_id'"))) {
-          // echo ' here ; ';
           $tagsArr = array();
           while ($tagRow = mysqli_fetch_assoc($tags)) {
             array_push($tagsArr, $tagRow["tag_name"]);
           }
-          // $canvases[$canvas_id]["tags"] = mysqli_fetch_array($tags);
           $canvases[$canvas_id]["tags"] = $tagsArr;
         }
         else {
@@ -64,7 +63,7 @@
         echo 400; // Wrong query
     }
     else if (mysqli_num_rows($result) >= 1){
-      // get details from canvas table
+      // get canvas_id's from tag_relation table
       while ($row = mysqli_fetch_assoc($result)) {
         $canvas_id = $row["canvas_id"];
 
@@ -89,12 +88,10 @@
       foreach($canvases as $canvas_id => $canvas) {
         if(count($canvas[tags]) <= 0) {
           if (($tags = mysqli_query($conn, "SELECT tags.tag_name as tag_name FROM tag_relation INNER JOIN tags ON tag_relation.tag_id=tags.id WHERE tag_relation.canvas_id='$canvas_id'"))) {
-            // echo ' here ; ';
             $tagsArr = array();
             while ($tagRow = mysqli_fetch_assoc($tags)) {
               array_push($tagsArr, $tagRow["tag_name"]);
             }
-            // $canvases[$canvas_id]["tags"] = mysqli_fetch_array($tags);
             $canvases[$canvas_id]["tags"] = $tagsArr;
           }
           else {
