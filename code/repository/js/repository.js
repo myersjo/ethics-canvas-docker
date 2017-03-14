@@ -13,7 +13,7 @@ $(function() {
       // var canvases = JSON.parse(returnedData);
       console.log("Canvases: " + JSON.stringify(returnedData) + "\n");
 
-      $.each(returnedData, function(key, value) {
+      $.each(returnedData[0], function(key, value) {
         console.log(key + " " + value + "\n");
       }) //end of $.each(returnedData)
 
