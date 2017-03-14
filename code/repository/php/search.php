@@ -42,7 +42,7 @@
           $canvases[$canvas_id]["tags"] = $tagsArr;
         }
         else 
-          echo ' else here ; '
+          echo ' else here ; ';
       }
       echo json_encode($canvases);
     }
