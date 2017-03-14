@@ -11,10 +11,10 @@ $(function() {
       var resultHTML = '';
 
       var canvases = JSON.parse(returnedData);
-      console.log(canvases);
+      console.log("Canvases: " + canvases + "\n");
 
       $.each(canvases, function(key, value) {
-        console.log(key + " " + value);
+        console.log(key + " " + value + "\n");
       }) //end of $.each(returnedData)
 
     }); // end of $.getJSON
