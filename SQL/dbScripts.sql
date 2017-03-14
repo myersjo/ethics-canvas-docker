@@ -8,6 +8,10 @@ CREATE TABLE canvas
   canvas_date date,
   is_public boolean DEFAULT 0
 );
+-- set 'is_public boolean DEFAULT' to 0 to be private by default
+ALTER TABLE canvas
+  ALTER is_public SET DEFAULT 1
+;
 
 CREATE TABLE user
 (
