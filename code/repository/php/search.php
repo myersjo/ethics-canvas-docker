@@ -26,6 +26,7 @@ $canvases;
      echo 'No results ; ';
    }
    else {
+     echo mysqli_num_rows($result);
      while ($row = mysqli_fetch_assoc(result)) {
        $canvas_id = $row[canvas_id];
        echo "canvas_id: $canvas_id ; canvases json: ";
