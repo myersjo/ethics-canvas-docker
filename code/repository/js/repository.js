@@ -10,11 +10,13 @@ $(function() {
     $.getJSON(url, {query: query}, function(returnedData) {
       var resultHTML = '';
 
-      var canvases = JSON.parse(returnedData[0].stringify);
+      var canvases = returnedData[0];
       console.log("Canvases: " + JSON.stringify(returnedData) + "\n");
 
       $.each(canvases, function(key, value) {
-        console.log(key + " " + value + "\n");
+        if(key == 'TAlszs4xcc') {
+          console.log(key + " " + value + "; TAlszs4xcc " + "\n");
+        }
       }) //end of $.each(returnedData)
 
     }); // end of $.getJSON
