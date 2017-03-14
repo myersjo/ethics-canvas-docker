@@ -16,6 +16,8 @@ $(function() {
       $.each(canvases, function(key, value) {
         if(key == 'TAlszs4xcc') {
           console.log(key + " " + value + "; TAlszs4xcc " + "\n");
+        } else if (key == 'zBwOdAamnN') {
+          console.log(key + " " + value + "; zBwOdAamnN " + "\n");
         }
       }) //end of $.each(returnedData)
 
