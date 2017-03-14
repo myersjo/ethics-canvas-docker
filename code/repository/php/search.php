@@ -73,14 +73,16 @@
             echo 400; // Wrong query
           } 
           else {  // add details to $canvases[]
-            $canvases[$canvas_id] = array(
-              "canvas_name" => $details["canvas_name"],
-              "user_id" => $details["user_id"],
-              "canvas_date" => $details["canvas_date"]
-            );
+            if ($detailsRow = mysqli_fetch_assoc($details)) {
+              $canvases[$canvas_id] = array(
+                "canvas_name" => $detailsRow["canvas_name"],
+                "user_id" => $detailsRow["user_id"],
+                "canvas_date" => $detailsRow["canvas_date"]
+              );
+            }
           }
+          mysqli_free_result($details);
         }
-        mysqli_free_result($details);
       }
       mysqli_free_result($result);
       // get tags for each canvas from tag_relation table
