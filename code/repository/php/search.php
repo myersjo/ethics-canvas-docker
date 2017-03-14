@@ -46,7 +46,7 @@
         }
         else { 
           // echo ' else here ; ';
-          echo mysqli_num_rows($tags);
+          echo mysqli_error($conn);
         }
         mysqli_free_result($tags);
       }
