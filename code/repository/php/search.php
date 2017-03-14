@@ -1,6 +1,6 @@
   <?php
   /* Retrieves the data from the database for the search box*/
-  
+
     // Retrieve query entered by user in the search box
     $query = $_GET['query'];
 
@@ -101,6 +101,6 @@
         mysqli_free_result($tags);
       }
     }
-    echo json_encode($canvases);
+    echo json_encode(array('canvases' => $canvases));
     db_close($conn); // Close the database
   ?>
