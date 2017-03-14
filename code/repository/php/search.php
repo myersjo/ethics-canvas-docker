@@ -17,7 +17,7 @@
       )
     );
   */
-  $canvases;
+  // $canvases;
     // Search canvases by name
     if(!($result = mysqli_query($conn, "SELECT * FROM canvas WHERE canvas_name LIKE \"%$query%\""))) {
       echo 400; // Wrong query
