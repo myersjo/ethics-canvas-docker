@@ -25,6 +25,7 @@ $canvases;
    else {
      while ($row = mysqli_fetch_assoc(result)) {
        $canvas_id = $row[canvas_id];
+       echo "canvas_id: $canvas_id ; canvases json: ";
        $canvases[$canvas_id] = array(
          "canvas_name" => $row[canvas_name],
          "user_id" => $row[user_id],
@@ -40,7 +41,6 @@ $canvases;
          }
        }
      }
-     echo "canvas_id: $canvas_id ; canvases json: ";
      echo json_encode($canvases);
    }
 
