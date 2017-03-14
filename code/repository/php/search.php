@@ -101,6 +101,6 @@
         mysqli_free_result($tags);
       }
     }
-    echo json_encode(array('canvases' => $canvases));
+    echo json_encode(array($canvases));
     db_close($conn); // Close the database
   ?>
