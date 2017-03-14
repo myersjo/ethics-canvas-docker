@@ -48,6 +48,7 @@
       //   }
       //   mysqli_free_result($tags);
       // }
+      print_r($canvases);
       echo json_encode($canvases);
     }
 
