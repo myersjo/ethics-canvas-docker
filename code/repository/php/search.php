@@ -40,7 +40,7 @@ $canvases;
          }
        }
      }
-     echo print_r($canvases);
+     echo "canvas_id: $canvas_id ; canvases json: ";
      echo json_encode($canvases);
    }
 
