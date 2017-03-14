@@ -110,7 +110,7 @@
           </div><!-- /.col-lg-6 -->
         </div><!-- /.row -->
 
-        <div class="row">
+        <div class="row" id="canvases-row">
           <div class="col-lg-12">
             <h2>Featured Canvases</h2>
           </div>
