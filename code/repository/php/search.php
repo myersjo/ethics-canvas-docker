@@ -24,10 +24,10 @@
     * Search canvases by name *
     ****************************
     */
-    if(!($result = mysqli_query($conn, "SELECT * FROM canvas WHERE canvas_name LIKE \"%$query%\""))) {
+    if(!($result = mysqli_query($conn, "SELECT * FROM canvas WHERE canvas_name LIKE \"%$query%\" AND is_public=TRUE"))) {
       echo 400; // Wrong query
     }
-    else if (mysqli_num_rows($result) >= 1) {
+    else if (mysqli_num_rows($result) > 0) {
       // get details from canvas table
       while ($row = mysqli_fetch_assoc($result)) {
         $canvas_id = $row["canvas_id"];
@@ -62,16 +62,16 @@
      if(!($result = mysqli_query($conn, $sql))) {
         echo 400; // Wrong query
     }
-    else if (mysqli_num_rows($result) >= 1){
+    else if (mysqli_num_rows($result) > 0){
       // get canvas_id's from tag_relation table
       while ($row = mysqli_fetch_assoc($result)) {
         $canvas_id = $row["canvas_id"];
 
         if(!array_key_exists($canvas_id, $canvases)) {  // if canvas not already in $canvases[]
-          if(!($details = mysqli_query($conn, "SELECT * FROM canvas WHERE canvas_id='$canvas_id'"))) { // get canvas details
+          if(!($details = mysqli_query($conn, "SELECT * FROM canvas WHERE canvas_id='$canvas_id' AND is_public=TRUE"))) { // get canvas details if canvas public
             echo 400; // Wrong query
           } 
-          else {  // add details to $canvases[]
+          else if (mysqli_num_rows($details) > 0) {  // add details to $canvases[]
             if ($detailsRow = mysqli_fetch_assoc($details)) {
               $canvases[$canvas_id] = array(
                 "canvas_name" => $detailsRow["canvas_name"],
