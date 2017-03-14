@@ -22,6 +22,7 @@ $(function() {
         resultHTML += '<div class="col-md-4"><div class="panel panel-default"><div class="panel-heading"><h4><i class="fa fa-fw fa-check"></i>' + value["canvas_name"] + '</h4></div><div class="panel-body"><p></p><a href="#" class="btn btn-default">View</a>';
         resultHTML+= '</div></div></div>';
         console.log(resultHTML);
+        $('body').find('#canvases-row').append(resultHTML);
       }) //end of $.each(returnedData)
 
     }); // end of $.getJSON
