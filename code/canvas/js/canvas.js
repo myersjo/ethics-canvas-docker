@@ -48,7 +48,7 @@ $(function() {
     var currentDate = fullDate.getFullYear() + "-" + twoDigitMonth + "-" +
         twoDigitDate;
     // set the current date in the date input field
-    // $('.proj_date').val(currentDate);
+     $('.proj_date').val(currentDate);
     /*========================================
         USER LOGS OUT (dropdown menu)
     ==========================================*/
@@ -89,7 +89,7 @@ $(function() {
 
                     $('.form-header').find('input.proj_title').val(value[
                         0]);
-                    // $('.form-header').find('input.proj_date').val(value[1]);
+                    $('.form-header').find('input.proj_date').val(value[1]);
 
 
                 } // end of if(key === 'field_00[]')
@@ -414,7 +414,7 @@ $(function() {
        ----------------------------------------------*/
       //   php variables are retieved in the header of the canvas index.php as js variables -->
       var name_save_canvas = $('.form-header').find('.proj_title').val();
-    //   var date_save_canvas = $('.form-header').find('.proj_date').val();
+       var date_save_canvas = $('.form-header').find('.proj_date').val();
       var save_canvas_obj = {
           'email_save_canvas': email_save_canvas,
           'name_save_canvas': name_save_canvas,
