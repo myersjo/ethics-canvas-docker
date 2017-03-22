@@ -101,16 +101,16 @@
           <div class="col-lg-6 col-lg-offset-3">
               <form class="search-box" action="search.php" method="get">
                 <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Enter a keyword..">
+                  <input type="text" class="form-control" id="search-box-input" placeholder="Enter a keyword..">
                   <span class="input-group-btn">
-                    <button class="btn btn-default" type="button">Go!</button>
+                    <button class="btn btn-default" type="submit" id="search-go-btn" name="search">Go!</button>
                   </span>
                 </div><!-- /input-group -->
               </form>
           </div><!-- /.col-lg-6 -->
         </div><!-- /.row -->
 
-        <div class="row">
+        <div class="row" id="canvases-row">
           <div class="col-lg-12">
             <h2>Featured Canvases</h2>
           </div>
