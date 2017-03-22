@@ -1,7 +1,7 @@
 $(function() {
 
   /*======================
-    Search box
+    Search box sumit
   ======================*/
   $('.search-box').on('submit', function(event) {
     event.preventDefault();
@@ -26,4 +26,11 @@ $(function() {
       $('body').find('#canvases-row').empty().append(resultHTML);
     }); // end of $.getJSON
   }); // end of $('.search-box').on('submit' ...
+
+  /*========================
+    Search box autocomplete
+  ==========================*/
+  $('#search-box-input').autocomplete({
+    source: php/search.php
+  });
 });
