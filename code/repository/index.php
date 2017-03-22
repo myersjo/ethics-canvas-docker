@@ -120,7 +120,9 @@
                       <h4><i class="fa fa-fw fa-check"></i> Featured Canvas 1</h4>
                   </div>
                   <div class="panel-body">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
+                      <p>Name:</p>
+                      <p>Username:</p>
+                      <p>Tags:</p>
                       <a href="#" class="btn btn-default">View</a>
                   </div>
               </div>
@@ -131,7 +133,10 @@
                       <h4><i class="fa fa-fw fa-gift"></i> Featured Canvas 2</h4>
                   </div>
                   <div class="panel-body">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
+                      <p>Name:</p>
+                      <p>Username:</p>
+                      <p>Tags:</p>
+                        
                       <a href="#" class="btn btn-default">View</a>
                   </div>
               </div>
@@ -142,7 +147,9 @@
                       <h4><i class="fa fa-fw fa-compass"></i> Featured Canvas 3</h4>
                   </div>
                   <div class="panel-body">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
+                      <p>Name:</p>
+                      <p>Username:</p>
+                      <p>Tags:</p>
                       <a href="#" class="btn btn-default">View</a>
                   </div>
               </div>

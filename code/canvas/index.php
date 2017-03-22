@@ -695,7 +695,10 @@
                           <p class="text-center">
                             <!-- Export JSON and also save the canvas for the registered user -->
                               <button class="json_exp" type="button" name="json_exp">Save This Canvas</button>
+				<input type="radio" name=“private” value=“true” > Please select if you would not like to share canvas<br>
+				
                           </p>
+				
  
                         <!-- BEGIN SHARE CANVAS -->
                         <p class="text-center">
@@ -720,6 +723,7 @@
                           <p class="text-center">
                             <!-- Export JSON and also save the canvas for the registered user -->
                               <a class="login-to-save"  href="../index.html">Sign up or login to save your canvas</a>
+				
                           </p>
   <?php }?>
 
