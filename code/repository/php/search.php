@@ -3,10 +3,10 @@
 
     // Retrieve query entered by user in the search box
     $query;
-    if (array_key_exists($_GET('query'))) {
+    if (array_key_exists($_GET['query'])) {
       $query = $_GET['query'];
     }
-    else if (array_key_exists($_GET('term'))) {
+    else if (array_key_exists($_GET['term'])) {
       $query = $_GET['term'];
     }
 
