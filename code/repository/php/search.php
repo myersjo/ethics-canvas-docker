@@ -2,7 +2,13 @@
   /* Retrieves the data from the database for the search box*/
 
     // Retrieve query entered by user in the search box
-    $query = $_GET['query'];
+    $query;
+    if (array_key_exists($_GET('query'))) {
+      $query = $_GET['query'];
+    }
+    else if (array_key_exists($_GET('term'))) {
+      $query = $_GET['term'];
+    }
 
     require_once('../../php/db_utils.php');
     $conn = db_connect(); // Connect to the database
