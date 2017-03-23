@@ -30,7 +30,7 @@ $(function() {
   /*========================
     Search box autocomplete
   ==========================*/
-  // $('#search-box-input').autocomplete({
-  //   source: php/search.php
-  // });
+  $('#search-box-input').autocomplete({
+    source: php/search.php
+  });
 });
