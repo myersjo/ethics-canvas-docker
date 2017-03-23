@@ -1,7 +1,7 @@
 $(function() {
 
   /*======================
-    Search box sumit
+    Search box submit
   ======================*/
   $('.search-box').on('submit', function(event) {
     event.preventDefault();
