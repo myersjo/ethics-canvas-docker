@@ -31,6 +31,9 @@ $(function() {
     Search box autocomplete
   ==========================*/
   $('#search-box-input').autocomplete({
-    source: php/search.php
+    source: "/php/search.php",
+    autoFocus: true,
+    delay: 300,
+    minLength: 2
   });
 });
