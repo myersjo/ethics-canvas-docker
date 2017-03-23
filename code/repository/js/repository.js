@@ -32,7 +32,6 @@ $(function() {
   ==========================*/
   $('#search-box-input').autocomplete({
     source: "php/search.php",
-    autoFocus: true,
     delay: 300,
     minLength: 2
   });
