@@ -55,7 +55,7 @@
                         <label class="project_title">Project Title</label>
                         <input class="proj_title" name="field_00[]" type="text"/>
                     </div>
-                    <div class="col-md-3  ">
+                    <div hidden class="col-md-3  ">
  -                        <label class="project_date">Date</label>
  -                        <input class="proj_date" name="field_00[]" type="date"/>
  -                    </div>
