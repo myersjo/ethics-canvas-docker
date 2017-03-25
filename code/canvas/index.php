@@ -61,12 +61,12 @@
  -                    </div>
                     <p class=“text-center”>
                         <a href=“www.facebook.com”>
-                            <button class= “guidelines” type=“button” name=“guidelines”> Guidelines pdf</button>
+                            <button class= "guidelines" type="button" name="guidelines"> Guidelines pdf</button>
                         </a>
                     </p>
                     <p class=“text-center”>
                         <a href=“../repository/index.php”>
-                            <button class= “guidelines” type=“button” name=“guidelines”> Repository Page</button>
+                            <button class= "guidelines" type="button" name="guidelines"> Repository Page</button>
                         </a>
                     </p>
                     <!-- login coming soon -->

@@ -120,7 +120,8 @@ footer .license-icons ul img{
 
 .navbar-brand img{
     margin-top: -10px;
-    height: 200%;
+    height: 40px;
+     -webkit-height:5px;
     display: block;
 
 }
@@ -144,6 +145,8 @@ footer .license-icons ul img{
 .col-lg-12 h2{
     color: #9dc963;
 }
+
+
 /*!
  * Start Bootstrap - Modern Business HTML Template (http://startbootstrap.com)
  * Code licensed under the Apache License v2.0.

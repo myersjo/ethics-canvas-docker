@@ -59,7 +59,6 @@ a.logo img {
     margin-top: 1.8em;
     margin-right: 0.3em;
     color: #444;
-    font-style: italic;
 }
 .form-header input {
     width: 62%;
@@ -67,6 +66,31 @@ a.logo img {
     border: 1px solid #eceff1;
     border-radius: 4px;
     padding: 0.45em;
+}
+/* buttoms in the header */
+.guidelines {
+    color: black;
+    text-decoration: none;
+    padding: 3px;
+    outline: none;
+    transition: all 0.5s;
+    width: 20%;
+    
+}
+
+.guidelines:focus {
+    border: 0;
+    outline: none;
+}
+.guidelines:hover, .guidelines:active {
+    color: #fff;
+
+    -ms-transform: rotate(5deg); /* IE 9 */
+    -ms-transform-origin: 51% top; /* IE 9 */
+    -webkit-transform: rotate(5deg); /* Chrome, Safari, Opera */
+    -webkit-transform-origin: 51% top; /* Chrome, Safari, Opera */
+       transform: rotate(5deg);
+       transform-origin: 51% top;
 }
 
 /*----------------------------------
