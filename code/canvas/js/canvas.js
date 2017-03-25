@@ -414,7 +414,8 @@ $(function() {
        ----------------------------------------------*/
       //   php variables are retieved in the header of the canvas index.php as js variables -->
       var name_save_canvas = $('.form-header').find('.proj_title').val();
-       var date_save_canvas = $('.form-header').find('.proj_date').val();
+      var date_save_canvas = $('.form-header').find('.proj_date').val();
+      var isPublic;
       var save_canvas_obj = {
           'email_save_canvas': email_save_canvas,
           'name_save_canvas': name_save_canvas,
@@ -482,6 +483,15 @@ $(function() {
           console.log("Error " + jqXHR.status + ' ' + jqXHR.statustext);
       });
     }
+    /*===========================================
+    HANDLING CLICK ON : Privacy Radio Buttons
+     ===========================================*/
+     $('input[name=privacy').on('change', function() {
+         $('#share-with-users').hide();
+         if ($(this).val() == "Private") {
+            $('#share-with-users').show();
+         }
+     });
 
     /*===========================================
     HANDLING CLICK ON : Share This Canvas BUTTON
