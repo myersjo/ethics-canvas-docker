@@ -64,6 +64,11 @@
                             <button class= “guidelines” type=“button” name=“guidelines”> Guidelines pdf</button>
                         </a>
                     </p>
+                    <p class=“text-center”>
+                        <a href=“../repository/index.php”>
+                            <button class= “guidelines” type=“button” name=“guidelines”> Repository Page</button>
+                        </a>
+                    </p>
                     <!-- login coming soon -->
                     <div class="col-md-3  ">
                     <?php if (!empty($name)) { ?>
@@ -698,7 +703,15 @@
                           <p class="text-center">
                             <!-- Export JSON and also save the canvas for the registered user -->
                               <button class="json_exp" type="button" name="json_exp">Save This Canvas</button>
-				<input type="radio" name=“private” value=“true” > Please select if you would not like to share canvas<br>
+                              <br>
+                              <br>
+				<input type="radio" name=“private” value=“true” > Select if you would like to share canvas to repository<br><br>
+                              <input type="radio" name=“private” value=“true” > Select if you would not like to share canvas<br><br>
+                              <form action="/action_page.php">
+  If private, enter emails to send to:<br><br>
+  <input type="text" name="firstname" value=""><br>
+  <input type="submit" value="Submit">
+</form>
 				
                           </p>
 				
