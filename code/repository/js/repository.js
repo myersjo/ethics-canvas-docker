@@ -1,7 +1,7 @@
 $(function() {
 
   /*======================
-    Search box sumit
+    Search box submit
   ======================*/
   $('.search-box').on('submit', function(event) {
     event.preventDefault();
@@ -31,7 +31,9 @@ $(function() {
     Search box autocomplete
   ==========================*/
   $('#search-box-input').autocomplete({
-    source: php/search.php
+    source: "php/search.php",
+    delay: 300,
+    minLength: 2
   });
 });
 

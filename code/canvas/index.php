@@ -55,12 +55,15 @@
                         <label class="project_title">Project Title</label>
                         <input class="proj_title" name="field_00[]" type="text"/>
                     </div>
-			<p class=“text-center”>
-				<a href=“www.facebook.com”>
-					<button class= “guidelines” type=“button” name=“guidelines”> Guidelines pdf</button>
-				</a>
-			</p>
-                    <!—— date removed dylan —->
+                    <div hidden class="col-md-3  ">
+ -                        <label class="project_date">Date</label>
+ -                        <input class="proj_date" name="field_00[]" type="date"/>
+ -                    </div>
+                    <p class=“text-center”>
+                        <a href=“www.facebook.com”>
+                            <button class= “guidelines” type=“button” name=“guidelines”> Guidelines pdf</button>
+                        </a>
+                    </p>
                     <!-- login coming soon -->
                     <div class="col-md-3  ">
                     <?php if (!empty($name)) { ?>
