@@ -490,7 +490,7 @@ $(function() {
      $('input[name=privacy').on('change', function() {
          $('#share-with-users').hide();
          if ($(this).val() == "Private") {
-            $('#share-with-users').slideDown(1000);
+            $('#share-with-users').show();
          }
      });
 
