@@ -42,7 +42,7 @@
     <body>
 
       <!-- Navigation -->
-      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" >
+       <nav class="navbar navbar-default navbar-fixed-top" role="navigation" >
         <div class="container">
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
@@ -53,8 +53,7 @@
                   <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="../index.html">
-              The Ethics Canvas
-              <!-- <img src="../icon/logo.svg" alt="Online Ethics Canvas"/> -->
+              <img src="../canvas/icons/logo-black-text.svg" alt="Ethics Canvas"/>
             </a>
           </div>
           <!-- Collect the nav links, forms, and other content for toggling -->
@@ -84,9 +83,10 @@
       <div class="container-fluid">
 
         <div class="row">
-          <div class="col-lg-12">
-              <h1 class="page-header">
-                  Canvas Repository
+          <div class="col-lg-12" href="#">
+              <img src="../canvas/icons/pdf/logo-canvas-noText.png" alt="Ethics Canvas"/>
+              <h1 class="page-header" >
+                   Canvas<br>Repository
               </h1>
           </div>
           <div class="col-md-12">
@@ -99,11 +99,24 @@
         <!--Search Box -->
         <div class="row">
           <div class="col-lg-6 col-lg-offset-3">
-              <form class="search-box" action="search.php" method="get">
+              <form class="log-in-form" action="search.php" method="get">
+                  
                 <div class="input-group">
-                  <input type="text" class="form-control" id="search-box-input" placeholder="Enter a keyword..">
+                  <input type="text" autocomplete="off" class="form-control" id="search-box-input" placeholder="Enter a keyword..">
                   <span class="input-group-btn">
-                    <button class="btn btn-default" type="submit" id="search-go-btn" name="search">Go!</button>
+                      <div class="btn-group">
+                          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Popular <span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li><a onclick="choose('Life')" href="#">Life</a></li>
+                            <li><a onclick="choose('Work')" href="#">Work</a></li>
+                            <li><a onclick="choose('Family')" href="#">Family</a></li>
+                          </ul>
+                        </div>
+                    <button class="btn btn-default" type="submit" id="search-go-btn" name="search"><i class="fa fa-search fa-lg" aria-hidden="true"></i>
+                        </button>
+                      
                   </span>
                 </div><!-- /input-group -->
               </form>

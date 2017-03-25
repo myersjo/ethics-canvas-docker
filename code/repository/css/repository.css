@@ -1,6 +1,4 @@
-body {
-    padding-top: 65px;
-}
+
 
 /* ------------------------------
         Footer
@@ -69,8 +67,83 @@ footer .license-icons ul img{
 
 }
 
+.btn:hover, .btn:active {
+    color: #fff;
 
+    -ms-transform: none; /* IE 9 */
+    -ms-transform-origin: none; /* IE 9 */
+    -webkit-transform: none; /* Chrome, Safari, Opera */
+    -webkit-transform-origin: none; /* Chrome, Safari, Opera */
+    transform: none;
+    transform-origin: none;
+}
+.btn {
+    color:black;
+    text-decoration: none;
+    padding: 6px;
+    outline: none;
+    transition: all 0.5s;
+    width: 75px;
+    margin: auto;
+    border-radius: 10px;
+    background-color: rgba(84, 110, 122, 0.2);
+    color: #555;
 
+}
+.navbar-header a{
+  color: #337ab7 !important;
+}
+.navbar-header a:hover{
+ text-decoration: underline;
+ opacity: 0.5;
+}
+
+.navbar-nav a{
+ color: #337ab7 !important;
+}
+
+.navbar-nav a:hover{
+ opacity: 0.5;
+ text-decoration:underline !important;
+}
+
+.navbar-default {
+    background-color: rgba(38, 50, 56, 0.85);
+    clear:both;
+    border:none;
+    
+}
+.panel > .panel-heading {
+    border: none;
+    filter: brightness(85%);
+}
+
+.navbar-brand img{
+    margin-top: -10px;
+    height: 200%;
+    display: block;
+
+}
+
+.col-lg-12 img{
+    display: block;
+    width: 25%;
+    float:left;
+    clear: both;
+}
+.col-lg-12 {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.col-lg-12 h1{
+    color: #759BCF;
+}
+.col-md-12 p{
+    color: #555;
+}
+.col-lg-12 h2{
+    color: #9dc963;
+}
 /*!
  * Start Bootstrap - Modern Business HTML Template (http://startbootstrap.com)
  * Code licensed under the Apache License v2.0.

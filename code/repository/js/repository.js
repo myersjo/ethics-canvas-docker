@@ -34,3 +34,22 @@ $(function() {
     source: php/search.php
   });
 });
+
+function choose(arg){
+    document.getElementById("search-box-input").value=arg;
+}
+    
+function colors(){
+var colors = ['#A281D0','#84ADE5','#28BCA4','#ACD682','#899AE0'];
+var searchCanvas = document.getElementById("canvases-row").getElementsByClassName('panel panel-default');
+var searchHeader = document.getElementById("canvases-row").getElementsByClassName('panel-heading');
+var j=0;
+for(var i =0; i < searchCanvas.length; i++) {
+    if(j==colors.length)
+        j=0;
+    searchCanvas[i].style.backgroundColor = colors[j];
+    searchHeader[i].style.backgroundColor = colors[j];
+    j++;
+    }
+}
+colors();
