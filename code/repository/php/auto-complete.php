@@ -50,6 +50,6 @@
         $keywords[] = $row["tag_name"];
       }
     }
-    echo json_encode(array($canvases));
+    echo json_encode(array($keywords));
     db_close($conn); // Close the database
   ?>
