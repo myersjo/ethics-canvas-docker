@@ -99,7 +99,7 @@
         <!--Search Box -->
         <div class="row">
           <div class="col-lg-6 col-lg-offset-3">
-              <form class="log-in-form" action="search.php" method="get">
+              <form class="log-in-form search-box" action="search.php" method="get">
                   
                 <div class="input-group">
                   <input type="text" autocomplete="off" class="form-control" id="search-box-input" placeholder="Enter a keyword..">
