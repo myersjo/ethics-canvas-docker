@@ -31,7 +31,7 @@ $(function() {
     Search box autocomplete
   ==========================*/
   $('#search-box-input').autocomplete({
-    source: "php/search.php",
+    source: "php/auto-complete.php",
     delay: 300,
     minLength: 2
   });

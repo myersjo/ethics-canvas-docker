@@ -21,6 +21,8 @@
 
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <!-- jQuery UI -->
+        <link href="css/jquery-ui.min.css" rel="stylesheet" type="text/css">
         <!-- Font Awesome -->
         <script src="https://use.fontawesome.com/f05ce90ed7.js"></script>
         <!-- Google font -->
@@ -99,7 +101,7 @@
         <!--Search Box -->
         <div class="row">
           <div class="col-lg-6 col-lg-offset-3">
-              <form class="log-in-form" action="search.php" method="get">
+              <form class="log-in-form search-box" action="search.php" method="get">
                   
                 <div class="input-group">
                   <input type="text" autocomplete="off" class="form-control" id="search-box-input" placeholder="Enter a keyword..">
