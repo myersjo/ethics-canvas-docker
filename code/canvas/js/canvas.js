@@ -7,6 +7,7 @@ $(function() {
     document.getElementById("4-col-layout").style.MozColumnCount =
         "4"; // end of Firefox fix
 
+    $('#share-with-users').hide();
 
     /* Prevent pressing ENTER on Project Title from submitting the form */
     $('.proj_title').keydown(function(event){
@@ -489,7 +490,7 @@ $(function() {
      $('input[name=privacy').on('change', function() {
          $('#share-with-users').hide();
          if ($(this).val() == "Private") {
-            $('#share-with-users').show();
+            $('#share-with-users').slideDown(1000);
          }
      });
 
