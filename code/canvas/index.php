@@ -700,7 +700,7 @@
                 <?php if (!empty($name)) { ?>
                     <div class="row">
                         <div class="col-md-5 col-md-offset-5">
-                            <label for="tags"><input type="text" name="tags" id="tags" title="Enter tags" placeholder="Enter tags..."/><h3>Tags: </h3</label>
+                            <label for="tags"><h3>Tags: </h3><input type="text" name="tags" id="tags" title="Enter tags" placeholder="Enter tags..."/></label>
                         </div>
                     </div>
                     <div class="row">
