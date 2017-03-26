@@ -65,7 +65,7 @@
                     <a href="../index.html">Home</a>
                 </li>
                 <?php if (!empty($name)) { ?>
-                  <li class="dropdown">
+                  <li class="dropdown" id="logged-in-dropdown">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $name; ?> <b class="caret"></b></a>
                       <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                           <li><a id="toGuidelines" href="../download/handbook.pdf">Guidelines</a></li>

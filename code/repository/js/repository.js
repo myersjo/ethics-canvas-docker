@@ -34,7 +34,22 @@ $(function() {
     delay: 300,
     minLength: 2
   });
+  /*========================================
+        USER LOGS OUT (dropdown menu)
+    ==========================================*/
+    $('#logout').on('click', function() {
+        var url = '../canvas/php/logout.php';
+        $.post(url, function(data, status) {
+            if (data == 200) {
+                $('#logged-in-dropdown').hide();
+                window.location.href="../index.html";
+            }
+        });
+    });
+
 });
+
+
 
 function choose(arg){
     document.getElementById("search-box-input").value=arg;
