@@ -59,11 +59,11 @@
  -                        <label class="project_date">Date</label>
  -                        <input class="proj_date" name="field_00[]" type="date"/>
  -                    </div>
-                    <p class=“text-center”>
+                    <!--<p class=“text-center”>
                         <a href=“www.facebook.com”>
                             <button class= "guidelines" type="button" name="guidelines"> Guidelines pdf</button>
                         </a>
-                    </p>
+                    </p>-->
                     <p class=“text-center”>
                         <a href=“../repository/index.php”>
                             <button class= "guidelines" type="button" name="guidelines"> Repository Page</button>
@@ -80,6 +80,10 @@
                             <span class="caret"></span>
                           </button>
                           <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a id="toGuidelines" href="#">Guidelines</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a id="toRepository" href="../repository">Repository</a></li>
+                            <li role="separator" class="divider"></li>
                             <li><a id="toDashboard" href="php/dashboard.php">Your Canvases</a></li>
                             <!-- <li><a href="#">Something else here</a></li> -->
                             <li role="separator" class="divider"></li>
