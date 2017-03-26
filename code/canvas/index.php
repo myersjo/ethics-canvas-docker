@@ -691,14 +691,13 @@
                 </div>
                 <!-- end of .canvas.box -->
 
-                <div class="row">
-                    <div class="col-md-4 col-md-offset-4">
-                        <label for="tags"><input type="text" name="tags" id="tags" title="Enter tags" /></label>
-                    </div>
-                </div>
-
                 <!-- FORM BUTTON BOX -->
                 <?php if (!empty($name)) { ?>
+                    <div class="row">
+                        <div class="col-md-5 col-md-offset-5">
+                            <label for="tags"><input type="text" name="tags" id="tags" title="Enter tags" /></label>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col-md-5 col-md-offset-5">
                             <p class="text-center">
