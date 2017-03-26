@@ -56,7 +56,7 @@ if (!empty($post_data)) {
       if(!($tag_id_result = mysqli_query($conn, "SELECT id FROM tags WHERE tag_name='$tag'"))) {
         echo 400; // Wrong query
         echo " #Wrong select tag id query :/ ";
-      } else if (mysqli_num_rows($get_user_result) > 0) {
+      } else if (mysqli_num_rows($tag_id_result) > 0) {
         $tagRow = mysqli_fetch_assoc($tag_id_result);
         $tag_id = $tagRow['id'];
         if(!($tag_rel_result = mysqli_query($conn, "INSERT INTO tag_relation(canvas_id) VALUES('$canvas_id_data') ON DUPLICATE KEY UPDATE canvas_id=VALUES(canvas_id)"))) {
