@@ -16,7 +16,7 @@ $(function() {
       $.each(canvases, function(key, value) {
         resultHTML += '<div class="col-md-4"><div class="panel panel-default"><div class="panel-heading"><h4><i class="fa fa-fw fa-th"></i>' + value["canvas_name"] + '</h4></div><div class="panel-body"><h5>Tags:</h5><p class="text-center">';
         $.each(value["tags"], function(i, tag) {
-          resultHTML += ' ' + tag + ' ';
+          resultHTML += '\t' + tag + '\t';
         });
         resultHTML += '</p><a href="#" class="btn btn-default">View</a></div></div></div>';
       }) //end of $.each(returnedData)
