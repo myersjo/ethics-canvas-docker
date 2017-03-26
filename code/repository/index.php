@@ -64,25 +64,28 @@
                 <li>
                     <a href="../index.html">Home</a>
                 </li>
-                <?php if (!empty($name)) { ?>
-                  <!-- bootstrap dropdown component -->
-                  <div class="dropdown user-profile">
+                <li>
+                  <?php if (!empty($name)) { ?>
+                    <!-- bootstrap dropdown component -->
+                    <div class="dropdown user-profile">
                       <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                      <img src="../icon/profile.svg" style="max-height: 25px;"/><span><?php echo $name; ?></span>
-                      <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                      <li><a id="toGuidelines" href="#">Guidelines</a></li>
-                      <li role="separator" class="divider"></li>
-                      <li><a id="toRepository" href="../repository">Repository</a></li>
-                      <li role="separator" class="divider"></li>
-                      <li><a id="toDashboard" href="php/dashboard.php">Your Canvases</a></li>
-                      <!-- <li><a href="#">Something else here</a></li> -->
-                      <li role="separator" class="divider"></li>
-                      <li><a id="logout" href="#">Log Out</a></li>
-                    </ul>
-                  </div>
-                <?php } ?>
+                        <img src="../icon/profile.svg" style="max-height: 20px;"/>
+                        <span><?php echo $name; ?></span>
+                        <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li><a id="toGuidelines" href="#">Guidelines</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a id="toRepository" href="../repository">Repository</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a id="toDashboard" href="php/dashboard.php">Your Canvases</a></li>
+                        <!-- <li><a href="#">Something else here</a></li> -->
+                        <li role="separator" class="divider"></li>
+                        <li><a id="logout" href="#">Log Out</a></li>
+                      </ul>
+                    </div>
+                  <?php } ?>
+                </li>
                 <!--<li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio <b class="caret"></b></a>
                     <ul class="dropdown-menu">
