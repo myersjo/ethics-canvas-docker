@@ -19,6 +19,7 @@ $(function() {
           resultHTML += '<p>' + tag + '</p>';
         });
         resultHTML += '<a href="#" class="btn btn-default">View</a></div></div></div>';
+        colors();
         console.log(resultHTML);
       }) //end of $.each(returnedData)
       $('body').find('#canvases-row').empty().append(resultHTML);
