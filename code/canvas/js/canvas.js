@@ -95,12 +95,9 @@ $(function() {
 
                 } // end of if(key === 'field_00[]')
                 else if(key === 'share-with') {
-                    if(val.length > 0) {
+                    if(value.length > 0) {
                         $('input[name=privacy][value=Private').prop('checked', true);
                         $('#share-with').val(value);
-                    }
-                    else {
-                        console.log(val.length);
                     }
                 }
                 else if (key !== 'new_item') {
