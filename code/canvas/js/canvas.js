@@ -97,6 +97,7 @@ $(function() {
                 else if(key === 'share-with') {
                     if(value.length > 0) {
                         $('input[name=privacy][value=Private').prop('checked', true);
+                        $('#share-with-users').show();
                         $('#share-with').val(value);
                     }
                 }
