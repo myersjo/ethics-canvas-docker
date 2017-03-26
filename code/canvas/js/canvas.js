@@ -99,6 +99,9 @@ $(function() {
                         $('input[name=privacy][value=Private').prop('checked', true);
                         $('#share-with').val(value);
                     }
+                    else {
+                        console.log(val.length);
+                    }
                 }
                 else if (key !== 'new_item') {
 
