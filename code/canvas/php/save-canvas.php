@@ -16,9 +16,17 @@
  }
 
  else {
+   require_once('../../php/db_utils.php');
+   $conn = db_connect(); // Connect to the database
 
    if(isset($_SESSION['canvas_id'])) {
      // Canvas already exists. Return canvas_id to overwrite JSON file.
+     $visibility = $params['visibility'];
+     $isPublic = ($visibility === "Public")?"1":"0";
+     if(!($result = mysqli_query($conn, "UPDATE canvas SET is_public='$isPublic'"))) {
+       echo 400; // Wrong query
+       echo " Wrong update canvas visibility query ";
+     }
      echo $_SESSION['canvas_id'];
    }
 
@@ -32,8 +40,6 @@
 
      $isPublic = ($visibility === "Public")?"1":"0";
 
-     require_once('../../php/db_utils.php');
-     $conn = db_connect(); // Connect to the database
 
      // Check if the username already exists
      if(!($result = mysqli_query($conn, "SELECT username FROM user WHERE username = '$email'"))) {
