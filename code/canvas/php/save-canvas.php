@@ -21,9 +21,10 @@
 
    if(isset($_SESSION['canvas_id'])) {
      // Canvas already exists. Return canvas_id to overwrite JSON file.
+     $canvas_id = $_SESSION['canvas_id'];
      $visibility = $params['visibility'];
      $isPublic = ($visibility === "Public")?"1":"0";
-     if(!($result = mysqli_query($conn, "UPDATE canvas SET is_public='$isPublic'"))) {
+     if(!($result = mysqli_query($conn, "UPDATE canvas SET is_public='$isPublic' WHERE canvas_id='$canvas_id'"))) {
        echo 400; // Wrong query
        echo " Wrong update canvas visibility query ";
      }
