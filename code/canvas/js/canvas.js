@@ -487,10 +487,11 @@ $(function() {
     /*===========================================
     HANDLING CLICK ON : Privacy Radio Buttons
      ===========================================*/
-     $("input[name=privacy").on('click', function() {
-         $('#share-with-users').hide();
+     $("input[name=privacy]").on("click", function() {
          if ($(this).val() == "Private") {
             $('#share-with-users').slideDown(400);
+         } else {
+             $('#share-with-users').slideUp();
          }
      });
 

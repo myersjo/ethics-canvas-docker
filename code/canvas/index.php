@@ -702,8 +702,8 @@
 
                             <p class="text-center">
                                 <p>Privacy Options: </p>
-                                <input type="radio" name=“privacy” value=“Public” title="Select if you would like to share canvas to repository" checked="checked"/>Public<br><br>
-                                <input type="radio" name=“privacy” value=“Private” title="Select if you would not like to share canvas" />Private<br><br>
+                                <label><input type="radio" name="privacy" value="Public" title="Select if you would like to share canvas to repository" checked="checked"/>Public</label><br><br>
+                                <label><input type="radio" name="privacy" value="Private" title="Select if you would not like to share canvas" />Private</label><br><br>
                                     <p id="share-with-users">
                                         <label for="share-with">Enter the email addresses of users you would like to share with:</label><br><br>
                                         <input type="text" id="share-with" name="share-with" value=""><br>
