@@ -52,17 +52,36 @@ if (!empty($post_data)) {
         echo 400; // Wrong query
         echo " #Wrong insert tag query :/ ";
       }
+      mysqli_free_result($tag_insert_result);
       if(!($tag_id_result = mysqli_query($conn, "SELECT id FROM tags WHERE tag_name='$tag'"))) {
         echo 400; // Wrong query
         echo " #Wrong select tag id query :/ ";
-      } else {
+      } else if (mysqli_num_rows($get_user_result) > 0) {
         $tagRow = mysqli_fetch_assoc($tag_id_result);
         $tag_id = $tagRow['id'];
-        if(!($tag_rel_result = mysqli_query($conn, "INSERT INTO tag_relation(tag_id, canvas_id) VALUES($tag_id, '$canvas_id_data') ON DUPLICATE KEY UPDATE tag_id=VALUES(tag_id), canvas_id=VALUES(canvas_id)"))) {
+        if(!($tag_rel_result = mysqli_query($conn, "INSERT INTO tag_relation(canvas_id) VALUES('$canvas_id_data') ON DUPLICATE KEY UPDATE canvas_id=VALUES(canvas_id)"))) {
           echo 400; // Wrong query
           echo " #Wrong insert tag relation query :/ ";
         }
+        mysqli_free_result($tag_rel_result);
       }
+      mysqli_free_result($tag_id_result);
+    }
+    foreach($users as $user) {
+      if(!($get_user_result = mysqli_query($conn, "SELECT username FROM user WHERE username='$user'"))) {
+        echo 400; // Wrong query
+        echo " #Wrong select user username query :/ ";
+      } else if (mysqli_num_rows($get_user_result) == 0) {
+        echo 401; // User doesn't exist
+        echo "$user";
+      } else {
+        if(!($ins_user_rel_result = mysqli_query($conn, "INSERT INTO user_canvas_visibility(user_id, canvas_id) VALUES('$user', '$canvas_id_data') ON DUPLICATE KEY UPDATE user_id=VALUES(user_id), canvas_id=VALUES(canvas_id)"))) {
+          echo 400; // Wrong query
+          echo " #Wrong insert visibility query :/ ";
+        }
+        mysqli_free_result($ins_user_rel_result);
+      }
+      mysqli_free_result($get_user_result);
     }
 
     // Return canvas_id and save it in the current session

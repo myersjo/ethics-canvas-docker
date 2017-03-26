@@ -53,5 +53,5 @@ CREATE TABLE user_canvas_visibility
   canvas_id varchar(128) NOT NULL,
   PRIMARY KEY(user_id, canvas_id),
   FOREIGN KEY(user_id) REFERENCES user(username),
-  FOREIGN KEY(canvas_id) REFERENCES canvas(id)
+  FOREIGN KEY(canvas_id) REFERENCES canvas(canvas_id)
 );
