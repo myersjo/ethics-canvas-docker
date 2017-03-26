@@ -12,3 +12,6 @@ ON DUPLICATE KEY UPDATE tag_id=VALUES(tag_id), canvas_id=VALUES(canvas_id);
 
 INSERT INTO user_canvas_visibility(user_id, canvas_id) VALUES('jord@live.ie', 'bSGx7r3UoR')
 ON DUPLICATE KEY UPDATE user_id=VALUES(user_id), canvas_id=VALUES(canvas_id);
+
+INSERT INTO tag_relation(tag_id, canvas_id) VALUES('100', '00000000') 
+ON DUPLICATE KEY UPDATE tag_id=VALUES(tag_id), canvas_id=VALUES(canvas_id);

@@ -59,6 +59,8 @@ if (!empty($post_data)) {
       } else if (mysqli_num_rows($tag_id_result) > 0) {
         $tagRow = mysqli_fetch_assoc($tag_id_result);
         $tag_id = $tagRow['id'];
+        echo "Tag ID: ";
+        echo $tag_id;
         if(!($tag_rel_result = mysqli_query($conn, "INSERT INTO tag_relation(tag_id, canvas_id) VALUES('$tag_id', '$canvas_id_data') ON DUPLICATE KEY UPDATE tag_id=VALUES(tag_id), canvas_id=VALUES(canvas_id)"))) {
           echo 400; // Wrong query
           echo " #Wrong insert tag relation query :/ ";
