@@ -90,7 +90,7 @@
                     </div>
 
                 </div>
-
+            <div class="row">
                 <!-- LAYOUT -->
                 <!-- ================ 8/5 col=================== -->
                 <div class="canvas-box">
@@ -690,6 +690,7 @@
                     </div>
                 </div>
                 <!-- end of .canvas.box -->
+            </div>
 
                 <!-- FORM BUTTON BOX -->
                 <?php if (!empty($name)) { ?>
