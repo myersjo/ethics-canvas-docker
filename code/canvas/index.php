@@ -701,7 +701,7 @@
                         <?php if (!empty($name)) { ?>
 
                             <p class="text-center">
-                                <p>Privacy Options: </p>
+                                <h3>Visibility Settings: </h3>
                                 <label><input type="radio" name="privacy" value="Public" title="Select if you would like to share canvas to repository" checked="checked"/>Public</label><br><br>
                                 <label><input type="radio" name="privacy" value="Private" title="Select if you would not like to share canvas" />Private</label><br><br>
                                     <p id="share-with-users">
