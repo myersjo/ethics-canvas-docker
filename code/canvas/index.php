@@ -706,7 +706,7 @@
                         </div>
                     </div>
                 <?php } ?>
-                
+
                 <div class="row">
 
                     <div class="imp-exp-btn col-md-4 col-md-offset-4">
@@ -715,16 +715,7 @@
 
 
                         <?php if (!empty($name)) { ?>
-
-                            <p class="text-center">
-                                <h3>Visibility Settings: </h3>
-                                <label><input type="radio" name="privacy" value="Public" title="Select if you would like to share canvas to repository" checked="checked"/>Public</label><br><br>
-                                <label><input type="radio" name="privacy" value="Private" title="Select if you would not like to share canvas" />Private</label><br><br>
-                                    <p id="share-with-users">
-                                        <label for="share-with">Enter the email addresses of users you would like to share with:</label><br><br>
-                                        <input type="text" id="share-with" name="share-with" value=""><br>
-                                    </p>
-                            </p>
+                        
                             <p class="text-center">
                             <!-- Export JSON and also save the canvas for the registered user -->
                               <button class="json_exp" type="button" name="json_exp">Save This Canvas</button>
