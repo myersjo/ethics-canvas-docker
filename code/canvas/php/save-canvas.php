@@ -9,7 +9,8 @@
 
  if(!array_key_exists('email_save_canvas', $params) OR
     !array_key_exists('name_save_canvas', $params) OR
-    !array_key_exists('date_save_canvas', $params)) {
+    !array_key_exists('date_save_canvas', $params) OR
+    !array_key_exists('visibility', $params)) {
    echo 400; // Missing parameters
  }
 
@@ -26,6 +27,9 @@
      $email = $params['email_save_canvas'];
      $canvas_name = $params['name_save_canvas'];
      $date = $params['date_save_canvas'];
+     $visibility = $params['visibility'];
+
+     $isPublic = ($visibility === "Public")?"TRUE":"FALSE";
 
      require_once('../../php/db_utils.php');
      $conn = db_connect(); // Connect to the database
@@ -40,7 +44,7 @@
      else { // User registered
        // Save this canvas
        $canvas_id = generateRandomString();
-       if(!mysqli_query($conn, "INSERT INTO canvas (canvas_id, user_id, canvas_name, canvas_date) VALUES ('$canvas_id', '$email', '$canvas_name', '$date')")) {
+       if(!mysqli_query($conn, "INSERT INTO canvas (canvas_id, user_id, canvas_name, canvas_date, is_public) VALUES ('$canvas_id', '$email', '$canvas_name', '$date', '$isPublic')")) {
          echo 400; // Wrong query
          echo " #Wrong query :/ ";
        }

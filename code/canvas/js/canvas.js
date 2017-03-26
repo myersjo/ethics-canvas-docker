@@ -416,11 +416,12 @@ $(function() {
       //   php variables are retieved in the header of the canvas index.php as js variables -->
       var name_save_canvas = $('.form-header').find('.proj_title').val();
       var date_save_canvas = $('.form-header').find('.proj_date').val();
-      var isPublic;
+      var visibility =  $("input[name=privacy]:checked").val();
       var save_canvas_obj = {
           'email_save_canvas': email_save_canvas,
           'name_save_canvas': name_save_canvas,
-          'date_save_canvas': date_save_canvas
+          'date_save_canvas': date_save_canvas,
+          'visibility': visibility
       };
 
       var save_canvas = $.param(save_canvas_obj);
@@ -464,12 +465,16 @@ $(function() {
           //Make the JSON object into a JSON string
           var JSONstrObj = JSON.stringify($('.canvas-form').serializeObject());
           var url = "php/canvas.php";
+          var share_with = $('#share-with').val();
+          var tags = $('#tags').val();
           /*  Post the JSON stringified object to the php file
           (the php script will save it in a database )*/
           //also, send the canvas_id to use as the key
           $.post(url, {
               JSONstrObj: JSONstrObj,
-              canvas_id: canvas_id
+              canvas_id: canvas_id,
+              share_with: share_with,
+              tags: tags
           }, function(data, status) {
               console.log(
                   'Response from php when sending the form json object: \n' +

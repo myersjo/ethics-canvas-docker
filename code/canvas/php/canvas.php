@@ -4,6 +4,11 @@ echo 'JSON stringified Object: '.$_POST['JSONstrObj'].' was sent to the php file
 //for the ajax post call in stringified object data form
 $post_data = $_POST['JSONstrObj'];
 $canvas_id_data = $_POST['canvas_id'];
+$share_with_str = $_POST['share_with'];
+$tags_str = $_POST['tags'];
+
+$share_with = explode(" ", $share_with_str);
+$tags = explode(" ", $tags_str);
 
 // $filename ='../json/'.$canvas_id_data.'.json';
 // $handle = fopen($filename, "w");
@@ -42,8 +47,22 @@ if (!empty($post_data)) {
         echo " #Wrong update query :/ ";
       }
     }
+    foreach($tags as $tag) {
+      if(!($tag_insert_result = mysqli_query($conn, "INSERT INTO tags(tag_name) VALUES ('$tag') ON DUPLICATE KEY UPDATE tag_name = VALUES(tag_name)"))) {
+        echo 400; // Wrong query
+        echo " #Wrong insert tag query :/ ";
+      }
+      if(!($tag_id_result = mysqli_query($conn, "SELECT id FROM tags WHERE tag_name='$tag'"))) {
+        $tag_id = $tag_id_result['id'];
+        if(!($tag_re_result = mysqli_query($conn, "INSERT INTO tag_relation(tag_id, canvas_id) VALUES($tag_id, '$canvas_id_data') ON DUPLICATE KEY UPDATE tag_id=VALUES(tag_id), canvas_id=VALUES(canvas_id)"))) {
+          echo 400; // Wrong query
+          echo " #Wrong insert tag relation query :/ ";
+        }
+      }
+    }
+
     // Return canvas_id and save it in the current session
-    $_SESSION['canvas_id'] = $canvas_id;
-    echo $canvas_id;
+    $_SESSION['canvas_id'] = $canvas_id_data;
+    echo $canvas_id_data;
 }
 ?>
