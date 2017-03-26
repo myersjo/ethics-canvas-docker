@@ -15,14 +15,14 @@ $(function() {
 
       $.each(canvases, function(key, value) {
         resultHTML += '<div class="col-md-4"><div class="panel panel-default"><div class="panel-heading"><h4><i class="fa fa-fw fa-th"></i>' + value["canvas_name"] + '</h4></div><div class="panel-body"><h5>Tags:</h5>';
-        $.each(value["tags"], function(tag) {
+        $.each(value["tags"], function(i, tag) {
           resultHTML += '<p>' + tag + '</p>';
         });
         resultHTML += '<a href="#" class="btn btn-default">View</a></div></div></div>';
-        colors();
-        console.log(resultHTML);
       }) //end of $.each(returnedData)
       $('body').find('#canvases-row').empty().append(resultHTML);
+      colors();
+      console.log(resultHTML);
     }); // end of $.getJSON
   }); // end of $('.search-box').on('submit' ...
 

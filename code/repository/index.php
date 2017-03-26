@@ -125,10 +125,12 @@
           </div><!-- /.col-lg-6 -->
         </div><!-- /.row -->
 
-        <div class="row" id="canvases-row">
+        <div class="row">
           <div class="col-lg-12">
             <h2>Featured Canvases</h2>
           </div>
+        </div>
+        <div class="row" id="canvases-row">
           <div class="col-md-4">
               <div class="panel panel-default">
                   <div class="panel-heading">
