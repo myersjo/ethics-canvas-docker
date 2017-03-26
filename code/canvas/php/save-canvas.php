@@ -12,6 +12,7 @@
     !array_key_exists('date_save_canvas', $params) OR
     !array_key_exists('visibility', $params)) {
    echo 400; // Missing parameters
+   echo ' missing params; ';
  }
 
  else {
@@ -35,7 +36,7 @@
      $conn = db_connect(); // Connect to the database
 
      // Check if the username already exists
-     if(!($result = mysqli_query($conn, "SELECT name FROM user WHERE username = '$email'"))) {
+     if(!($result = mysqli_query($conn, "SELECT username FROM user WHERE username = '$email'"))) {
        echo 400; // Wrong query
      }
      else if(mysqli_num_rows($result) != 1) { // User not registered or duplicated
@@ -46,7 +47,7 @@
        $canvas_id = generateRandomString();
        if(!mysqli_query($conn, "INSERT INTO canvas (canvas_id, user_id, canvas_name, canvas_date, is_public) VALUES ('$canvas_id', '$email', '$canvas_name', '$date', '$isPublic')")) {
          echo 400; // Wrong query
-         echo " #Wrong query :/ ";
+         echo " #Wrong insert canvas query :/ ";
        }
        else { // Return canvas_id and save it in the current session
          $_SESSION['canvas_id'] = $canvas_id;
