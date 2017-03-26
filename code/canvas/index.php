@@ -696,7 +696,7 @@
                 <?php if (!empty($name)) { ?>
                     <div class="row">
                         <div class="col-md-5 col-md-offset-5">
-                            <label for="tags"><input type="text" name="tags" id="tags" title="Enter tags" /></label>
+                            <label for="tags"><input type="text" name="tags" id="tags" title="Enter tags" placeholder="Enter tags..."/><h3>Tags: </h3</label>
                         </div>
                     </div>
                     <div class="row">
@@ -707,7 +707,7 @@
                                 <label><input type="radio" name="privacy" value="Private" title="Select if you would not like to share canvas" />Private</label><br>
                                 <p id="share-with-users">
                                     <label for="share-with">Enter the email addresses of users you would like to share with:</label><br><br>
-                                    <input type="text" id="share-with" name="share-with" value=""><br>
+                                    <input type="text" id="share-with" name="share-with" value="" placeholder="Enter email addresses..."><br>
                                 </p>
                             </p>
                         </div>

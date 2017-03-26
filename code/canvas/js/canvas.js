@@ -101,6 +101,9 @@ $(function() {
                         $('#share-with').val(value);
                     }
                 }
+                else if(key === 'tags') {
+                    $('#tags').val(value);
+                }
                 else if (key !== 'new_item') {
 
                     if ($.type(value) === "array") {
