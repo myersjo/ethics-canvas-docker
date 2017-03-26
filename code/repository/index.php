@@ -68,7 +68,7 @@
                   <!-- bootstrap dropdown component -->
                   <div class="dropdown user-profile">
                       <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                      <img src="../icon/profile.svg"/><span><?php echo $name; ?></span>
+                      <img src="../icon/profile.svg" style="max-height: 25px;"/><span><?php echo $name; ?></span>
                       <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
