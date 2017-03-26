@@ -44,7 +44,7 @@ CREATE TABLE tag_relation
 	canvas_id varchar(128) NOT NULL,
 	PRIMARY KEY(tag_id, canvas_id),
 	FOREIGN KEY(tag_id) REFERENCES tags(id),
-	FOREIGN KEY(canvas_id) REFERENCES canvas(id)
+	FOREIGN KEY(canvas_id) REFERENCES canvas(canvas_id)
 );
 
 CREATE TABLE user_canvas_visibility

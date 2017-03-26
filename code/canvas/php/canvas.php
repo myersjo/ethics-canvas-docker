@@ -53,8 +53,9 @@ if (!empty($post_data)) {
         echo " #Wrong insert tag query :/ ";
       }
       if(!($tag_id_result = mysqli_query($conn, "SELECT id FROM tags WHERE tag_name='$tag'"))) {
-        $tag_id = $tag_id_result['id'];
-        if(!($tag_re_result = mysqli_query($conn, "INSERT INTO tag_relation(tag_id, canvas_id) VALUES($tag_id, '$canvas_id_data') ON DUPLICATE KEY UPDATE tag_id=VALUES(tag_id), canvas_id=VALUES(canvas_id)"))) {
+        $tagRow = mysqli_fetch_assoc($tag_id_result);
+        $tag_id = $tagRow['id'];
+        if(!($tag_rel_result = mysqli_query($conn, "INSERT INTO tag_relation(tag_id, canvas_id) VALUES($tag_id, '$canvas_id_data') ON DUPLICATE KEY UPDATE tag_id=VALUES(tag_id), canvas_id=VALUES(canvas_id)"))) {
           echo 400; // Wrong query
           echo " #Wrong insert tag relation query :/ ";
         }
