@@ -94,7 +94,7 @@ $(function() {
 
 
                 } // end of if(key === 'field_00[]')
-                else if(key === 'share-canvas-email') {
+                else if(key === 'share-with') {
                     $('#share-with').val(value);
                 }
                 else if (key !== 'new_item') {
