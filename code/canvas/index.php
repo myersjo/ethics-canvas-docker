@@ -64,11 +64,11 @@
                             <button class= "guidelines" type="button" name="guidelines"> Guidelines pdf</button>
                         </a>
                     </p>-->
-                    <p class=“text-center”>
+                    <!--<p class=“text-center”>
                         <a href=“../repository/index.php”>
                             <button class= "guidelines" type="button" name="guidelines"> Repository Page</button>
                         </a>
-                    </p>
+                    </p>-->
                     <!-- login coming soon -->
                     <div class="col-md-3  ">
                     <?php if (!empty($name)) { ?>
