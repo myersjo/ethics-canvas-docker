@@ -40,7 +40,7 @@ CREATE TABLE tags
 
 CREATE TABLE tag_relation
 (
-	tag_id int NOT NULL AUTO_INCREMENT,
+	tag_id int NOT NULL,
 	canvas_id varchar(128) NOT NULL,
 	PRIMARY KEY(tag_id, canvas_id),
 	FOREIGN KEY(tag_id) REFERENCES tags(id),
