@@ -132,7 +132,7 @@
           <div class="col-md-4">
               <div class="panel panel-default">
                   <div class="panel-heading">
-                      <h4><i class="fa fa-fw fa-check"></i> Featured Canvas 1</h4>
+                      <h4><i class="fa fa-fw fa-th"></i> Featured Canvas 1</h4>
                   </div>
                   <div class="panel-body">
                       <p>Name:</p>
@@ -145,7 +145,7 @@
           <div class="col-md-4">
               <div class="panel panel-default">
                   <div class="panel-heading">
-                      <h4><i class="fa fa-fw fa-gift"></i> Featured Canvas 2</h4>
+                      <h4><i class="fa fa-fw fa-th"></i> Featured Canvas 2</h4>
                   </div>
                   <div class="panel-body">
                       <p>Name:</p>
@@ -159,7 +159,7 @@
           <div class="col-md-4">
               <div class="panel panel-default">
                   <div class="panel-heading">
-                      <h4><i class="fa fa-fw fa-compass"></i> Featured Canvas 3</h4>
+                      <h4><i class="fa fa-fw fa-th"></i> Featured Canvas 3</h4>
                   </div>
                   <div class="panel-body">
                       <p>Name:</p>
