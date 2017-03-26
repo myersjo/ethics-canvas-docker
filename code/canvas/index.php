@@ -80,7 +80,7 @@
                             <span class="caret"></span>
                           </button>
                           <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li><a id="toGuidelines" href="#">Guidelines</a></li>
+                            <li><a id="toGuidelines" href="../download/handbook.pdf">Guidelines</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a id="toRepository" href="../repository">Repository</a></li>
                             <li role="separator" class="divider"></li>

@@ -68,11 +68,11 @@
                   <li class="dropdown">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $name; ?> <b class="caret"></b></a>
                       <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                          <li><a id="toGuidelines" href="#">Guidelines</a></li>
+                          <li><a id="toGuidelines" href="../download/handbook.pdf">Guidelines</a></li>
                           <li role="separator" class="divider"></li>
                           <li><a id="toRepository" href="../repository">Repository</a></li>
                           <li role="separator" class="divider"></li>
-                          <li><a id="toDashboard" href="php/dashboard.php">Your Canvases</a></li>
+                          <li><a id="toDashboard" href="../canvas/php/dashboard.php">Your Canvases</a></li>
                           <li role="separator" class="divider"></li>
                           <li><a id="logout" href="#">Log Out</a></li>
                         </ul>
