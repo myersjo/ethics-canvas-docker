@@ -30,7 +30,7 @@
      $date = $params['date_save_canvas'];
      $visibility = $params['visibility'];
 
-     $isPublic = ($visibility === "Public")?"TRUE":"FALSE";
+     $isPublic = ($visibility === "Public")?"1":"0";
 
      require_once('../../php/db_utils.php');
      $conn = db_connect(); // Connect to the database
@@ -45,7 +45,7 @@
      else { // User registered
        // Save this canvas
        $canvas_id = generateRandomString();
-       if(!mysqli_query($conn, "INSERT INTO canvas (canvas_id, user_id, canvas_name, canvas_date, is_public) VALUES ('$canvas_id', '$email', '$canvas_name', '$date', '$isPublic')")) {
+       if(!mysqli_query($conn, "INSERT INTO canvas(canvas_id, user_id, canvas_name, canvas_date, is_public) VALUES ('$canvas_id', '$email', '$canvas_name', '$date', '$isPublic')")) {
          echo 400; // Wrong query
          echo " #Wrong insert canvas query :/ ";
        }
