@@ -697,7 +697,30 @@
             </div>
 
                 <!-- FORM BUTTON BOX -->
-                <?php if (true) { ?>
+                <?php if (!empty($name))  { ?>
+                
+                   
+                
+                   
+              <div class="panel">
+                <div class="border">
+                  <div class="panel-heading">
+                      <h4> Temporary</h4>
+                  </div>
+                </div>
+                  <div class="border">
+                  <div class="panel-body">
+                      <p class="intro">If you do not know which canvas use, put your idea in this canvas</p>
+                       <label>Your Idea</label><br>
+                                         <p>
+                                             <textarea class="new_item expandable" rows="2" maxlength="100" data-limit-rows="true" data-autoresize type="text" name="new_item" placeholder="Write an idea here ..."></textarea>
+                                         </p>
+                    <a href="#" class="btn btn-default">Add</a>
+                      
+                  </div>
+                </div>
+              </div>
+         
                    
                   
                    <div class="tags">
