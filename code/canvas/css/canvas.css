@@ -92,6 +92,38 @@ a.logo img {
        transform: rotate(5deg);
        transform-origin: 51% top;
 }
+.tags input{
+    width: 100%;
+    outline: none;
+    border: 1px solid #eceff1;
+    border-radius: 4px;
+    padding: 0.45em;
+    float:left;
+}
+
+.tags label{
+    width: 100%;
+    outline: none;
+    border: 1px solid #eceff1;
+    border-radius: 7px;
+    padding: 0.45em;
+    background-color: #87AEE3;
+    float:left;
+    
+}
+.tags{
+    outline: none;
+    border: 1px solid #eceff1;
+    border-radius: 7px;
+    padding: 0.45em;
+    background-color: #87AEE3;
+       margin-top: 5px;
+       text-align: left;
+    width:25%;
+    height: 250px;
+    margin:0 auto;
+       
+}
 
 /*----------------------------------
    DROPDOWN MENU (User DASHBORD menu)
