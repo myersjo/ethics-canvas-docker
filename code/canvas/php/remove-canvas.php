@@ -5,6 +5,7 @@
 
  if(!isset($_POST['remove_canvas_ID'], $_SESSION['userlogin'])) {
    echo 400; // Missing parameters
+   echo "Missing parameters";
  }
  else {
    // Retrieve user credentials
@@ -17,6 +18,7 @@
    // Check if the canvas exists and belongs to the current user
    if(!($result = mysqli_query($conn, "SELECT canvas_id FROM canvas WHERE canvas_id = '$canvas_id' AND user_id = '$email'"))) {
       echo 400; // Wrong query
+      echo " Wrong select canvas query ";
    }
    else if(mysqli_num_rows($result) != 1) { // User not registered or duplicated
       echo 401;
@@ -24,9 +26,11 @@
    else { // Canvas exists: delete canvas
      if(!mysqli_query($conn, "DELETE FROM canvas WHERE canvas_id = '$canvas_id'")) {
        echo 400; // Wrong query
+       echo " Wrong delete from canvas query ";
      }
      if(!mysqli_query($conn, "DELETE FROM canvas_json WHERE canvas_id = '$canvas_id'")) {
        echo 400; // Wrong query
+       echo " Wrong delete from canvas_json query ";
      }
     //  else { // Canvas successfully deleted: remove json file
     //    unlink("../json/$canvas_id.json");
