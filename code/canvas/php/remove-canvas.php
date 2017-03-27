@@ -24,7 +24,11 @@
       echo 401;
    }
    else { // Canvas exists: delete canvas
-     if(!mysqli_query($conn, "DELETE FROM canvas WHERE canvas_id = '$canvas_id'")) {
+     if(!mysqli_query($conn, "DELETE FROM tag_relation WHERE canvas_id='$canvas_id'")) {
+       echo 400; // Wrong query
+       echo " Wrong delete from tag_relation query ";
+     }
+     if(!mysqli_query($conn, "DELETE FROM canvas WHERE canvas_id='$canvas_id'")) {
        echo 400; // Wrong query
        echo " Wrong delete from canvas query ";
      }
