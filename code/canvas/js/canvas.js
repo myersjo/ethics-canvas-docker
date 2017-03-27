@@ -505,8 +505,10 @@ $(function() {
      $("input[name=privacy]").on("click", function() {
          if ($(this).val() == "Private") {
             $('#share-with-users').slideDown(400);
+            $('.tags').css("height","350px")
          } else {
              $('#share-with-users').slideUp();
+             $('.tags').css("height","250px")
          }
      });
 

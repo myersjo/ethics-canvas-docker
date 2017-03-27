@@ -697,7 +697,7 @@
             </div>
 
                 <!-- FORM BUTTON BOX -->
-                <?php if (!empty($name)) { ?>
+                <?php if (true) { ?>
                    
                   
                    <div class="tags">
