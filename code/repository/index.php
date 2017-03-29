@@ -130,7 +130,7 @@
 
         <div class="row">
           <div class="col-lg-12">
-            <h2>Featured Canvases</h2>
+            <h2 id="content-heading">Featured Canvases</h2>
           </div>
         </div>
         <div class="row" id="canvases-row">
