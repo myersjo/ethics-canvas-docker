@@ -28,7 +28,7 @@ $(function() {
         $('body').find('#canvases-row').empty().append(resultHTML);
         colors();
       }
-      //console.log(resultHTML);
+      console.log(resultHTML);
     }); // end of $.getJSON
   }); // end of $('.search-box').on('submit' ...
 
