@@ -5,9 +5,12 @@ if (isset($_GET['current_canvas_id'])) {
   $canvas_id = $_GET['current_canvas_id'];
   $_SESSION['canvas_id'] = $canvas_id;
 
-  $user_id='';
+  $user_id;
   if (isset($_SESSION['userlogin'])) {
     $user_id = $_SESSION['userlogin'];
+  }
+  else {
+      $user_id = '';
   }
 
   require_once('../../php/db_utils.php');
