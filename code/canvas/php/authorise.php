@@ -36,7 +36,7 @@ if (isset($_GET['current_canvas_id'])) {
             else {
                 $users = mysqli_fetch_all($usersRes);
                 foreach($users as $user) {
-                    if ($user == $user_id) {
+                    if ($user['user_id'] == $user_id) {
                         echo 200;
                         return;
                     }
