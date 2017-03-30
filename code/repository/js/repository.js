@@ -14,7 +14,7 @@ $(function() {
       console.log("Canvases: " + JSON.stringify(returnedData) + "\n");
 
       $.each(canvases, function(key, value) {
-        resultHTML += '<div class="col-md-4"><div class="panel panel-default"><div class="panel-heading"><h4><i class="fa fa-fw fa-th"></i>' + value["canvas_name"] + '</h4></div><div class="panel-body"><h5>Tags:</h5><p">';
+        resultHTML += '<div class="col-md-4"><div class="panel panel-default" id="'+ key +'"><div class="panel-heading"><h4><i class="fa fa-fw fa-th"></i>' + value["canvas_name"] + '</h4></div><div class="panel-body"><h5>Tags:</h5><p">';
         $.each(value["tags"], function(i, tag) {
           resultHTML += ' ' + tag + ' ';
         });
@@ -52,6 +52,23 @@ $(function() {
             }
         });
     });
+
+    /*=============================================
+     Handling click on a canvas 
+    ===============================================*/
+    $('#canvases-row').on('click', '.panel', function(event) {
+        event.stopPropagation();
+        //The id of the canvas that the user clicked on to load
+        var canvas_ID = $(this).attr('id');
+        var url = '../canvas/php/utils.php';
+        $.post(url, {
+            canvas_ID: canvas_ID
+        }, function(data, status) {
+            if (data == 200) {
+                window.location.href = "../canvas/index.php";
+
+            }
+        });
 
 });
 
