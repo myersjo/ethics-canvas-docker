@@ -27,7 +27,7 @@ if (isset($_GET['current_canvas_id'])) {
                 echo 400; // Wrong query
             }
             else if (mysqli_num_rows($usersRes) < 1) {
-                unset($_SESSION['canvas_id']);
+                // unset($_SESSION['canvas_id']);
                 echo 401;
             }
             else {
@@ -38,7 +38,7 @@ if (isset($_GET['current_canvas_id'])) {
                         return;
                     }
                 }
-                unset($_SESSION['canvas_id']);
+                // unset($_SESSION['canvas_id']);
                 echo 401; // If this line is reached, user is not permitted to view the canvas
             }
         }
