@@ -76,10 +76,15 @@ $(function() {
         var params = 'current_canvas_id=' + current_canvas_id;
 
         var auth = 'php/authorise.php';
-        var authorised = false;
+        var authorised = true;
         $.get(auth, params, function (returnedVal) {
             if (returnedVal == 200) {
                 authorised = true;
+                console.log("authorised true");
+            }
+            else {
+                authorised = false;
+                console.log("authorised false");
             }
         });
         // var url= 'json/test_canvas.json';
