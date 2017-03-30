@@ -42,8 +42,11 @@ if (isset($_GET['current_canvas_id'])) {
                 echo 401; // If this line is reached, user is not permitted to view the canvas
             }
         }
+        mysqli_free_result($usersRes);
    }
+   mysqli_free_result($result);
 }
-else
+else {
   echo 401;
+}
 ?>
