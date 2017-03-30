@@ -30,7 +30,7 @@
         <!-- Google font -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
         <!-- App style -->
-        <link rel="stylesheet" type="text/css" href="css/canvas.css">
+        <link rel="stylesheet" type="text/css" href="../repository/css/canvas.css">
 
         <!-- php variables have to be retieved here as js variables -->
         <script type="text/javascript">
