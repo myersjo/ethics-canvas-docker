@@ -790,7 +790,7 @@
                               <a class="login-to-save"  href="../index.html">Sign up or login to save your canvas</a>
 				
                           </p>
-  <?php }?>
+                        <?php }?>
 
 
                         <!-- BEGIN EXPORT PDF -->

@@ -65,7 +65,7 @@ $(function() {
             canvas_ID: canvas_ID
         }, function(data, status) {
             if (data == 200) {
-                window.location.href = "../canvas/index.php";
+                window.location.href = "../canvas/index.php?id=" + canvas_ID;
 
             }
         });

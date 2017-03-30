@@ -58,7 +58,7 @@ $(function() {
         $.post(url, function(data, status) {
             if (data == 200) {
                 $('.user-profile').hide();
-                window.location.href="https://www.ethicscanvas.org";
+                window.location.href="../index.html";
             }
         });
     });
@@ -161,7 +161,7 @@ $(function() {
              }
              else {
                 console.log("authorised false");
-                window.location.href = "../repository/index.php";
+                window.location.href = "error.php";
             }
         });        
 
