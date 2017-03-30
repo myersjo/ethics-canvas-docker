@@ -41,8 +41,49 @@
 
     </head>
     <body>
+       <!-- Navigation -->
+       <nav class="navbar navbar-default navbar-fixed-top" role="navigation" >
+        <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../index.html">
+              <img src="../canvas/icons/logo-black-text.svg" alt="Ethics Canvas"/>
+            </a>
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="navbar-collapse">
+              <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="../index.html">Home</a>
+                </li>
+                <?php if (!empty($name)) { ?>
+                  <li class="dropdown" id="logged-in-dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $name; ?> <b class="caret"></b></a>
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                          <li><a id="toGuidelines" href="../download/handbook.pdf">Guidelines</a></li>
+                          <li role="separator" class="divider"></li>
+                          <li><a id="toRepository" href="../repository">Repository</a></li>
+                          <li role="separator" class="divider"></li>
+                          <li><a id="toDashboard" href="../canvas/php/dashboard.php">Your Canvases</a></li>
+                          <li role="separator" class="divider"></li>
+                          <li><a id="logout" href="#">Log Out</a></li>
+                        </ul>
+                  </li>
+                 <?php } ?>
+              </ul>
+          </div>
+          <!-- /.navbar-collapse -->
+        </div>
+      </nav> <!-- End of navbar-->
 
-        <div class="container-fluid">
+        <!-- Page Content -->
+      <div class="container-fluid">
             <div class="row">
                 <div class = "col-12-md">
                     <h1>Oops!</h1>
