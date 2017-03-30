@@ -92,7 +92,7 @@
                         <p>To view this canvas, ask the creator to share it with you</p>
                      <?php } else{?>
                         <p>You do not have permission to view this canvas.</p>
-                        <p>To view this canvas, <a href="../index.html/">log into</a> your account and ensure the creator has shared it with you</p>
+                        <p>To view this canvas, <a href="../index.html">log into</a> your account and ensure the creator has shared it with you</p>
                     <?php }?>
                 </div>
             </div>
