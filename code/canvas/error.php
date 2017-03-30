@@ -85,7 +85,7 @@
         <!-- Page Content -->
       <div class="container-fluid">
             <div class="row">
-                <div class = "col-12-md">
+                <div class = "col-md-12 col-md-offset-1">
                     <h1>Oops!</h1>
                     <?php if (!empty($name)) { ?>
                         <p>Sorry <?php echo $name; ?>, you do not have permission to view this canvas.</p>
