@@ -76,7 +76,7 @@ $(function() {
         var params = 'current_canvas_id=' + current_canvas_id;
 
         var auth = 'php/authorise.php';
-        var authorised = true;
+        var authorised;
         $.get(auth, params, function (returnedVal) {
             if (returnedVal == 200) {
                 authorised = true;
@@ -89,7 +89,7 @@ $(function() {
         });
         // var url= 'json/test_canvas.json';
 
-        if (authorised) {
+        if (authorised == true) {
             // get the saved ISON object in the sendJSON.text file
             $.getJSON(url, params, function(returnedObj) {
 
