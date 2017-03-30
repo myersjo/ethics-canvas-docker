@@ -3,7 +3,11 @@
   if (isset($_SESSION['userlogin'], $_SESSION['userfirstname'])) {
     $email = $_SESSION['userlogin'];
     $name = $_SESSION['userfirstname'];
-    if (isset($_SESSION['canvas_id'])) {
+    if (isset($_GET['id'])) {
+        $canvas_id = $_GET['id'];
+        $_SESSION['canvas_id'] = $canvas_id;
+    }
+    else if (isset($_SESSION['canvas_id'])) {
       $canvas_id = $_SESSION['canvas_id'];
     }
   }
