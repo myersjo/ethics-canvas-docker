@@ -23,7 +23,7 @@ if (isset($_GET['current_canvas_id'])) {
     echo 400;
    } else {
        $visiblity = mysqli_fetch_assoc($result);
-        if ($visiblity["is_public"] == 1 || $visiblity["user_id"] == $user_id) {
+        if (($visiblity["is_public"] == 1) || ($visiblity["user_id"] == $user_id)) {
             echo 200; // Canvas is public or user is canvas creator
         } else {
             if(!($usersRes = mysqli_query($conn, "SELECT user_id FROM user_canvas_visibility WHERE canvas_id = '$canvas_id'"))) {
@@ -44,8 +44,8 @@ if (isset($_GET['current_canvas_id'])) {
                 // unset($_SESSION['canvas_id']);
                 echo 401; // If this line is reached, user is not permitted to view the canvas
             }
+            mysqli_free_result($usersRes);
         }
-        mysqli_free_result($usersRes);
    }
    mysqli_free_result($result);
 }
