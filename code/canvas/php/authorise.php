@@ -38,7 +38,7 @@ if (isset($_GET['current_canvas_id'])) {
                 foreach($users as $user) {
                     if ($user['user_id'] == $user_id) {
                         echo 200;
-                        return;
+                        // return;
                     }
                 }
                 // unset($_SESSION['canvas_id']);
