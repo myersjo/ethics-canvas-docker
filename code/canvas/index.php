@@ -705,45 +705,45 @@
                 
                    
                 
-                   
-              <div class="panel">
-                <div class="border">
-                  <div class="panel-heading">
-                      <h4> Temporary</h4>
-                  </div>
-                </div>
-                  <div class="border">
-                  <div class="panel-body">
-                      <p class="intro">If you do not know which canvas use, put your idea in this canvas</p>
-                       <label>Your Idea</label><br>
-                                         <p>
-                                             <textarea class="new_item expandable" rows="2" maxlength="100" data-limit-rows="true" data-autoresize type="text" name="new_item" placeholder="Write an idea here ..."></textarea>
-                                         </p>
-                    <a href="#" class="btn btn-default">Add</a>
-                      
-                  </div>
-                </div>
-              </div>
-         
-                   
-                  
-                   <div class="tags">
-                        <label for="tags">
-                        <h4>Tags: </h4>
-                        <input type="text" name="tags" id="tags" title="Enter tags" placeholder="Enter tags..."/>
-                        </label>
-                        <h4>Visibility Settings: </h4>
-                      
-                                <label><input type="radio" name="privacy" value="Public" id="Public" title="Select if you would like to share canvas to repository" checked="checked"/>Public</label><br><br>
-                                <label><input type="radio" name="privacy" value="Private" id="Private" title="Select if you would not like to share canvas" />Private</label>
-                                <br>
-                                <p id="share-with-users">
-                                    <label for="share-with">Enter the email addresses of users you would like to share with:</label><br><br>
-                                    <input type="text" id="share-with" name="share-with" value="" placeholder="Enter email addresses..."><br>
-                                 </p>
-                
+                <div class="row">
+                    <div class="col-md-5 col-md-offset-1">
+                        <div class="panel">
+                            <div class="border">
+                                <div class="panel-heading">
+                                    <h4> Temporary</h4>
+                                </div>
+                            </div>
+                            <div class="border">
+                                <div class="panel-body">
+                                    <p class="intro">If you do not know which canvas use, put your idea in this canvas</p>
+                                    <label>Your Idea</label><br>
+                                        <p>
+                                            <textarea class="new_item expandable" rows="2" maxlength="100" data-limit-rows="true" data-autoresize type="text" name="new_item" placeholder="Write an idea here ..."></textarea>
+                                        </p>
+                                    <a href="#" class="btn btn-default">Add</a>
+                                    
+                                </div> <!-- End of class="panel-body" -->
+                            </div> <!-- End of class="border" -->
+                        </div> <!-- End of class="panel" -->
                     </div>
-                   <?php } ?>
+                    <div class="col-md-5">
+                        <div class="tags">
+                            <label for="tags">
+                                <h4>Tags: </h4>
+                                <input type="text" name="tags" id="tags" title="Enter tags" placeholder="Enter tags..."/>
+                            </label>
+                            <h4>Visibility Settings: </h4>
+                            <label><input type="radio" name="privacy" value="Public" id="Public" title="Select if you would like to share canvas to repository" checked="checked"/>Public</label><br><br>
+                            <label><input type="radio" name="privacy" value="Private" id="Private" title="Select if you would not like to share canvas" />Private</label>
+                            <br>
+                            <p id="share-with-users">
+                                <label for="share-with">Enter the email addresses of users you would like to share with:</label><br><br>
+                                <input type="text" id="share-with" name="share-with" value="" placeholder="Enter email addresses..."><br>
+                            </p>
+                        </div>
+                    </div>
+                </div> <!-- end of row -->
+                <?php } ?>
                    
                 
                    
