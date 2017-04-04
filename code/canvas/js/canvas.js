@@ -70,7 +70,15 @@ $(function() {
 
     // if a canvas is chosen by the user to be loaded
     if (current_canvas_id !== '') {
-        loadCanvas();
+        var params = 'current_canvas_id=' + current_canvas_id;
+        var auth = 'php/authorise.php';
+        $.get(auth, params, function (returnedVal) {
+            if (returnedVal == 200) {
+                $(function() {
+                    loadCanvas();
+                });
+            }
+        });
     }
 
     function loadCanvas() {
@@ -78,7 +86,7 @@ $(function() {
         var url = 'php/load-canvas.php'
         var params = 'current_canvas_id=' + current_canvas_id;
 
-        var auth = 'php/authorise.php';
+        // var auth = 'php/authorise.php';
         $.get(auth, params, function (returnedVal) {
             if (returnedVal == 200) {
                 // get the saved ISON object in the sendJSON.text file
