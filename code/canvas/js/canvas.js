@@ -514,6 +514,7 @@ $(function() {
             $('.tags').css("height","350px")
          } else {
              $('#share-with-users').slideUp();
+             $('#share-with').val(value);
              $('.tags').css("height","250px")
          }
      });
