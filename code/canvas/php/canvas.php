@@ -16,7 +16,7 @@ $tags = explode(" ", $tags_str);
 if (empty($post_data)) {
     echo 'Hmm... I did NOT get any data posted by AJAX.';
 }
-if (!empty($post_data)) {
+if (!empty($post_data) && $canvas_id_data != 403) {
   echo 'Awesome! got the json info :)';
     //$dir = 'YOUR-SERVER-DIRECTORY/files';
     //$file = uniqid().getmypid();
@@ -91,5 +91,8 @@ if (!empty($post_data)) {
     // Return canvas_id and save it in the current session
     $_SESSION['canvas_id'] = $canvas_id_data;
     echo $canvas_id_data;
+}
+else {
+  echo 400;
 }
 ?>
