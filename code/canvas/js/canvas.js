@@ -510,7 +510,6 @@ $(function() {
      ===========================================*/
      $("input[name=privacy]").on("click", function() {
          if ($(this).val() == "Private") {
-            $('#share-with-users').slideDown(400);
             // $('.tags').css("height","350px")
             $('.tags').animate({
                 height: "350px"
@@ -518,6 +517,7 @@ $(function() {
                 queue: false,
                 duration: 400
             });
+            $('#share-with-users').slideDown(400);
          } else {
              $('#share-with-users').slideUp();
              $('#share-with').val("");
@@ -526,7 +526,7 @@ $(function() {
                 height: "250px"
             }, {
                 queue: false,
-                duration: 400
+                duration: 200
             });
          }
      });
