@@ -511,11 +511,23 @@ $(function() {
      $("input[name=privacy]").on("click", function() {
          if ($(this).val() == "Private") {
             $('#share-with-users').slideDown(400);
-            $('.tags').css("height","350px")
+            // $('.tags').css("height","350px")
+            $('.tags').animate({
+                height: "350px"
+            }, {
+                queue: false,
+                duration: 400
+            });
          } else {
              $('#share-with-users').slideUp();
              $('#share-with').val("");
-             $('.tags').css("height","250px")
+            //  $('.tags').css("height","250px")
+            $('.tags').animate({
+                height: "250px"
+            }, {
+                queue: false,
+                duration: 400
+            });
          }
      });
 
