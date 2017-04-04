@@ -22,6 +22,7 @@
    if(isset($_SESSION['canvas_id'])) {
      // Canvas already exists. Return canvas_id to overwrite JSON file.
      $canvas_id = $_SESSION['canvas_id'];
+     $email = $params['email_save_canvas'];
 
      if(!($result = mysqli_query($conn, "SELECT * FROM canvas WHERE user_id = '$email' AND canvas_id='$canvas_id'"))) {
        echo 400; // Wrong query
