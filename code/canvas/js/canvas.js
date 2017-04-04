@@ -74,9 +74,7 @@ $(function() {
         var auth = 'php/authorise.php';
         $.get(auth, params, function (returnedVal) {
             if (returnedVal == 200) {
-                $(function() {
-                    loadCanvas();
-                });
+                loadCanvas();
             }
         });
     }
