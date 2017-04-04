@@ -59,10 +59,6 @@ if (!empty($post_data) && $canvas_id_data != 403) {
       } else if (mysqli_num_rows($tag_id_result) > 0) {
         $tagRow = mysqli_fetch_assoc($tag_id_result);
         $tag_id = $tagRow['id'];
-        echo "Tag ID: ";
-        echo $tag_id;
-        echo "Canvas ID: ";
-        echo $canvas_id_data;
         if(!($tag_rel_result = mysqli_query($conn, "INSERT INTO tag_relation(tag_id, canvas_id) VALUES('$tag_id', '$canvas_id_data') ON DUPLICATE KEY UPDATE tag_id=VALUES(tag_id), canvas_id=VALUES(canvas_id)"))) {
           echo 400; // Wrong query
           echo " #Wrong insert tag relation query :/ ";
@@ -77,7 +73,6 @@ if (!empty($post_data) && $canvas_id_data != 403) {
         echo " #Wrong select user username query :/ ";
       } else if (mysqli_num_rows($get_user_result) == 0) {
         echo 401; // User doesn't exist
-        echo "$user";
       } else {
         if(!($ins_user_rel_result = mysqli_query($conn, "INSERT INTO user_canvas_visibility(user_id, canvas_id) VALUES('$user', '$canvas_id_data') ON DUPLICATE KEY UPDATE user_id=VALUES(user_id), canvas_id=VALUES(canvas_id)"))) {
           echo 400; // Wrong query
