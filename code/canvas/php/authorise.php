@@ -34,24 +34,12 @@ if (isset($_GET['current_canvas_id'])) {
                 echo 401;
             }
             else {
-                // echo ' here ';
                 while ($user = mysqli_fetch_assoc($usersRes)) {
-                    // echo "Session id: '".$user_id."'";
-                    // echo "DB id: '".$user['user_id']."'";
                     if ($user['user_id'] == $user_id) {
-                    // if (strcmp($user['user_id'], $user_id)==0) {
                         echo 200;
                         return;
                     }
                 }
-                // $users = mysqli_fetch_all($usersRes, MYSQLI_BOTH);
-                // echo ' users ';
-                // foreach($users as $user) {
-                //     if ($user['user_id'] == $user_id) {
-                //         echo 200;
-                //         return;
-                //     }
-                // }
                 // unset($_SESSION['canvas_id']);
                 echo 401; // If this line is reached, user is not permitted to view the canvas
             }
