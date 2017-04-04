@@ -17,6 +17,8 @@ $(function() {
       }
     });
 
+    // canvas-box
+
 
     /*================================
        Serialize Form to JSON
@@ -68,12 +70,12 @@ $(function() {
     otherwise load an empty canvas
     ==========================================*/
 
-    // if a canvas is chosen by the user to be loaded
+    // if a canvas is chosen by the user to be loaded, authorise and load or redirect
     if (current_canvas_id !== '') {
         var params = 'current_canvas_id=' + current_canvas_id;
         var auth = 'php/authorise.php';
         $.get(auth, params, function (returnedVal) {
-            if (returnedVal == 200) {
+            if (returnedVal == 200) {   // canvas is public or user is authorised to view
                 loadCanvas();
             }
             else {
@@ -86,93 +88,83 @@ $(function() {
         // var url = 'json/' + current_canvas_id + '.json';
         var url = 'php/load-canvas.php'
         var params = 'current_canvas_id=' + current_canvas_id;
+        // get the saved JSON object in the database
+        $.getJSON(url, params, function(returnedObj) {
 
-        // var auth = 'php/authorise.php';
-        // $.get(auth, params, function (returnedVal) {
-            // if (returnedVal == 200) {
-                // get the saved ISON object in the sendJSON.text file
-                $.getJSON(url, params, function(returnedObj) {
+            //Display the json data in the html
 
-                    //Display the json data in the html
+            var itemListHTML = '';
+            // var returnedJSON = JSON.parse(returnedObj);
+            //iterate through the object
+            $.each(returnedObj, function(key, value) {
+                /* project name and tem field*/
+                if (key === 'field_00[]') {
 
-                    var itemListHTML = '';
-                    // var returnedJSON = JSON.parse(returnedObj);
-                    //iterate through the object
-                    $.each(returnedObj, function(key, value) {
-                        /* project name and tem field*/
-                        if (key === 'field_00[]') {
-
-                            $('.form-header').find('input.proj_title').val(value[
-                                0]);
-                            $('.form-header').find('input.proj_date').val(value[1]);
+                    $('.form-header').find('input.proj_title').val(value[
+                        0]);
+                    $('.form-header').find('input.proj_date').val(value[1]);
 
 
-                        } // end of if(key === 'field_00[]')
-                        else if(key === 'share-with') {
-                            if(value.length > 0) {
-                                $('input[name=privacy][value=Private').prop('checked', true);
-                                $('#share-with-users').show();
-                                $('#share-with').val(value);
-                            }
-                        }
-                        else if(key === 'tags') {
-                            $('#tags').val(value);
-                        }
-                        else if (key !== 'new_item') {
+                } // end of if(key === 'field_00[]')
+                else if(key === 'share-with') {
+                    if(value.length > 0) {
+                        $('input[name=privacy][value=Private').prop('checked', true);
+                        $('#share-with-users').show();
+                        $('#share-with').val(value);
+                    }
+                }
+                else if(key === 'tags') {
+                    $('#tags').val(value);
+                }
+                else if (key !== 'new_item') {
 
-                            if ($.type(value) === "array") {
-                                $.each(value, function(i, itm) {
+                    if ($.type(value) === "array") {
+                        $.each(value, function(i, itm) {
 
-                                    /** FIX DUPLICATIONs in the canvas when importing
-                                    /*  Importing will override the canvas content
-                                    clear the canvas by giving en emty content to the ul list (remove previous list items) */
-                                    $('.canvas-form').find('.card').filter('.' +
-                                        key.substr(0, 8)).find('ul.item_list').html(
-                                        '');
+                            /** FIX DUPLICATIONs in the canvas when importing
+                            /*  Importing will override the canvas content
+                            clear the canvas by giving en emty content to the ul list (remove previous list items) */
+                            $('.canvas-form').find('.card').filter('.' +
+                                key.substr(0, 8)).find('ul.item_list').html(
+                                '');
 
-                                    /* Create a list item with each value item
-                                    and give it text area with the name attribute as the "key" (right field name) */
+                            /* Create a list item with each value item
+                            and give it text area with the name attribute as the "key" (right field name) */
 
-                                    itemListHTML +=
-                                        '<li class="added_item"><span class="handle glyphicon glyphicon-th"></span><textarea maxlength="100" class="expandable" rows="3" data-limit-rows="true"  data-autoresize  name="' +
-                                        key + '">' + itm +
-                                        '</textarea><span class="remove glyphicon glyphicon-remove-circle"></span></li>';
+                            itemListHTML +=
+                                '<li class="added_item"><span class="handle glyphicon glyphicon-th"></span><textarea maxlength="100" class="expandable" rows="3" data-limit-rows="true"  data-autoresize  name="' +
+                                key + '">' + itm +
+                                '</textarea><span class="remove glyphicon glyphicon-remove-circle"></span></li>';
 
-                                }); //end of $.each(value ...
-                            } // end of if($.type(value)==="array")
-                            else { // a single value string
-                                itemListHTML +=
-                                    '<li class="added_item"><span class="handle glyphicon glyphicon-th"></span><textarea maxlength="100" class="expandable" rows="3" data-limit-rows="true"  data-autoresize  name="' +
-                                    key + '">' + value +
-                                    '</textarea><span class="remove glyphicon glyphicon-remove-circle"></span></li>';
-                            }
-                            /* Append the created list items/textatreas to the right field based on the "key"*/
-                            /* the str.substr(start,length)
-                            is used to remove the [] from the end of the "key"name (for each field. also the name attributes accociated with each fiels) so that we can select the right class (right field) and append the created lists to the right field
-                            so field names/key/name attribute will tuen into class names: ex:  field_1[] becomes field_1
-                            */
-                            // find the field by its class names besed on the current key name
-                            // append the created list of item values to that right field
+                        }); //end of $.each(value ...
+                    } // end of if($.type(value)==="array")
+                    else { // a single value string
+                        itemListHTML +=
+                            '<li class="added_item"><span class="handle glyphicon glyphicon-th"></span><textarea maxlength="100" class="expandable" rows="3" data-limit-rows="true"  data-autoresize  name="' +
+                            key + '">' + value +
+                            '</textarea><span class="remove glyphicon glyphicon-remove-circle"></span></li>';
+                    }
+                    /* Append the created list items/textatreas to the right field based on the "key"*/
+                    /* the str.substr(start,length)
+                    is used to remove the [] from the end of the "key"name (for each field. also the name attributes accociated with each fiels) so that we can select the right class (right field) and append the created lists to the right field
+                    so field names/key/name attribute will tuen into class names: ex:  field_1[] becomes field_1
+                    */
+                    // find the field by its class names besed on the current key name
+                    // append the created list of item values to that right field
 
-                            $('.canvas-form').find('.card').filter('.' + key.substr(
-                                0, 8)).find('ul.item_list').append(itemListHTML);
-                            /*$('form').find('.card').filter('.field_1').find('ul.item_list').append(itemListHTML); */
-                            /* !! Empty the item list after each count of "key" so that the previous item lists from the other fields (associated with the previous key) don't get added up to the item list of other fields */
-                            itemListHTML = '';
+                    $('.canvas-form').find('.card').filter('.' + key.substr(
+                        0, 8)).find('ul.item_list').append(itemListHTML);
+                    /*$('form').find('.card').filter('.field_1').find('ul.item_list').append(itemListHTML); */
+                    /* !! Empty the item list after each count of "key" so that the previous item lists from the other fields (associated with the previous key) don't get added up to the item list of other fields */
+                    itemListHTML = '';
 
-                        } //end of   if(key !== ...
-                    }); //end of $.each(returnedObj...
+                } //end of   if(key !== ...
+            }); //end of $.each(returnedObj...
 
-                }); // end of $.getJSON
-                /*--- fix the heights after importing  ---*/
-                fixHeights();
-                /*--------------------------------*/
-            
-            // }
-            // else {
-            //     window.location.href = "error.php";
-            // }
-        // });     
+        }); // end of $.getJSON
+        /*--- fix the heights after importing  ---*/
+        fixHeights();
+        /*--------------------------------*/    
     }   
 
 
@@ -325,6 +317,7 @@ $(function() {
     //<textarea data-limit-rows="true" ></textarea>
     $('.card').on('keypress', 'textarea[data-limit-rows=true]', function(
         event) {
+        event.preventDefault(); // stop new line character being added to the text area
         var textarea = $(this);
         var text = textarea.val();
 
