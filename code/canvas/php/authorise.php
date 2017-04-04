@@ -34,11 +34,12 @@ if (isset($_GET['current_canvas_id'])) {
                 echo 401;
             }
             else {
+                echo 'else';
                 $users = mysqli_fetch_all($usersRes);
                 foreach($users as $user) {
                     if ($user['user_id'] == $user_id) {
                         echo 200;
-                        // return;
+                        return;
                     }
                 }
                 // unset($_SESSION['canvas_id']);
