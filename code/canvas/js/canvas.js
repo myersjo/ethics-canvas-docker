@@ -1,18 +1,5 @@
 /* Contains all the Javascript logic of the canvas and its main features: save, export and share */
 
-// if a canvas is chosen by the user to be loaded
-if (current_canvas_id !== '') {
-    var params = 'current_canvas_id=' + current_canvas_id;
-    var auth = 'php/authorise.php';
-    $.get(auth, params, function (returnedVal) {
-        if (returnedVal == 200) {
-            $(function() {
-                loadCanvas();
-            });
-        }
-    });
-}
-
 $(function() {
     /*This piece of code is for making the column-count and column-gap CSS to work in Firefox*/
     document.getElementById("8-5-col-layout").style.MozColumnCount =
@@ -81,7 +68,18 @@ $(function() {
     otherwise load an empty canvas
     ==========================================*/
 
-    
+    // if a canvas is chosen by the user to be loaded
+    if (current_canvas_id !== '') {
+        var params = 'current_canvas_id=' + current_canvas_id;
+        var auth = 'php/authorise.php';
+        $.get(auth, params, function (returnedVal) {
+            if (returnedVal == 200) {
+                $(function() {
+                    loadCanvas();
+                });
+            }
+        });
+    }
 
     function loadCanvas() {
         // var url = 'json/' + current_canvas_id + '.json';
