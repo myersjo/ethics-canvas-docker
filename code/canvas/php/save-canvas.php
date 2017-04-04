@@ -22,13 +22,21 @@
    if(isset($_SESSION['canvas_id'])) {
      // Canvas already exists. Return canvas_id to overwrite JSON file.
      $canvas_id = $_SESSION['canvas_id'];
-     $visibility = $params['visibility'];
-     $isPublic = ($visibility === "Public")?"1":"0";
-     if(!($result = mysqli_query($conn, "UPDATE canvas SET is_public='$isPublic' WHERE canvas_id='$canvas_id'"))) {
+
+     if(!($result = mysqli_query($conn, "SELECT * FROM canvas WHERE user_id = '$email' AND canvas_id='$canvas_id'"))) {
        echo 400; // Wrong query
-       echo " Wrong update canvas visibility query ";
      }
-     echo $_SESSION['canvas_id'];
+     else if(mysqli_num_rows($result) != 1) { // User not creator of canvas
+       echo 403; 
+     } else { // User is creator
+        $visibility = $params['visibility'];
+        $isPublic = ($visibility === "Public")?"1":"0";
+        if(!($result = mysqli_query($conn, "UPDATE canvas SET is_public='$isPublic' WHERE canvas_id='$canvas_id'"))) {
+          echo 400; // Wrong query
+          echo " Wrong update canvas visibility query ";
+        }
+        echo $_SESSION['canvas_id'];
+     }
    }
 
    else { // New canvas in the database

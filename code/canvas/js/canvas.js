@@ -455,12 +455,13 @@ $(function() {
       $.post(save_reg_url, {
           save_canvas: save_canvas
       }, function(data, status) {
-          //the returned data is successful, is the $canvas_id
+          //the returned data, if successful, is the $canvas_id
           var canvas_id = data;
-          // send this canvas_id with the next ajax requestedto the php/canvas.php file and use it as the name of the json file to be saved
+          // send this canvas_id with the next ajax requestedto the php/canvas.php file and use it as the canvas_id for the database
 
-          // Give the user feedback that the canvas is saved
-          if (data !== 400 || data !== 401) {
+          // Check that the user is logged in and is the creator
+          if (data !== 400 || data !== 401 || data !== 403) {
+              // Give the user feedback that the canvas is saved
               if ($('.imp-exp-btn ').find(".save-canvas-feedback") !== null) {
                   $('.imp-exp-btn ').find(".save-canvas-feedback").remove();
 
