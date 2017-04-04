@@ -460,8 +460,7 @@ $(function() {
           // send this canvas_id with the next ajax requestedto the php/canvas.php file and use it as the canvas_id for the database
 
           // Check that the user is logged in and is the creator
-          console.log(data != 403);
-          if (data !== 400 || data !== 401 || data !== 403) {
+          if (data !== 400 || data !== 401 || data != 403) {
               // Give the user feedback that the canvas is saved
               if ($('.imp-exp-btn ').find(".save-canvas-feedback") !== null) {
                   $('.imp-exp-btn ').find(".save-canvas-feedback").remove();
