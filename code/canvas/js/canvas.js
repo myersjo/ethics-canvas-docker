@@ -70,7 +70,10 @@ $(function() {
 
     // if a canvas is chosen by the user to be loaded
     if (current_canvas_id !== '') {
+        loadCanvas();
+    }
 
+    function loadCanvas() {
         // var url = 'json/' + current_canvas_id + '.json';
         var url = 'php/load-canvas.php'
         var params = 'current_canvas_id=' + current_canvas_id;
@@ -78,8 +81,6 @@ $(function() {
         var auth = 'php/authorise.php';
         $.get(auth, params, function (returnedVal) {
             if (returnedVal == 200) {
-                console.log("authorised true");
-
                 // get the saved ISON object in the sendJSON.text file
                 $.getJSON(url, params, function(returnedObj) {
 
@@ -157,16 +158,13 @@ $(function() {
                 /*--- fix the heights after importing  ---*/
                 fixHeights();
                 /*--------------------------------*/
-
-             }
-             else {
-                console.log("authorised false");
+            
+            }
+            else {
                 window.location.href = "error.php";
             }
-        });        
-
-    }
-
+        });     
+    }   
 
 
     /*=======================================
