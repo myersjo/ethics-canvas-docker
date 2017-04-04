@@ -76,6 +76,9 @@ $(function() {
             if (returnedVal == 200) {
                 loadCanvas();
             }
+            else {
+                window.location.href = "error.php";
+            }
         });
     }
 
@@ -85,8 +88,8 @@ $(function() {
         var params = 'current_canvas_id=' + current_canvas_id;
 
         // var auth = 'php/authorise.php';
-        $.get(auth, params, function (returnedVal) {
-            if (returnedVal == 200) {
+        // $.get(auth, params, function (returnedVal) {
+            // if (returnedVal == 200) {
                 // get the saved ISON object in the sendJSON.text file
                 $.getJSON(url, params, function(returnedObj) {
 
@@ -165,11 +168,11 @@ $(function() {
                 fixHeights();
                 /*--------------------------------*/
             
-            }
-            else {
-                window.location.href = "error.php";
-            }
-        });     
+            // }
+            // else {
+            //     window.location.href = "error.php";
+            // }
+        // });     
     }   
 
 
