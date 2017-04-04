@@ -111,6 +111,7 @@ $(function() {
                         $('input[name=privacy][value=Private').prop('checked', true);
                         $('#share-with-users').show();
                         $('#share-with').val(value);
+                        $('.tags').css("height","350px")
                     }
                 }
                 else if(key === 'tags') {
