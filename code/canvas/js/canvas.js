@@ -464,50 +464,41 @@ $(function() {
               // Give the user feedback that the canvas is saved
               if ($('.imp-exp-btn ').find(".save-canvas-feedback") !== null) {
                   $('.imp-exp-btn ').find(".save-canvas-feedback").remove();
-
-
               }
               $('.canvas-form').find('.imp-exp-btn ').append('<div class="save-canvas-feedback"><p><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Your canvas is saved in your dashbord</p></div>');
               // remove the canvas is saves message as soon as user changes the canvas
               $('.canvas-form').on("change keyup", 'textarea', function() {
                   $('.imp-exp-btn ').find(".save-canvas-feedback").remove();
               });
+                //For the second AJAX request:
+                /* B: Exporting the form data json to a database */
+
+                //Make the JSON object into a JSON string
+                var JSONstrObj = JSON.stringify($('.canvas-form').serializeObject());
+                var url = "php/canvas.php";
+                var share_with = $('#share-with').val();
+                var tags = $('#tags').val();
+                /*  Post the JSON stringified object to the php file
+                (the php script will save it in a database )*/
+                //also, send the canvas_id to use as the key
+                $.post(url, {
+                    JSONstrObj: JSONstrObj,
+                    canvas_id: canvas_id,
+                    share_with: share_with,
+                    tags: tags
+                }, function(data, status) {
+                    console.log(
+                        'Response from php when sending the form json object: \n' +
+                        'data:' + data + '\n status: ' + status);
+                }).fail(function(jqXHR) {
+                    console.log("Error " + jqXHR.status + ' ' + jqXHR.statustext);
+                });
+                /*########################################################*/
           } else {
 
               $('.canvas-form').find('.imp-exp-btn ').append('<div class="save-canvas-feedback-fail"><p>Oh! We could not save your canvas. Please try again or contact us at hello@ethicscanvas.org</p></div>');
           }
-          //For the second AJAX request:
-          /*#########################################################*/
-
-          /*----------------------------------------
-            B: Exporting the form data json to a database
-           ----------------------------------------*/
-
-          // $('#result').text(JSON.stringify($('.canvas-form').serializeObject()));
-
-
-          //Make the JSON object into a JSON string
-          var JSONstrObj = JSON.stringify($('.canvas-form').serializeObject());
-          var url = "php/canvas.php";
-          var share_with = $('#share-with').val();
-          var tags = $('#tags').val();
-          /*  Post the JSON stringified object to the php file
-          (the php script will save it in a database )*/
-          //also, send the canvas_id to use as the key
-          $.post(url, {
-              JSONstrObj: JSONstrObj,
-              canvas_id: canvas_id,
-              share_with: share_with,
-              tags: tags
-          }, function(data, status) {
-              console.log(
-                  'Response from php when sending the form json object: \n' +
-                  'data:' + data + '\n status: ' + status);
-          }).fail(function(jqXHR) {
-              console.log("Error " + jqXHR.status + ' ' + jqXHR.statustext);
-          });
-
-          /*########################################################*/
+          
 
       }).fail(function(jqXHR) {
           console.log("Error " + jqXHR.status + ' ' + jqXHR.statustext);
