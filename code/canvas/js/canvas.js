@@ -317,14 +317,14 @@ $(function() {
     //<textarea data-limit-rows="true" ></textarea>
     $('.card').on('keypress', 'textarea[data-limit-rows=true]', function(
         event) {
-        event.preventDefault(); // stop new line character being added to the text area
-        var textarea = $(this);
-        var text = textarea.val();
 
         /* The jQuery event.which -->
          Returns which keyboard key was pressed: */
         // if the enter is pressed, event.which === 13
         if (event.which === 13) {
+            event.preventDefault(); // stop new line character being added to the text area
+            var textarea = $(this);
+            var text = textarea.val();
             var new_item = $(this).closest('.card').find('.new_item').val();
             var new_item_height = $(this).closest('.card').find('.new_item').height();
             //number of items are in the list
