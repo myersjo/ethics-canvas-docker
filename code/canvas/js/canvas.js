@@ -112,6 +112,7 @@ $(function() {
                         $('#share-with-users').show();
                         $('#share-with').val(value);
                         $('.tags').css("height","350px")
+                        $('.privacy').css("height","350px")
                     }
                 }
                 else if(key === 'tags') {
@@ -518,11 +519,23 @@ $(function() {
                 duration: 400
             });
             $('#share-with-users').slideDown(400);
+            $('.privacy').animate({
+                height: "350px"
+            }, {
+                queue: false,
+                duration: 400
+            });
          } else {
              $('#share-with-users').slideUp();
              $('#share-with').val("");
             //  $('.tags').css("height","250px")
             $('.tags').animate({
+                height: "250px"
+            }, {
+                queue: false,
+                duration: 200
+            });
+            $('.privacy').animate({
                 height: "250px"
             }, {
                 queue: false,
