@@ -707,7 +707,7 @@
                 
                 <div class="row">
                     <div class="col-md-5 col-md-offset-1">
-                        <div class="panel">
+                        <div class="privacy panel">
                             <div class="border">
                                 <div class="panel-heading">
                                     <h4> Temporary</h4>
