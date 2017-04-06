@@ -717,10 +717,10 @@
                                 <div class="panel-body">
                                     <p class="intro">If you do not know which canvas use, put your idea in this canvas</p>
                                     <label>Your Idea</label><br>
-                                        <p>
-                                            <textarea class="new_item expandable" rows="2" maxlength="100" data-limit-rows="true" data-autoresize type="text" name="new_item" placeholder="Write an idea here ..."></textarea>
-                                        </p>
-                                    <a href="#" class="btn btn-default">Add</a>
+                                    <p>
+                                        <textarea class="new_item expandable" rows="3" maxlength="100" data-limit-rows="true" data-autoresize type="text" name="temp-space" id="temp-space" placeholder="Write an idea here ..."></textarea>
+                                    </p>
+                                    <!--<a href="#" class="btn btn-default">Add</a>-->
                                     
                                 </div> <!-- End of class="panel-body" -->
                             </div> <!-- End of class="border" -->

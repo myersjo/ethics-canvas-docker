@@ -114,6 +114,9 @@ $(function() {
                         $('.tags').css("height","350px")
                     }
                 }
+                else if(key === 'temp-space') {
+                    $('#temp-space').val(value);
+                }
                 else if(key === 'tags') {
                     $('#tags').val(value);
                 }
