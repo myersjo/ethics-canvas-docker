@@ -7,9 +7,6 @@ $canvas_id_data = $_POST['canvas_id'];
 $share_with_str = $_POST['share_with'];
 $tags_str = $_POST['tags'];
 
-$users = explode(" ", $share_with_str);
-$tags = explode(",", $tags_str);
-
 // $filename ='../json/'.$canvas_id_data.'.json';
 // $handle = fopen($filename, "w");
 
@@ -25,6 +22,13 @@ if (!empty($post_data) && $canvas_id_data != 403) {
     // fwrite($handle, $post_data);
     // Close the file
     //  fclose($handle);
+
+    $users = explode(" ", $share_with_str);
+    $tags = explode(",", $tags_str);
+    foreach($tags as $tag) {
+      trim($tag);
+      strtolower($tag);
+    }
 
     require_once('../../php/db_utils.php');
     $conn = db_connect(); // Connect to the database
