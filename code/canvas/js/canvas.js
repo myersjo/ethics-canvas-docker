@@ -526,7 +526,7 @@ $(function() {
              $('#share-with').val("");
             //  $('.tags').css("height","250px")
             $('.tags').animate({
-                height: "250px"
+                height: "284px"
             }, {
                 queue: false,
                 duration: 200

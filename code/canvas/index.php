@@ -704,7 +704,7 @@
                 <?php if (!empty($name))  { ?>
                 
                    
-                
+                <br>
                 <div class="row">
                     <div class="col-md-5 col-md-offset-1">
                         <div class="temp-space panel">
@@ -733,8 +733,9 @@
                                 <input type="text" name="tags" id="tags" title="Enter tags" placeholder="Enter tags..."/>
                             </label>
                             <h4>Visibility Settings: </h4>
-                            <label><input type="radio" name="privacy" value="Public" id="Public" title="Select if you would like to share canvas to repository" checked="checked"/>Public</label><br><br>
-                            <label><input type="radio" name="privacy" value="Private" id="Private" title="Select if you would not like to share canvas" />Private</label>
+                            <label for="Public"><input type="radio" name="privacy" value="Public" id="Public" title="Select if you would like to share canvas to repository" checked="checked"/>Public</label><br><br>
+                            <br>
+                            <label for="Private"><input type="radio" name="privacy" value="Private" id="Private" title="Select if you would not like to share canvas" />Private</label>
                             <br>
                             <p id="share-with-users">
                                 <label for="share-with">Enter the email addresses of users you would like to share with:</label><br><br>
