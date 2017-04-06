@@ -8,7 +8,7 @@ $share_with_str = $_POST['share_with'];
 $tags_str = $_POST['tags'];
 
 $users = explode(" ", $share_with_str);
-$tags = explode(" ", $tags_str);
+$tags = explode(",", $tags_str);
 
 // $filename ='../json/'.$canvas_id_data.'.json';
 // $handle = fopen($filename, "w");
