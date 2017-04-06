@@ -11,7 +11,8 @@ $(function() {
       var resultHTML = '';
 
       var canvases = returnedData[0];
-      console.log("Canvases: " + JSON.stringify(returnedData) + "\n");
+
+      $('body').find('#content-heading').val("Search Results");
 
       $.each(canvases, function(key, value) {
         resultHTML += '<div class="col-md-4 col-sm-6"><div class="canvas-gallery-item panel panel-default" id="'+ key +'"><div class="panel-heading"><h4><i class="fa fa-fw fa-th"></i>' + value["canvas_name"] + '</h4></div><div class="panel-body"><h5>Tags:</h5><p">';
