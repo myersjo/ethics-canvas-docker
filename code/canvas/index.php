@@ -3,9 +3,13 @@
   if (isset($_SESSION['userlogin'], $_SESSION['userfirstname'])) {
     $email = $_SESSION['userlogin'];
     $name = $_SESSION['userfirstname'];
-    if (isset($_SESSION['canvas_id'])) {
-      $canvas_id = $_SESSION['canvas_id'];
-    }
+  }
+  if (isset($_GET['id'])) {
+    $canvas_id = $_GET['id'];
+    $_SESSION['canvas_id'] = $canvas_id;
+  }
+  else if (isset($_SESSION['canvas_id'])) {
+    $canvas_id = $_SESSION['canvas_id'];
   }
 ?>
 
@@ -55,12 +59,20 @@
                         <label class="project_title">Project Title</label>
                         <input class="proj_title" name="field_00[]" type="text"/>
                     </div>
-			<p class=“text-center”>
-				<a href=“www.facebook.com”>
-					<button class= “guidelines” type=“button” name=“guidelines”> Guidelines pdf</button>
-				</a>
-			</p>
-                    <!—— date removed dylan —->
+                    <div hidden class="col-md-3  ">
+ -                        <label class="project_date">Date</label>
+ -                        <input class="proj_date" name="field_00[]" type="date"/>
+ -                    </div>
+                    <!--<p class=“text-center”>
+                        <a href=“www.facebook.com”>
+                            <button class= "guidelines" type="button" name="guidelines"> Guidelines pdf</button>
+                        </a>
+                    </p>-->
+                    <!--<p class=“text-center”>
+                        <a href=“../repository/index.php”>
+                            <button class= "guidelines" type="button" name="guidelines"> Repository Page</button>
+                        </a>
+                    </p>-->
                     <!-- login coming soon -->
                     <div class="col-md-3  ">
                     <?php if (!empty($name)) { ?>
@@ -72,6 +84,10 @@
                             <span class="caret"></span>
                           </button>
                           <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a id="toGuidelines" href="../download/handbook.pdf">Guidelines</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a id="toRepository" href="../repository">Repository</a></li>
+                            <li role="separator" class="divider"></li>
                             <li><a id="toDashboard" href="php/dashboard.php">Your Canvases</a></li>
                             <!-- <li><a href="#">Something else here</a></li> -->
                             <li role="separator" class="divider"></li>
@@ -82,7 +98,7 @@
                     </div>
 
                 </div>
-
+            <div class="row">
                 <!-- LAYOUT -->
                 <!-- ================ 8/5 col=================== -->
                 <div class="canvas-box">
@@ -682,7 +698,57 @@
                     </div>
                 </div>
                 <!-- end of .canvas.box -->
+            </div>
+
                 <!-- FORM BUTTON BOX -->
+                <?php if (!empty($name))  { ?>
+                
+                   
+                <br>
+                <div class="row">
+                    <div class="col-md-5 col-md-offset-1">
+                        <div class="temp-space panel">
+                            <div class="border">
+                                <div class="panel-heading">
+                                    <h4> Temporary</h4>
+                                </div>
+                            </div>
+                            <div class="border">
+                                <div class="panel-body">
+                                    <p class="intro">If you do not know which canvas use, put your idea in this canvas</p>
+                                    <label>Your Idea</label><br>
+                                    <p>
+                                        <textarea class="new_item expandable" rows="3" maxlength="100" data-limit-rows="true" data-autoresize type="text" name="temp-space" id="temp-space" placeholder="Write an idea here ..."></textarea>
+                                    </p>
+                                    <!--<a href="#" class="btn btn-default">Add</a>-->
+                                    
+                                </div> <!-- End of class="panel-body" -->
+                            </div> <!-- End of class="border" -->
+                        </div> <!-- End of class="panel" -->
+                    </div>
+                    <div class="col-md-5">
+                        <div class="tags">
+                            <label for="tags">
+                                <h4>Tags: </h4>
+                                <input type="text" name="tags" id="tags" title="Enter tags" placeholder="Enter tags..."/>
+                            </label>
+                            <h4>Visibility Settings: </h4>
+                            <label for="Public"><input type="radio" name="privacy" value="Public" id="Public" title="Select if you would like to share canvas to repository" checked="checked"/>Public</label><br><br>
+                            <br>
+                            <label for="Private"><input type="radio" name="privacy" value="Private" id="Private" title="Select if you would not like to share canvas" />Private</label>
+                            <br>
+                            <p id="share-with-users">
+                                <label for="share-with">Enter the email addresses of users you would like to share with:</label><br><br>
+                                <input type="text" id="share-with" name="share-with" value="" placeholder="Enter email addresses..."><br>
+                            </p>
+                        </div>
+                    </div>
+                </div> <!-- end of row -->
+                <?php } ?>
+                   
+                
+                   
+
                 <div class="row">
 
                     <div class="imp-exp-btn col-md-4 col-md-offset-4">
@@ -692,10 +758,13 @@
 
                         <?php if (!empty($name)) { ?>
 
-                          <p class="text-center">
+                            <p class="text-center">
                             <!-- Export JSON and also save the canvas for the registered user -->
                               <button class="json_exp" type="button" name="json_exp">Save This Canvas</button>
-                          </p>
+                              <br>
+                              <br>
+                            </p>
+				
  
                         <!-- BEGIN SHARE CANVAS -->
                         <p class="text-center">
@@ -720,8 +789,9 @@
                           <p class="text-center">
                             <!-- Export JSON and also save the canvas for the registered user -->
                               <a class="login-to-save"  href="../index.html">Sign up or login to save your canvas</a>
+				
                           </p>
-  <?php }?>
+                        <?php }?>
 
 
                         <!-- BEGIN EXPORT PDF -->

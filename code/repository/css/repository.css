@@ -1,0 +1,179 @@
+
+
+/* ------------------------------
+        Footer
+ ------------------------------ */
+
+footer {
+font-size:1em;
+
+    margin-top: 2em;
+    padding: 1.5em;
+    background-color: #37474f;
+
+}
+footer p{
+    color: white;
+}
+footer .contact p{
+  color: #18AE90;
+}
+footer .contact h2{
+  color:#6bb5b4;
+}
+footer .license a{
+  color:#759BCF;
+}
+
+footer .license {
+  margin:0.5em auto 1.8em auto;
+}
+
+footer p.ethics-copy.terms,
+footer p.ethics-copy.privacy
+{
+
+    text-decoration:none;
+    padding: 0 0.5em;
+    display:inline-block;
+
+
+}
+footer p.cc{
+  margin-top:2.8em ;
+}
+footer p.terms,
+footer p.privacy{
+  margin:1.9em auto;
+}
+footer .privacy a{
+  color:#a67de0;
+}
+footer .terms a{
+  color:#aed581;
+}
+/*footer license icons */
+footer .license-icons ul{
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+footer .license-icons li{
+  display:inline-block;
+  margin: 1.2em 0.2em;
+}
+footer .license-icons ul img{
+  width:3.5em;
+
+}
+
+.btn:hover, .btn:active {
+    color: #fff;
+
+    -ms-transform: none; /* IE 9 */
+    -ms-transform-origin: none; /* IE 9 */
+    -webkit-transform: none; /* Chrome, Safari, Opera */
+    -webkit-transform-origin: none; /* Chrome, Safari, Opera */
+    transform: none;
+    transform-origin: none;
+}
+.btn {
+    color:black;
+    text-decoration: none;
+    padding: 6px;
+    outline: none;
+    transition: all 0.5s;
+    width: 75px;
+    margin: auto;
+    border-radius: 10px;
+    background-color: rgba(84, 110, 122, 0.2);
+    color: #555;
+
+}
+.navbar-header a{
+  color: #337ab7 !important;
+}
+.navbar-header a:hover{
+ text-decoration: underline;
+ opacity: 0.5;
+}
+
+.navbar-nav a{
+ color: #337ab7 !important;
+}
+
+.navbar-nav a:hover{
+ opacity: 0.5;
+ text-decoration:underline !important;
+}
+
+.navbar-default {
+    background-color: rgba(38, 50, 56, 0.85);
+    clear:both;
+    border:none;
+    
+}
+.panel > .panel-heading {
+    border: none;
+    filter: brightness(85%);
+}
+
+.navbar-brand img{
+    margin-top: -10px;
+    height: 40px;
+     -webkit-height:5px;
+    display: block;
+
+}
+
+.col-lg-12 img{
+    display: block;
+    width: 25%;
+    float:left;
+    clear: both;
+}
+.col-lg-12 {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.col-lg-12 h1{
+    color: #759BCF;
+}
+.col-md-12 p{
+    color: #555;
+}
+.col-lg-12 h2{
+    color: #9dc963;
+}
+
+
+/*!
+ * Start Bootstrap - Modern Business HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+/* Global Styles */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    padding-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+.img-portfolio {
+    margin-bottom: 30px;
+}
+
+.img-hover:hover {
+    opacity: 0.8;
+}
+
+/* 404 Page Styles */
+
+.error-404 {
+    font-size: 100px;
+}

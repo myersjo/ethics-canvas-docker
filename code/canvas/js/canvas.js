@@ -7,6 +7,7 @@ $(function() {
     document.getElementById("4-col-layout").style.MozColumnCount =
         "4"; // end of Firefox fix
 
+    $('#share-with-users').hide();
 
     /* Prevent pressing ENTER on Project Title from submitting the form */
     $('.proj_title').keydown(function(event){
@@ -15,6 +16,8 @@ $(function() {
         return false;
       }
     });
+
+    // canvas-box
 
 
     /*================================
@@ -48,7 +51,7 @@ $(function() {
     var currentDate = fullDate.getFullYear() + "-" + twoDigitMonth + "-" +
         twoDigitDate;
     // set the current date in the date input field
-    $('.proj_date').val(currentDate);
+     $('.proj_date').val(currentDate);
     /*========================================
         USER LOGS OUT (dropdown menu)
     ==========================================*/
@@ -57,7 +60,7 @@ $(function() {
         $.post(url, function(data, status) {
             if (data == 200) {
                 $('.user-profile').hide();
-                window.location.href="https://www.ethicscanvas.org";
+                window.location.href="../index.html";
             }
         });
     });
@@ -67,15 +70,25 @@ $(function() {
     otherwise load an empty canvas
     ==========================================*/
 
-    // if a canvas is chosen by the user to be loaded
+    // if a canvas is chosen by the user to be loaded, authorise and load or redirect
     if (current_canvas_id !== '') {
+        var params = 'current_canvas_id=' + current_canvas_id;
+        var auth = 'php/authorise.php';
+        $.get(auth, params, function (returnedVal) {
+            if (returnedVal == 200) {   // canvas is public or user is authorised to view
+                loadCanvas();
+            }
+            else {
+                window.location.href = "error.php";
+            }
+        });
+    }
 
+    function loadCanvas() {
         // var url = 'json/' + current_canvas_id + '.json';
         var url = 'php/load-canvas.php'
         var params = 'current_canvas_id=' + current_canvas_id;
-        // var url= 'json/test_canvas.json';
-
-        // get the saved ISON object in the sendJSON.text file
+        // get the saved JSON object in the database
         $.getJSON(url, params, function(returnedObj) {
 
             //Display the json data in the html
@@ -93,6 +106,20 @@ $(function() {
 
 
                 } // end of if(key === 'field_00[]')
+                else if(key === 'share-with') {
+                    if(value.length > 0) {
+                        $('input[name=privacy][value=Private').prop('checked', true);
+                        $('#share-with-users').show();
+                        $('#share-with').val(value);
+                        $('.tags').css("height","350px")
+                    }
+                }
+                else if(key === 'temp-space') {
+                    $('#temp-space').val(value);
+                }
+                else if(key === 'tags') {
+                    $('#tags').val(value);
+                }
                 else if (key !== 'new_item') {
 
                     if ($.type(value) === "array") {
@@ -100,7 +127,7 @@ $(function() {
 
                             /** FIX DUPLICATIONs in the canvas when importing
                             /*  Importing will override the canvas content
-                              clear the canvas by giving en emty content to the ul list (remove previous list items) */
+                            clear the canvas by giving en emty content to the ul list (remove previous list items) */
                             $('.canvas-form').find('.card').filter('.' +
                                 key.substr(0, 8)).find('ul.item_list').html(
                                 '');
@@ -139,13 +166,10 @@ $(function() {
             }); //end of $.each(returnedObj...
 
         }); // end of $.getJSON
-
         /*--- fix the heights after importing  ---*/
         fixHeights();
-        /*--------------------------------*/
-
-    }
-
+        /*--------------------------------*/    
+    }   
 
 
     /*=======================================
@@ -297,13 +321,14 @@ $(function() {
     //<textarea data-limit-rows="true" ></textarea>
     $('.card').on('keypress', 'textarea[data-limit-rows=true]', function(
         event) {
-        var textarea = $(this);
-        var text = textarea.val();
 
         /* The jQuery event.which -->
          Returns which keyboard key was pressed: */
         // if the enter is pressed, event.which === 13
         if (event.which === 13) {
+            event.preventDefault(); // stop new line character being added to the text area
+            var textarea = $(this);
+            var text = textarea.val();
             var new_item = $(this).closest('.card').find('.new_item').val();
             var new_item_height = $(this).closest('.card').find('.new_item').height();
             //number of items are in the list
@@ -327,11 +352,14 @@ $(function() {
             } // end of if(new_item){
             //clear the new item the text area value
             $(this).closest('.card').find('.new_item').val('');
+            if (email_save_canvas != '') {
+                saveCanvas();
+            }
             /* When clicking on "add idea",  hide the  input field for adding a new item (slideUp() doesn't work nicely here)*/
             $(this).closest('.card').find('.user-input').hide("fast",
                 function() {
-                    // Animation complete.
-                });
+                // Animation complete.
+            });
 
         }
 
@@ -415,10 +443,12 @@ $(function() {
       //   php variables are retieved in the header of the canvas index.php as js variables -->
       var name_save_canvas = $('.form-header').find('.proj_title').val();
       var date_save_canvas = $('.form-header').find('.proj_date').val();
+      var visibility =  $("input[name=privacy]:checked").val();
       var save_canvas_obj = {
           'email_save_canvas': email_save_canvas,
           'name_save_canvas': name_save_canvas,
-          'date_save_canvas': date_save_canvas
+          'date_save_canvas': date_save_canvas,
+          'visibility': visibility
       };
 
       var save_canvas = $.param(save_canvas_obj);
@@ -429,59 +459,80 @@ $(function() {
       $.post(save_reg_url, {
           save_canvas: save_canvas
       }, function(data, status) {
-          //the returned data is successful, is the $canvas_id
+          //the returned data, if successful, is the $canvas_id
           var canvas_id = data;
-          // send this canvas_id with the next ajax requestedto the php/canvas.php file and use it as the name of the json file to be saved
+          // send this canvas_id with the next ajax requestedto the php/canvas.php file and use it as the canvas_id for the database
 
-          // Give the user feedback that the canvas is saved
-          if (data !== 400 || data !== 401) {
+          // Check that the user is logged in and is the creator
+          if (data !== 400 && data !== 401 && data != 403) {
+              // Give the user feedback that the canvas is saved
               if ($('.imp-exp-btn ').find(".save-canvas-feedback") !== null) {
                   $('.imp-exp-btn ').find(".save-canvas-feedback").remove();
-
-
               }
               $('.canvas-form').find('.imp-exp-btn ').append('<div class="save-canvas-feedback"><p><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Your canvas is saved in your dashbord</p></div>');
               // remove the canvas is saves message as soon as user changes the canvas
               $('.canvas-form').on("change keyup", 'textarea', function() {
                   $('.imp-exp-btn ').find(".save-canvas-feedback").remove();
               });
+                //For the second AJAX request:
+                /* B: Exporting the form data json to a database */
+
+                //Make the JSON object into a JSON string
+                var JSONstrObj = JSON.stringify($('.canvas-form').serializeObject());
+                var url = "php/canvas.php";
+                var share_with = $('#share-with').val();
+                var tags = $('#tags').val();
+                /*  Post the JSON stringified object to the php file
+                (the php script will save it in a database )*/
+                //also, send the canvas_id to use as the key
+                $.post(url, {
+                    JSONstrObj: JSONstrObj,
+                    canvas_id: canvas_id,
+                    share_with: share_with,
+                    tags: tags
+                }, function(data, status) {
+                    console.log(
+                        'Response from php when sending the form json object: \n' +
+                        'data:' + data + '\n status: ' + status);
+                }).fail(function(jqXHR) {
+                    console.log("Error " + jqXHR.status + ' ' + jqXHR.statustext);
+                });
+                /*########################################################*/
           } else {
 
               $('.canvas-form').find('.imp-exp-btn ').append('<div class="save-canvas-feedback-fail"><p>Oh! We could not save your canvas. Please try again or contact us at hello@ethicscanvas.org</p></div>');
           }
-          //For the second AJAX request:
-          /*#########################################################*/
-
-          /*----------------------------------------
-            B: Exporting the form data json to a database
-           ----------------------------------------*/
-
-          // $('#result').text(JSON.stringify($('.canvas-form').serializeObject()));
-
-
-          //Make the JSON object into a JSON string
-          var JSONstrObj = JSON.stringify($('.canvas-form').serializeObject());
-          var url = "php/canvas.php";
-          /*  Post the JSON stringified object to the php file
-          (the php script will save it in a database )*/
-          //also, send the canvas_id to use as the key
-          $.post(url, {
-              JSONstrObj: JSONstrObj,
-              canvas_id: canvas_id
-          }, function(data, status) {
-              console.log(
-                  'Response from php when sending the form json object: \n' +
-                  'data:' + data + '\n status: ' + status);
-          }).fail(function(jqXHR) {
-              console.log("Error " + jqXHR.status + ' ' + jqXHR.statustext);
-          });
-
-          /*########################################################*/
+          
 
       }).fail(function(jqXHR) {
           console.log("Error " + jqXHR.status + ' ' + jqXHR.statustext);
       });
     }
+    /*===========================================
+    HANDLING CLICK ON : Privacy Radio Buttons
+     ===========================================*/
+     $("input[name=privacy]").on("click", function() {
+         if ($(this).val() == "Private") {
+            // $('.tags').css("height","350px")
+            $('.tags').animate({
+                height: "350px"
+            }, {
+                queue: false,
+                duration: 400
+            });
+            $('#share-with-users').slideDown(400);
+         } else {
+             $('#share-with-users').slideUp();
+             $('#share-with').val("");
+            //  $('.tags').css("height","250px")
+            $('.tags').animate({
+                height: "284px"
+            }, {
+                queue: false,
+                duration: 200
+            });
+         }
+     });
 
     /*===========================================
     HANDLING CLICK ON : Share This Canvas BUTTON

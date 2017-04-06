@@ -67,6 +67,102 @@ a.logo img {
     border-radius: 4px;
     padding: 0.45em;
 }
+/* buttoms in the header */
+.guidelines {
+    color: black;
+    text-decoration: none;
+    padding: 3px;
+    outline: none;
+    transition: all 0.5s;
+    width: 20%;
+    
+}
+
+.guidelines:focus {
+    border: 0;
+    outline: none;
+}
+.guidelines:hover, .guidelines:active {
+    color: #fff;
+
+    -ms-transform: rotate(5deg); /* IE 9 */
+    -ms-transform-origin: 51% top; /* IE 9 */
+    -webkit-transform: rotate(5deg); /* Chrome, Safari, Opera */
+    -webkit-transform-origin: 51% top; /* Chrome, Safari, Opera */
+       transform: rotate(5deg);
+       transform-origin: 51% top;
+}
+.tags input{
+    width: 100%;
+    outline: none;
+    border: 1px solid #eceff1;
+    border-radius: 0.5em;
+    padding: 0.45em;
+    float:left;
+    clear: all;
+}
+
+.tags label{
+    width: 100%;
+    outline: none;
+    border: 1px solid #eceff1;
+    border-radius: 0.5em;
+    padding: 0.45em;
+    background-color: #87AEE3;
+    float:left;
+    clear: all;
+    
+}
+.panel{
+    outline: none;
+    border: 1px solid #eceff1;
+    border-radius: 0.5em;
+    padding: 0.45em;
+    background-color: #34BBA4;
+    margin-bottom: 25px;
+    text-align: left;
+    width:25%;
+    height: auto;
+    margin:0 auto 20px;
+    clear: all;
+}
+.tags{
+    outline: none;
+    border: 1px solid #eceff1;
+    border-radius: 0.5em;
+    padding: 0.45em;
+    background-color: #87AEE3;
+    margin-top: 5px;
+    text-align: left;
+    width:100%;
+    height: 284px;
+    margin:0 auto;
+    clear: all;
+}
+.temp-space{
+    outline: none;
+    border: 1px solid #eceff1;
+    border-radius: 0.5em;
+    padding: 0.45em;
+    background-color: #34BBA4;
+    margin-bottom: 25px;
+    text-align: left;
+    width:100%;
+    height: auto;
+    margin:0 auto 20px;
+    clear: all;
+}
+
+.border{
+       width: 100%;
+    outline: none;
+    border: 1px solid #eceff1;
+    border-radius: 0.5em;
+    padding: 0.45em;
+    background-color: #34BBA4;
+    margin-bottom: 5px;
+}
+
 
 /*----------------------------------
    DROPDOWN MENU (User DASHBORD menu)
