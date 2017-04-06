@@ -22,8 +22,8 @@ $(function() {
         resultHTML += '</p><a href="#" class="btn btn-default">View</a></div></div></div>';
       }) //end of $.each(returnedData)
       if (resultHTML.length <= 1) { // No Results
-        resultHTML += '<div class="col-md-12"><h4>No results found!</h4><p>Try a different keyword or view the featured canvases below. </p></div>';
-        $('body').find('#canvases-row').prepend(resultHTML);
+        resultHTML += '<div class="col-md-12"><h4>No results found!</h4><p>Try a different keyword or leave the search field blank to show all canvases. </p></div>';
+        $('body').find('#canvases-row').empty().prepend(resultHTML);
       } else { // Display results
         $('#content-heading').val("Search Results");
         $('body').find('#canvases-row').empty().append(resultHTML);
