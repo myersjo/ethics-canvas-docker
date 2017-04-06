@@ -114,9 +114,10 @@
                             Popular <span class="caret"></span>
                           </button>
                           <ul class="dropdown-menu">
-                            <li><a onclick="choose('Life')" href="#">Life</a></li>
-                            <li><a onclick="choose('Work')" href="#">Work</a></li>
-                            <li><a onclick="choose('Family')" href="#">Family</a></li>
+                            <li><a onclick="choose('Data')" href="#">Data</a></li>
+                            <li><a onclick="choose('Genetics')" href="#">Genetics</a></li>
+                            <li><a onclick="choose('Secuity')" href="#">Security</a></li>
+                              
                           </ul>
                         </div>
                     <button class="btn btn-default" type="submit" id="search-go-btn" name="search"><i class="fa fa-search fa-lg" aria-hidden="true"></i>
