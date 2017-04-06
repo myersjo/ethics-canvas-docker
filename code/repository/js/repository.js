@@ -21,14 +21,13 @@ $(function() {
         resultHTML += '</p><a href="#" class="btn btn-default">View</a></div></div></div>';
       }) //end of $.each(returnedData)
       if (resultHTML.length <= 1) { // No Results
-        resultHTML += '<div class ="col-md-4><h4>No results found!</h4><p>Try searching for a different term of view the featured canvases below. </p></div>"';
+        resultHTML += '<div class="col-md-4"><h4>No results found!</h4><p>Try searching for a different term of view the featured canvases below. </p></div>';
         $('body').find('#canvases-row').append(resultHTML);
       } else { // Display results
         $('#content-heading').val("Search Results");
         $('body').find('#canvases-row').empty().append(resultHTML);
         colors();
       }
-      console.log(resultHTML);
     }); // end of $.getJSON
   }); // end of $('.search-box').on('submit' ...
 
